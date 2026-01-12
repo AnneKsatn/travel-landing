@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripGenius — Идеальные путешествия от искусственного интеллекта</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">TripGenius</div>
+            <div class="tagline">Искусство идеального путешествия</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title animate">Ваше идеальное путешествие начинается здесь</h1>
+            <p class="hero-subtitle animate">Искусственный интеллект создаст персонализированный маршрут, рассчитает точный бюджет и спланирует каждый день вашего путешествия. Просто расслабьтесь и наслаждайтесь.</p>
+            <a href="#cta" class="cta-button animate">
+                Попробовать бесплатно <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Photo Collage Section -->
+<section class="photo-collage-section" style="background: var(--bg-soft); padding: 40px 0;">
+    <div class="container">
+        <h2 style="text-align: center; font-family: 'Inter', sans-serif; color: var(--color-dark); margin-bottom: 40px; font-size: 2.2rem;">
+            Путешествия, которые мы помним
+        </h2>
+        
+        <div class="photo-collage">
+            <!-- Текстурный фон -->
+            <div class="paper-texture"></div>
+            
+            <!-- Фото 1: Париж -->
+            <div class="polaroid polaroid-1">
+                <div class="tape-piece" style="top: -12px; left: 50%; transform: translateX(-50%) rotate(-45deg);"></div>
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
+                     alt="Париж, Эйфелева башня" class="polaroid-img">
+                <div class="handwritten-note note-paris">наш первый закат здесь ❤️</div>
+                <div class="polaroid-caption">Париж, весна 2023</div>
+            </div>
+            
+            <!-- Фото 2: Япония -->
+            <div class="polaroid polaroid-2">
+                <div class="tape-piece" style="top: -12px; left: 30%;"></div>
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
+                     alt="Гора Фудзи" class="polaroid-img">
+                <div class="handwritten-note note-japan">в 5 утра, но оно того стоило!</div>
+                <div class="polaroid-caption">Фудзи, осень 2023</div>
+            </div>
+            
+            <!-- Фото 3: Италия -->
+            <div class="polaroid polaroid-3">
+                <div class="tape-piece" style="top: -12px; right: 30%;"></div>
+                <img src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
+                     alt="Амальфитанское побережье" class="polaroid-img">
+                <div class="handwritten-note note-italy">лучшая паста в жизни!</div>
+                <div class="polaroid-caption">Амальфи, лето 2022</div>
+            </div>
+            
+            <!-- Фото 4: Исландия -->
+            <div class="polaroid polaroid-4">
+                <div class="tape-piece" style="top: -12px; left: 40%;"></div>
+                <img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
+                     alt="Северное сияние" class="polaroid-img">
+                <div class="polaroid-caption" style="color: #2c5282;">Исландия, зима 2023</div>
+            </div>
+            
+            <!-- Фото 5: Таиланд -->
+            <div class="polaroid polaroid-5">
+                <div class="tape-piece" style="top: -12px; right: 40%;"></div>
+                <img src="https://images.unsplash.com/photo-1552465011-b4e30bf7349d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
+                     alt="Пляж в Таиланде" class="polaroid-img">
+                <div class="polaroid-caption" style="color: #d69e2e;">Пхукет, весна 2022</div>
+            </div>
+            
+            <!-- Фото 6: Нью-Йорк -->
+            <div class="polaroid polaroid-6">
+                <div class="tape-piece" style="top: -12px; left: 50%;"></div>
+                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
+                     alt="Таймс-сквер" class="polaroid-img">
+                <div class="polaroid-caption" style="color: #2d3748;">Нью-Йорк, осень 2023</div>
+            </div>
+        </div>
+        
+        <p style="text-align: center; color: var(--color-gray); margin-top: 60px; max-width: 600px; margin-left: auto; margin-right: auto; font-style: italic;">
+            Каждое фото — история, которую мы помним до мелочей. Теперь вы можете создавать такие же воспоминания с идеальным маршрутом.
+        </p>
+    </div>
+</section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают TripGenius</h2>
+            <div class="features-grid">
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="feature-title">Точный бюджет до копейки</h3>
+                    <p class="feature-description">ИИ учитывает сезонные цены, местные налоги, транспорт и даже ежедневные расходы. Ваш бюджет будет совпадать с реальностью.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="feature-title">Интеллектуальный маршрут</h3>
+                    <p class="feature-description">Персонализированный план под ваши интересы: архитектура, искусство, гастрономия или природа. Всё логично и удобно расположено.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Расписание, которое работает</h3>
+                    <p class="feature-description">Учет времени на дорогу, часов работы заведений и оптимального времени посещения. Никаких очередей и пробежек по городу.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
+            <div class="steps">
+                <div class="step animate">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Введите параметры</h3>
+                    <p class="step-description">Город, даты, количество человек, интересы и бюджет. Это займет 2 минуты.</p>
+                </div>
+                <div class="step animate">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">ИИ анализирует</h3>
+                    <p class="step-description">Наш интеллект сравнивает цены, оптимизирует логистику и выбирает лучшие места.</p>
+                </div>
+                <div class="step animate">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Получите план</h3>
+                    <p class="step-description">Готовый PDF с маршрутом, картой, бюджетной таблицей и советами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example -->
+    <section class="example">
+        <div class="container">
+            <h2 class="section-title">Пример маршрута</h2>
+            <div class="example-card animate">
+                <h3 class="example-title">Барселона, 4 дня, двоим</h3>
+                
+                <div class="day-card">
+                    <h4 class="day-title"><i class="fas fa-sun"></i> День 1: Готический квартал и море</h4>
+                    <div class="activity">
+                        <div class="time">10:00</div>
+                        <div class="activity-description">Прогулка по Готическому кварталу с аудиогидом</div>
+                    </div>
+                    <div class="activity">
+                        <div class="time">12:00</div>
+                        <div class="activity-description">Кафедральный собор (бесплатный вход до 12:30)</div>
+                    </div>
+                    <div class="activity">
+                        <div class="time">14:00</div>
+                        <div class="activity-description">Обед на рынке Бокерия, паэлья и тапас</div>
+                    </div>
+                    <div class="activity">
+                        <div class="time">16:00</div>
+                        <div class="activity-description">Пляж Барселонета, отдых у моря</div>
+                    </div>
+                    <div class="activity">
+                        <div class="time">20:00</div>
+                        <div class="activity-description">Ужин в аутентичном тапас-баре в районе Грасия</div>
+                    </div>
+                </div>
+                
+                <div class="budget-summary">
+                    <h4 class="budget-title">Бюджет на поездку</h4>
+                    <div class="budget-item">
+                        <span>Жилье (4 ночи, центр)</span>
+                        <span>€320</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Питание и рестораны</span>
+                        <span>€400</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Транспорт и билеты</span>
+                        <span>€60</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Развлечения и музеи</span>
+                        <span>€400</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Итого на двоих</span>
+                        <span>€1,180</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <h2 class="section-title">Сравнение с ручным планированием</h2>
+            <div class="comparison-table animate">
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">8+ часов в Google и на форумах</div>
+                    <div class="comparison-item comparison-good">5 минут работы с ИИ</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">Устаревшие цены из туристических блогов</div>
+                    <div class="comparison-item comparison-good">Актуальные данные в реальном времени</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">"Примерный бюджет", который никогда не сходится</div>
+                    <div class="comparison-item comparison-good">Точный расчет до €10-20</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">Маршрут "как у всех" из путеводителей</div>
+                    <div class="comparison-item comparison-good">Персонализированный план под ваши интересы</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">PDF и карты нужно делать самостоятельно</div>
+                    <div class="comparison-item comparison-good">Готовые документы для поездки</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Section -->
+    <section class="free-section">
+        <div class="container">
+            <h2 class="section-title">Бесплатные возможности</h2>
+            <div class="free-features">
+                <div class="free-feature animate">
+                    <div class="free-number">5</div>
+                    <div class="free-text">полноценных маршрутов можно создать бесплатно</div>
+                </div>
+                <div class="free-feature animate">
+                    <div class="free-text">Экспорт в PDF и Google Maps для оффлайн-доступа</div>
+                </div>
+                <div class="free-feature animate">
+                    <div class="free-text">Общение с ИИ-помощником для правок и улучшений</div>
+                </div>
+                <div class="free-feature animate">
+                    <div class="free-text">Персональные советы по экономии и лучшему времени</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium -->
+    <section class="premium-section">
+        <div class="container">
+            <h2 class="section-title">Когда может понадобиться премиум</h2>
+            <div class="premium-card animate">
+                <h3 class="premium-title">Бесплатного достаточно для большинства поездок</h3>
+                <p class="premium-description">5 маршрутов, неограниченные правки, экспорт в PDF и поддержка ИИ-помощника — всё это доступно совершенно бесплатно.</p>
+                <p class="premium-description">Премиум функции пригодятся, если после 5 маршрутов вы захотите детализировать конкретный план, добавить бронирование отелей и билетов, или получить персональные рекомендации от экспертов.</p>
+                <p class="premium-description" style="color: var(--accent-gold); font-weight: 500;">Сначала создайте свои 5 бесплатных маршрутов, а затем решите, нужен ли вам премиум.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Отзывы путешественников</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card animate">
+                    <p class="testimonial-text">Впервые бюджет в поездке совпал с реальностью. Обычно мы тратили на 20-30% больше, а тут всё сошлось до €50.</p>
+                    <p class="testimonial-author">— Анна, поездка в Париж</p>
+                </div>
+                <div class="testimonial-card animate">
+                    <p class="testimonial-text">Сэкономил 3 дня на планировании. Просто ввел параметры и получил готовый маршрут. Идеально для занятых людей.</p>
+                    <p class="testimonial-author">— Михаил, путешествие по Испании</p>
+                </div>
+                <div class="testimonial-card animate">
+                    <p class="testimonial-text">Маршрут был настолько логичным, что мы ничего не меняли. Всё рядом, ничего не нужно жертвовать. Идеальный баланс.</p>
+                    <p class="testimonial-author">— Ольга и Алексей, медовый месяц в Италии</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Form -->
+    <section class="cta-form" id="cta">
+        <div class="container">
+            <div class="form-container animate">
+                <h2 class="form-title">Создайте свой первый маршрут бесплатно</h2>
+                <form id="tripForm">
+                    <div class="form-group">
+                        <label class="form-label" for="city">Куда хотите поехать?</label>
+                        <input type="text" class="form-input" id="city" placeholder="Например: Рим, Италия" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="dates">Даты поездки</label>
+                        <input type="text" class="form-input" id="dates" placeholder="15 июня — 20 июня 2024" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="interests">Ваши интересы (через запятую)</label>
+                        <input type="text" class="form-input" id="interests" placeholder="Например: искусство, архитектура, местная кухня" required>
+                    </div>
+                    
+                    <button type="submit" class="form-button">
+                        Сгенерировать бесплатный маршрут <i class="fas fa-magic"></i>
+                    </button>
+                    
+                    <p class="form-note">Первый маршрут будет готов через 2 минуты. Это полностью бесплатно и не требует привязки карты.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">TripGenius</div>
+            <p class="footer-tagline">Искусственный интеллект, созданный с душой для ваших самых запоминающихся путешествий. Мы верим, что планирование должно быть простым, а поездки — совершенными.</p>
+            <p class="copyright">© 2024 TripGenius. Все права защищены. Сделано с ❤️ для путешественников.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
