@@ -1,0 +1,78 @@
+/* How It Works - простой и понятный */
+.how-it-works {
+    padding: 100px 0;
+    background: var(--bg-main);
+    position: relative;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.step {
+    text-align: center;
+    max-width: 280px;
+    position: relative;
+}
+
+.step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    top: 25px;
+    right: -30px;
+    color: var(--color-gray-light);
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .step:not(:last-child)::after {
+        content: '↓';
+        top: auto;
+        bottom: -40px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    border: 2px solid var(--border-soft);
+    transition: all 0.3s ease;
+}
+
+.step:hover .step-number {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
+.step-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.step-description {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}

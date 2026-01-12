@@ -1,0 +1,54 @@
+/* Testimonials - живые отзывы */
+.testimonials {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.testimonial-card {
+    background: var(--bg-main);
+    border-radius: var(--radius-medium);
+    padding: 40px 32px;
+    border: 1px solid var(--border-soft);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: rgba(102, 126, 234, 0.1);
+    line-height: 1;
+}
+
+.testimonial-text {
+    color: var(--color-gray);
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 0.95rem;
+}

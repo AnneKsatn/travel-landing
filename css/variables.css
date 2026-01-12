@@ -1,0 +1,42 @@
+:root {
+    /* Теплая, душевная палитра */
+    --color-primary: #667eea;
+    --color-primary-light: #a3bffa;
+    --color-primary-dark: #5a67d8;
+    
+    /* Теплые нейтральные цвета */
+    --color-dark: #2d3748;
+    --color-gray: #718096;
+    --color-gray-light: #cbd5e0;
+    --color-light: #f7fafc;
+    
+    /* Акцентные цвета - тёплые и приятные */
+    --color-accent-warm: #ed8936;
+    --color-accent-cool: #38b2ac;
+    --color-accent-soft: #d6bcfa;
+    
+    /* Градиенты - мягкие и душевные */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, #764ba2 100%);
+    --gradient-soft: linear-gradient(135deg, #f0f9ff 0%, #fef7ff 100%);
+    --gradient-warm: linear-gradient(135deg, #fffaf0 0%, #f8fafc 100%);
+    
+    /* Фоны */
+    --bg-main: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-soft: #fef7ff;
+    
+    /* Бордеры - мягкие */
+    --border-soft: rgba(226, 232, 240, 0.8);
+    --border-medium: rgba(203, 213, 224, 0.6);
+    
+    /* Тени - мягкие и нежные */
+    --shadow-soft: 0 4px 20px rgba(102, 126, 234, 0.08);
+    --shadow-medium: 0 8px 30px rgba(102, 126, 234, 0.12);
+    --shadow-subtle: 0 2px 15px rgba(0, 0, 0, 0.05);
+    
+    /* Закругления - мягкие */
+    --radius-large: 20px;
+    --radius-medium: 16px;
+    --radius-small: 12px;
+    --radius-full: 50px;
+}
