@@ -5,22 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripGenius — Идеальные путешествия от искусственного интеллекта</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header с поляроидами -->
     <header class="header">
-        <div class="container">
-            <div class="logo">TripGenius</div>
-            <div class="tagline">Искусство идеального путешествия</div>
+        <div class="header-content">
+            <!-- Поляроидные карточки -->
+            <div class="polaroid polaroid-left" style="--rotation: -15deg;">
+                <img src="https://images.unsplash.com/photo-1550340499-a6c60fc8287c?w=400&h=300&fit=crop" alt="Париж" class="polaroid-img">
+                <div class="polaroid-caption">Париж, весна</div>
+            </div>
+            
+            <div class="polaroid polaroid-right" style="--rotation: 12deg;">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop" alt="Киото" class="polaroid-img">
+                <div class="polaroid-caption">Киото, сакура</div>
+            </div>
+            
+            <div class="polaroid polaroid-center" style="--rotation: 5deg;">
+                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&h=300&fit=crop" alt="Рим" class="polaroid-img">
+                <div class="polaroid-caption">Рим, утро</div>
+            </div>
+            
+            <div class="polaroid polaroid-extra-1" style="--rotation: -8deg;">
+                <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400&h=300&fit=crop" alt="Бали" class="polaroid-img">
+                <div class="polaroid-caption">Бали, закат</div>
+            </div>
+            
+            <div class="polaroid polaroid-extra-2" style="--rotation: 8deg;">
+                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=300&fit=crop" alt="Нью-Йорк" class="polaroid-img">
+                <div class="polaroid-caption">Нью-Йорк, ночь</div>
+            </div>
+            
+            <!-- Ручные пометки -->
+            <div class="handwritten-note" style="top: 70px; left: 18%;">
+                ✨ Лучшее путешествие!
+            </div>
+            
+            <div class="handwritten-note" style="top: 40px; right: 15%; transform: rotate(3deg);">
+                😍 Вернуться сюда!
+            </div>
+            
+            <!-- Контент по центру -->
+            <div class="header-center">
+                <div class="logo">TripGenius</div>
+                <div class="tagline">Искусство идеального путешествия</div>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
+            <!-- Поляроид в Hero -->
+            <div class="polaroid-hero polaroid-hero-right" style="--rotation: 8deg;">
+                <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=400&h=300&fit=crop" alt="Венеция" class="polaroid-img">
+                <div class="polaroid-caption">Венеция, гондолы</div>
+                <div class="handwritten-note-hero" style="top: -15px; right: -10px; transform: rotate(10deg);">
+                    Мечта! 💭
+                </div>
+            </div>
+            
+            <!-- Еще одна карточка слева -->
+            <div class="polaroid-hero polaroid-hero-left" style="--rotation: -10deg;">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&h=300&fit=crop" alt="Токио" class="polaroid-img">
+                <div class="polaroid-caption">Токио, неон</div>
+                <div class="handwritten-note-hero" style="top: 5px; left: -15px; transform: rotate(-5deg);">
+                    Суши! 🍣
+                </div>
+            </div>
+            
             <h1 class="hero-title animate">Ваше идеальное путешествие начинается здесь</h1>
             <p class="hero-subtitle animate">Искусственный интеллект создаст персонализированный маршрут, рассчитает точный бюджет и спланирует каждый день вашего путешествия. Просто расслабьтесь и наслаждайтесь.</p>
             <a href="#cta" class="cta-button animate">
@@ -32,6 +88,15 @@
     <!-- Features -->
     <section class="features">
         <div class="container">
+            <!-- Карточка над секцией Features -->
+            <div class="polaroid-floating polaroid-floating-1" style="--rotation: -5deg;">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&h=300&fit=crop" alt="Санторини" class="polaroid-img">
+                <div class="polaroid-caption">Санторини</div>
+                <div class="handwritten-note-floating" style="top: -10px; left: -20px;">
+                    Бюджет совпал! 💰
+                </div>
+            </div>
+            
             <h2 class="section-title">Почему выбирают TripGenius</h2>
             <div class="features-grid">
                 <div class="feature-card animate">
@@ -200,7 +265,7 @@
                 <h3 class="premium-title">Бесплатного достаточно для большинства поездок</h3>
                 <p class="premium-description">5 маршрутов, неограниченные правки, экспорт в PDF и поддержка ИИ-помощника — всё это доступно совершенно бесплатно.</p>
                 <p class="premium-description">Премиум функции пригодятся, если после 5 маршрутов вы захотите детализировать конкретный план, добавить бронирование отелей и билетов, или получить персональные рекомендации от экспертов.</p>
-                <p class="premium-description" style="color: var(--accent-gold); font-weight: 500;">Сначала создайте свои 5 бесплатных маршрутов, а затем решите, нужен ли вам премиум.</p>
+                <p class="premium-description" style="color: #d4af37; font-weight: 500;">Сначала создайте свои 5 бесплатных маршрутов, а затем решите, нужен ли вам премиум.</p>
             </div>
         </div>
     </section>
@@ -208,6 +273,15 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
+            <!-- Карточка в отзывах -->
+            <div class="polaroid-floating polaroid-floating-2" style="--rotation: 7deg;">
+                <img src="https://images.unsplash.com/photo-1565498255466-0ac7c9c1428e?w=400&h=300&fit=crop" alt="Прага" class="polaroid-img">
+                <div class="polaroid-caption">Прага, мост</div>
+                <div class="handwritten-note-floating" style="bottom: -15px; right: -10px;">
+                    Маршрут идеален! 👍
+                </div>
+            </div>
+            
             <h2 class="section-title">Отзывы путешественников</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card animate">
@@ -229,6 +303,15 @@
     <!-- CTA Form -->
     <section class="cta-form" id="cta">
         <div class="container">
+            <!-- Карточка рядом с формой -->
+            <div class="polaroid-cta" style="--rotation: -3deg;">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Исландия" class="polaroid-img">
+                <div class="polaroid-caption">Исландия, север</div>
+                <div class="handwritten-note-cta" style="top: -12px; right: 5px;">
+                    Следующая поездка! 🗺️
+                </div>
+            </div>
+            
             <div class="form-container animate">
                 <h2 class="form-title">Создайте свой первый маршрут бесплатно</h2>
                 <form id="tripForm">
