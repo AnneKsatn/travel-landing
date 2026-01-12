@@ -1,22 +1,1098 @@
-/* Основной файл стилей - импортирует все остальные */
-@import url('variables.css');
-@import url('base.css');
-@import url('utilities.css');
+:root {
+    /* Теплая, душевная палитра */
+    --color-primary: #667eea;
+    --color-primary-light: #a3bffa;
+    --color-primary-dark: #5a67d8;
+    
+    /* Теплые нейтральные цвета */
+    --color-dark: #2d3748;
+    --color-gray: #718096;
+    --color-gray-light: #cbd5e0;
+    --color-light: #f7fafc;
+    
+    /* Акцентные цвета - тёплые и приятные */
+    --color-accent-warm: #ed8936;
+    --color-accent-cool: #38b2ac;
+    --color-accent-soft: #d6bcfa;
+    
+    /* Градиенты - мягкие и душевные */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, #764ba2 100%);
+    --gradient-soft: linear-gradient(135deg, #f0f9ff 0%, #fef7ff 100%);
+    --gradient-warm: linear-gradient(135deg, #fffaf0 0%, #f8fafc 100%);
+    
+    /* Фоны */
+    --bg-main: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-soft: #fef7ff;
+    
+    /* Бордеры - мягкие */
+    --border-soft: rgba(226, 232, 240, 0.8);
+    --border-medium: rgba(203, 213, 224, 0.6);
+    
+    /* Тени - мягкие и нежные */
+    --shadow-soft: 0 4px 20px rgba(102, 126, 234, 0.08);
+    --shadow-medium: 0 8px 30px rgba(102, 126, 234, 0.12);
+    --shadow-subtle: 0 2px 15px rgba(0, 0, 0, 0.05);
+    
+    /* Закругления - мягкие */
+    --radius-large: 20px;
+    --radius-medium: 16px;
+    --radius-small: 12px;
+    --radius-full: 50px;
+}
 
-/* Компоненты */
-@import url('components/header.css');
-@import url('components/hero.css');
-@import url('components/features.css');
-@import url('components/steps.css');
-@import url('components/example.css');
-@import url('components/comparison.css');
-@import url('components/free-section.css');
-@import url('components/premium.css');
-@import url('components/testimonials.css');
-@import url('components/form.css');
-@import url('components/footer.css');
-@import url('components/photo-collage.css');
-@import url('components/photos.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Адаптивность */
-@import url('responsive.css');
+body {
+    font-family: 'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--color-gray);
+    background: var(--bg-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Плавные переходы */
+a, button, .feature-card, .day-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header - душевный и приветливый */
+.header {
+    padding: 40px 0 60px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, transparent 100%);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+    position: relative;
+    display: inline-block;
+}
+
+.logo::after {
+    content: '✈️';
+    position: absolute;
+    top: -8px;
+    right: -40px;
+    font-size: 1.8rem;
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+/* Hero Section - тёплый и приветливый */
+.hero {
+    text-align: center;
+    padding: 60px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(118, 75, 162, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 24px;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title span {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 48px;
+    color: var(--color-gray);
+    font-weight: 400;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: var(--radius-full);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+.cta-button i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover i {
+    transform: translateX(4px);
+}
+
+/* Features - карточки с теплыми акцентами */
+.features {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.4rem;
+    text-align: center;
+    color: var(--color-dark);
+    margin-bottom: 48px;
+    font-weight: 600;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 48px;
+}
+
+.feature-card {
+    background: var(--bg-main);
+    border-radius: var(--radius-medium);
+    padding: 40px 32px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid var(--border-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-primary-light);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-icon {
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(102, 126, 234, 0.08);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.feature-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.feature-description {
+    color: var(--color-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* How It Works - простой и понятный */
+.how-it-works {
+    padding: 100px 0;
+    background: var(--bg-main);
+    position: relative;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.step {
+    text-align: center;
+    max-width: 280px;
+    position: relative;
+}
+
+.step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    top: 25px;
+    right: -30px;
+    color: var(--color-gray-light);
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .step:not(:last-child)::after {
+        content: '↓';
+        top: auto;
+        bottom: -40px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    border: 2px solid var(--border-soft);
+    transition: all 0.3s ease;
+}
+
+.step:hover .step-number {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
+.step-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.step-description {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Example - живой пример маршрута */
+.example {
+    padding: 100px 0;
+    background: var(--bg-soft);
+    position: relative;
+}
+
+.example-card {
+    background: var(--bg-main);
+    border-radius: var(--radius-large);
+    padding: 48px;
+    margin-top: 48px;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+.example-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--gradient-primary);
+}
+
+.example-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    color: var(--color-dark);
+    margin-bottom: 32px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.day-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-medium);
+    padding: 32px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-soft);
+    transition: all 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateX(4px);
+    border-color: var(--color-primary-light);
+}
+
+.day-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.day-title i {
+    color: var(--color-primary);
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.activity {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.activity:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.time {
+    font-weight: 600;
+    color: var(--color-primary);
+    min-width: 80px;
+    font-size: 0.95rem;
+    padding-top: 2px;
+}
+
+.activity-description {
+    color: var(--color-gray);
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.budget-summary {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-medium);
+    padding: 32px;
+    margin-top: 32px;
+    border: 1px solid var(--border-soft);
+}
+
+.budget-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    color: var(--color-dark);
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.budget-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.budget-item:last-child {
+    border-bottom: none;
+    font-weight: 700;
+    color: var(--color-dark);
+    padding-top: 20px;
+    font-size: 1.1rem;
+}
+
+/* Comparison - мягкое сравнение */
+.comparison {
+    padding: 100px 0;
+    background: var(--bg-main);
+    position: relative;
+}
+
+.comparison-table {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-large);
+    padding: 48px;
+    margin-top: 48px;
+    border: 1px solid var(--border-soft);
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-soft);
+    align-items: center;
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-item {
+    text-align: center;
+    padding: 0 20px;
+    font-size: 1rem;
+}
+
+.comparison-bad {
+    color: var(--color-gray);
+    position: relative;
+}
+
+.comparison-good {
+    color: var(--color-primary);
+    font-weight: 500;
+    position: relative;
+}
+
+.comparison-bad::before {
+    content: '✗';
+    position: absolute;
+    left: -24px;
+    width: 20px;
+    height: 20px;
+    background: rgba(203, 213, 224, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: var(--color-gray);
+}
+
+.comparison-good::before {
+    content: '✓';
+    position: absolute;
+    left: -24px;
+    width: 20px;
+    height: 20px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: var(--color-primary);
+}
+
+/* Free Section - тёплое предложение */
+.free-section {
+    padding: 100px 0;
+    background: var(--bg-soft);
+    position: relative;
+}
+
+.free-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 48px;
+}
+
+.free-feature {
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--bg-main);
+    border-radius: var(--radius-medium);
+    border: 1px solid var(--border-soft);
+    transition: all 0.3s ease;
+}
+
+.free-feature:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--color-primary-light);
+}
+
+.free-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.free-text {
+    color: var(--color-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Premium - прозрачное предложение */
+.premium-section {
+    padding: 100px 0;
+    background: var(--bg-main);
+    text-align: center;
+    position: relative;
+}
+
+.premium-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-large);
+    padding: 56px 48px;
+    margin-top: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--border-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--gradient-primary);
+}
+
+.premium-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    color: var(--color-dark);
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.premium-description {
+    color: var(--color-gray);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Testimonials - живые отзывы */
+.testimonials {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.testimonial-card {
+    background: var(--bg-main);
+    border-radius: var(--radius-medium);
+    padding: 40px 32px;
+    border: 1px solid var(--border-soft);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: rgba(102, 126, 234, 0.1);
+    line-height: 1;
+}
+
+.testimonial-text {
+    color: var(--color-gray);
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 0.95rem;
+}
+
+/* CTA Form - приветливая форма */
+.cta-form {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-soft) 100%);
+    text-align: center;
+    position: relative;
+}
+
+.form-container {
+    background: var(--bg-main);
+    border-radius: var(--radius-large);
+    padding: 56px 48px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-subtle);
+}
+
+.form-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    color: var(--color-dark);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid var(--border-soft);
+    border-radius: var(--radius-small);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--color-dark);
+    transition: all 0.3s ease;
+    background: var(--bg-main);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-button {
+    width: 100%;
+    padding: 18px;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-small);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.form-note {
+    margin-top: 24px;
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Footer - тёплый и душевный */
+.footer {
+    padding: 80px 0 48px;
+    background: var(--color-dark);
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--gradient-primary);
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: white;
+    margin-bottom: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto 48px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 48px;
+}
+
+/* Анимации */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 48px 0 80px;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .logo {
+        font-size: 2.4rem;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .example-card, .comparison-table, .premium-card, .form-container {
+        padding: 40px 24px;
+    }
+    
+    .steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+    }
+    
+    .step:not(:last-child)::after {
+        content: '↓';
+        position: absolute;
+        top: auto;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+    
+    .comparison-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    
+    .comparison-bad::before,
+    .comparison-good::before {
+        left: 0;
+        top: 0;
+        position: relative;
+        margin-right: 12px;
+        margin-bottom: 8px;
+        display: inline-flex;
+    }
+    
+    .features, .how-it-works, .example, .comparison,
+    .free-section, .premium-section, .testimonials, .cta-form {
+        padding: 80px 0;
+    }
+    
+    .features-grid, .free-features, .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-button {
+        padding: 16px 32px;
+        font-size: 1rem;
+    }
+    
+    .feature-card, .free-feature, .testimonial-card {
+        padding: 32px 24px;
+    }
+    
+    .form-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 0 64px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .features, .how-it-works, .example, .comparison,
+    .free-section, .premium-section, .testimonials, .cta-form {
+        padding: 64px 0;
+    }
+    
+    .form-container {
+        padding: 40px 20px;
+    }
+    
+    .example-card::before {
+        height: 4px;
+    }
+    
+    .premium-card::before {
+        height: 4px;
+    }
+    
+    .footer::before {
+        height: 4px;
+    }
+}
+
+/* Микро-анимации для добавления жизни */
+.feature-icon,
+.free-number,
+.step-number {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover .feature-icon {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Эффект при наведении на карточки */
+.feature-card,
+.free-feature,
+.testimonial-card,
+.day-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover,
+.free-feature:hover,
+.testimonial-card:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+/* Плавное появление элементов */
+.feature-card,
+.step,
+.example-card,
+.free-feature,
+.testimonial-card,
+.form-container {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 0.1s);
+    opacity: 0;
+}
+
+/* Мягкие ховер-эффекты для интерактивных элементов */
+.cta-button:hover,
+.form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Акцент на текущем элементе формы */
+.form-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Улучшенное отображение карточек на мобильных */
+@media (hover: none) {
+    .feature-card:hover,
+    .free-feature:hover,
+    .testimonial-card:hover {
+        transform: none;
+    }
+    
+    .feature-card:active,
+    .free-feature:active,
+    .testimonial-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Плавный скролл */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Подсветка текущей секции */
+section:target {
+    animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+    0% { background: rgba(102, 126, 234, 0.1); }
+    100% { background: transparent; }
+}
