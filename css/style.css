@@ -75,13 +75,9 @@ button,
 
 /* ===== HEADER С ФОТО ПО БОКАМ ===== */
 .header {
-    position: relative;
-    padding: 40px 0 30px;
+     padding: 40px 0 60px;
     text-align: center;
     background: linear-gradient(180deg, var(--bg-secondary) 0%, transparent 100%);
-    overflow: visible;
-    min-height: 280px;
-    z-index: 10;
 }
 
 .header-content {
@@ -100,46 +96,39 @@ button,
     max-width: 450px;
     margin: 0 auto;
     padding: 25px 30px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    border-radius: var(--radius-large);
-    border: 1px solid var(--border-soft);
-    box-shadow: 
-        0 15px 40px rgba(0, 0, 0, 0.1),
-        0 0 0 1px white,
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
     transform: translateY(-10px);
 }
 
+
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: var(--color-dark);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     position: relative;
     display: inline-block;
-    letter-spacing: -0.5px;
 }
 
 .logo::after {
     content: '✈️';
     position: absolute;
-    top: -5px;
-    right: -35px;
-    font-size: 1.5rem;
-    opacity: 0.9;
+    top: -8px;
+    right: -40px;
+    font-size: 1.8rem;
+    opacity: 0.7;
     animation: float 6s ease-in-out infinite;
 }
 
 .tagline {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--color-gray);
     font-weight: 400;
-    max-width: 350px;
+    max-width: 500px;
     margin: 0 auto;
-    line-height: 1.4;
-    padding: 0 10px;
+    line-height: 1.5;
+    padding: 0 20px;
 }
 
 /* Поляроиды в header */
@@ -147,7 +136,7 @@ button,
     position: absolute;
     background: white;
     padding: 8px 8px 25px 8px;
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.12),
         0 0 0 1px white,
         0 0 0 2px rgba(0, 0, 0, 0.05);
@@ -259,7 +248,7 @@ button,
 
 .hero-title {
     font-family: 'Inter', sans-serif;
-    font-size: 3.2rem;
+    font-size: 32px;
     font-weight: 700;
     color: var(--color-dark);
     margin-bottom: 24px;
@@ -1113,9 +1102,12 @@ button,
 
 /* Анимации */
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -1126,6 +1118,7 @@ button,
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1137,6 +1130,7 @@ button,
         opacity: 0;
         transform: translateY(-15px) rotate(var(--rotation, 0deg));
     }
+
     to {
         opacity: 1;
         transform: translateY(0) rotate(var(--rotation, 0deg));
@@ -1160,7 +1154,7 @@ button,
     .features-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
-    
+
     /* На планшетах прячем некоторые поляроиды */
     .polaroid-hero-right,
     .polaroid-hero-left,
@@ -1169,34 +1163,34 @@ button,
     .polaroid-cta {
         display: none;
     }
-    
+
     /* Уменьшаем header на планшетах */
     .header {
         padding: 35px 0 25px;
     }
-    
+
     .header .polaroid-img {
         width: 120px;
         height: 100px;
     }
-    
+
     .polaroid-left {
         left: 3%;
     }
-    
+
     .polaroid-right {
         right: 3%;
     }
-    
+
     .header-center {
         padding: 20px 25px;
         max-width: 400px;
     }
-    
+
     .logo {
         font-size: 2.2rem;
     }
-    
+
     .tagline {
         font-size: 0.9rem;
         max-width: 300px;
@@ -1398,6 +1392,7 @@ button,
 
 /* Улучшенное отображение карточек на мобильных */
 @media (hover: none) {
+
     .feature-card:hover,
     .free-feature:hover,
     .testimonial-card:hover {
@@ -1421,11 +1416,84 @@ section:target {
     animation: highlight 1s ease;
 }
 
+.polaroid-floating-2-features {
+    top: -30px;
+    right: 10%;
+    animation-delay: 0.35s;
+    z-index: 1;
+    --rotation: 5deg;
+}
+
 @keyframes highlight {
     0% {
         background: rgba(102, 126, 234, 0.1);
     }
+
     100% {
         background: transparent;
     }
+}
+
+
+/* Header поляроиды - исправленная версия для полной симметрии */
+.polaroid-left {
+    top: 5px; /* Было: 5px */
+    left: 5%;
+    transform: rotate(-15deg);
+    animation-delay: 0.1s;
+    z-index: 5;
+}
+
+.polaroid-right {
+    top: 5px; /* Было: 0px - теперь симметрично */
+    right: 5%;
+    transform: rotate(12deg);
+    animation-delay: 0.2s;
+    z-index: 5;
+}
+
+.polaroid-center {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
+    animation-delay: 0.3s;
+    z-index: 4;
+}
+
+.polaroid-extra-1 {
+    top: 25px; /* Было: 20px - теперь симметрично */
+    left: 12%;
+    transform: rotate(-8deg);
+    animation-delay: 0.4s;
+    z-index: 4;
+}
+
+.polaroid-extra-2 {
+    top: 25px; /* Осталось как есть */
+    right: 12%;
+    transform: rotate(8deg);
+    animation-delay: 0.5s;
+    z-index: 4;
+}
+
+
+/* Обновленные тени для поляроидов */
+.header .polaroid,
+.polaroid-hero,
+.polaroid-floating,
+.polaroid-cta {
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.08),  /* Уменьшил с 10px 25px на 6px 15px */
+        0 0 0 1px white,
+        0 0 0 2px rgba(0, 0, 0, 0.03);   /* Уменьшил прозрачность с 0.05 до 0.03 */
+}
+
+/* Обновленные тени при наведении */
+.header .polaroid:hover,
+.polaroid-hero:hover,
+.polaroid-floating:hover,
+.polaroid-cta:hover {
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12), /* Уменьшил с 15px 30px на 10px 25px */
+        0 0 0 1px white;
 }
