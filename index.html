@@ -1,151 +1,300 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>TripGenius — Искусство идеального путешествия</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripGenius — Идеальные путешествия от искусственного интеллекта</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
+    <!-- Header (обновленный по стилю второго лендинга) -->
+    <header class="topbar">
+        <div class="container">
+            <div class="logo">TripGenius</div>
+            <div class="topbar-link">
+                <a href="#cta" class="hero-link">Начать</a>
+            </div>
+        </div>
+    </header>
 
-<!-- HERO -->
-<section class="hero-collage">
+    <!-- Hero Section (обновленная по стилю второго лендинга) -->
+    <section class="hero-collage">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- TEXT -->
+                <div class="hero-text">
+                    <span class="overline">Искусство идеального путешествия</span>
+                    <h1>Ваше идеальное путешествие начинается здесь</h1>
+                    <p>Искусственный интеллект создаст персонализированный маршрут, рассчитает точный бюджет и спланирует каждый день вашего путешествия. Просто расслабьтесь и наслаждайтесь.</p>
+                    <a href="#cta" class="hero-link">Создать маршрут</a>
+                </div>
 
-  <header class="topbar">
-    <div class="logo">TripGenius</div>
-    <div class="topbar-link">Начать</div>
-  </header>
+                <!-- COLLAGE -->
+                <div class="collage">
+                    <div class="card tall"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Путешествие 1"></div>
+                    <div class="card small"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w-600" alt="Путешествие 2"></div>
+                    <div class="card medium"><img src="https://images.unsplash.com/photo-1500048993959-d6b34b1f4a0c?w=800" alt="Путешествие 3"></div>
+                    <div class="card small offset"><img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?w=600" alt="Путешествие 4"></div>
+                    <div class="card tall"><img src="https://images.unsplash.com/photo-1500534314209-a26db0f5b18d?w=800" alt="Путешествие 5"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="hero-grid">
+    <!-- MANIFEST (новая секция из второго лендинга) -->
+    <section class="manifest">
+        <div class="container">
+            <p class="manifest-big">
+                Мы верим, что путешествие<br>
+                начинается задолго до аэропорта.
+            </p>
+            <p class="manifest-small">
+                В ощущении ритма, деталей и уверенности,
+                что всё продумано именно для вас.
+            </p>
+        </div>
+    </section>
 
-    <!-- TEXT -->
-    <div class="hero-text">
-      <span class="overline">Искусство идеального путешествия</span>
-      <h1>
-        Путешествия,<br>
-        которые<br>
-        хочется прожить
-      </h1>
-      <p>
-        Искусственный интеллект создаёт персонализированные маршруты,
-        точные бюджеты и продуманные дни —
-        как если бы у вас был личный travel-консьерж.
-      </p>
-      <a href="#cta" class="hero-link">Создать маршрут</a>
-    </div>
+    <!-- Features (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают TripGenius</h2>
+            <div class="features-grid">
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="feature-title">Точный бюджет до копейки</h3>
+                    <p class="feature-description">ИИ учитывает сезонные цены, местные налоги, транспорт и даже ежедневные расходы. Ваш бюджет будет совпадать с реальностью.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="feature-title">Интеллектуальный маршрут</h3>
+                    <p class="feature-description">Персонализированный план под ваши интересы: архитектура, искусство, гастрономия или природа. Всё логично и удобно расположено.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Расписание, которое работает</h3>
+                    <p class="feature-description">Учет времени на дорогу, часов работы заведений и оптимального времени посещения. Никаких очередей и пробежек по городу.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- COLLAGE -->
-    <div class="collage">
-      <div class="card tall"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800"></div>
-      <div class="card small"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600"></div>
-      <div class="card medium"><img src="https://images.unsplash.com/photo-1500048993959-d6b34b1f4a0c?w=800"></div>
-      <div class="card small offset"><img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?w=600"></div>
-      <div class="card tall"><img src="https://images.unsplash.com/photo-1500534314209-a26db0f5b18d?w=800"></div>
-    </div>
+    <!-- How It Works (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
+            <div class="steps">
+                <div class="step animate">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Введите параметры</h3>
+                    <p class="step-description">Город, даты, количество человек, интересы и бюджет. Это займет 2 минуты.</p>
+                </div>
+                <div class="step animate">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">ИИ анализирует</h3>
+                    <p class="step-description">Наш интеллект сравнивает цены, оптимизирует логистику и выбирает лучшие места.</p>
+                </div>
+                <div class="step animate">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Получите план</h3>
+                    <p class="step-description">Готовый PDF с маршрутом, картой, бюджетной таблицей и советами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  </div>
-</section>
+    <!-- Example (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="example">
+        <div class="container">
+            <h2 class="section-title">Пример маршрута</h2>
+            <div class="example-card animate">
+                <h3 class="example-title">Барселона, 4 дня, двоим</h3>
+                
+                <div class="day-card">
+                    <h4 class="day-title"><i class="fas fa-sun"></i> День 1: Готический квартал и море</h4>
+                    <div class="activity">
+                        <div class="time">10:00</div>
+                        <div class="activity-description">Прогулка по Готическому кварталу с аудиогидом</div>
+                    </div>
+                    <div class="activity">
+                        <div class="time">12:00</div>
+                        <div class="activity-description">Кафедральный собор (бесплатный вход до 12:30)</div>
+                    </div>
+                    <div class="activity">
+                        <div class="time">14:00</div>
+                        <div class="activity-description">Обед на рынке Бокерия, паэлья и тапас</div>
+                    </div>
+                    <div class="activity">
+                        <div class="time">16:00</div>
+                        <div class="activity-description">Пляж Барселонета, отдых у моря</div>
+                    </div>
+                    <div class="activity">
+                        <div class="time">20:00</div>
+                        <div class="activity-description">Ужин в аутентичном тапас-баре в районе Грасия</div>
+                    </div>
+                </div>
+                
+                <div class="budget-summary">
+                    <h4 class="budget-title">Бюджет на поездку</h4>
+                    <div class="budget-item">
+                        <span>Жилье (4 ночи, центр)</span>
+                        <span>€320</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Питание и рестораны</span>
+                        <span>€400</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Транспорт и билеты</span>
+                        <span>€60</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Развлечения и музеи</span>
+                        <span>€400</span>
+                    </div>
+                    <div class="budget-item">
+                        <span>Итого на двоих</span>
+                        <span>€1,180</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- MANIFEST -->
-<section class="manifest">
-  <p class="manifest-big">
-    Мы верим, что путешествие<br>
-    начинается задолго до аэропорта.
-  </p>
-  <p class="manifest-small">
-    В ощущении ритма, деталей и уверенности,
-    что всё продумано именно для вас.
-  </p>
-</section>
+    <!-- Comparison (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="comparison">
+        <div class="container">
+            <h2 class="section-title">Сравнение с ручным планированием</h2>
+            <div class="comparison-table animate">
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">8+ часов в Google и на форумах</div>
+                    <div class="comparison-item comparison-good">5 минут работы с ИИ</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">Устаревшие цены из туристических блогов</div>
+                    <div class="comparison-item comparison-good">Актуальные данные в реальном времени</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">"Примерный бюджет", который никогда не сходится</div>
+                    <div class="comparison-item comparison-good">Точный расчет до €10-20</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">Маршрут "как у всех" из путеводителей</div>
+                    <div class="comparison-item comparison-good">Персонализированный план под ваши интересы</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item comparison-bad">PDF и карты нужно делать самостоятельно</div>
+                    <div class="comparison-item comparison-good">Готовые документы для поездки</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature">
-    <span>01</span>
-    <h3>Точный бюджет до копейки</h3>
-    <p>
-      ИИ учитывает сезонные цены, районы,
-      транспорт и реальные ежедневные расходы.
-    </p>
-  </div>
+    <!-- Free Section (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="free-section">
+        <div class="container">
+            <h2 class="section-title">Бесплатные возможности</h2>
+            <div class="free-features">
+                <div class="free-feature animate">
+                    <div class="free-number">5</div>
+                    <div class="free-text">полноценных маршрутов можно создать бесплатно</div>
+                </div>
+                <div class="free-feature animate">
+                    <div class="free-text">Экспорт в PDF и Google Maps для оффлайн-доступа</div>
+                </div>
+                <div class="free-feature animate">
+                    <div class="free-text">Общение с ИИ-помощником для правок и улучшений</div>
+                </div>
+                <div class="free-feature animate">
+                    <div class="free-text">Персональные советы по экономии и лучшему времени</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="feature">
-    <span>02</span>
-    <h3>Интеллектуальный маршрут</h3>
-    <p>
-      Не список мест, а логичное течение дней —
-      без спешки и бессмысленных переездов.
-    </p>
-  </div>
+    <!-- Premium (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="premium-section">
+        <div class="container">
+            <h2 class="section-title">Когда может понадобиться премиум</h2>
+            <div class="premium-card animate">
+                <h3 class="premium-title">Бесплатного достаточно для большинства поездок</h3>
+                <p class="premium-description">5 маршрутов, неограниченные правки, экспорт в PDF и поддержка ИИ-помощника — всё это доступно совершенно бесплатно.</p>
+                <p class="premium-description">Премиум функции пригодятся, если после 5 маршрутов вы захотите детализировать конкретный план, добавить бронирование отелей и билетов, или получить персональные рекомендации от экспертов.</p>
+                <p class="premium-description" style="color: var(--color-accent-warm); font-weight: 500;">Сначала создайте свои 5 бесплатных маршрутов, а затем решите, нужен ли вам премиум.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="feature">
-    <span>03</span>
-    <h3>Расписание, которое работает</h3>
-    <p>
-      Учет времени, часов работы и лучших
-      периодов для посещения.
-    </p>
-  </div>
-</section>
+    <!-- Testimonials (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Отзывы путешественников</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card animate">
+                    <p class="testimonial-text">Впервые бюджет в поездке совпал с реальностью. Обычно мы тратили на 20-30% больше, а тут всё сошлось до €50.</p>
+                    <p class="testimonial-author">— Анна, поездка в Париж</p>
+                </div>
+                <div class="testimonial-card animate">
+                    <p class="testimonial-text">Сэкономил 3 дня на планировании. Просто ввел параметры и получил готовый маршрут. Идеально для занятых людей.</p>
+                    <p class="testimonial-author">— Михаил, путешествие по Испании</p>
+                </div>
+                <div class="testimonial-card animate">
+                    <p class="testimonial-text">Маршрут был настолько логичным, что мы ничего не меняли. Всё рядом, ничего не нужно жертвовать. Идеальный баланс.</p>
+                    <p class="testimonial-author">— Ольга и Алексей, медовый месяц в Италии</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- EXAMPLE -->
-<section class="example">
-  <div class="example-inner">
-    <h2>Пример маршрута</h2>
-    <h3>Барселона · 4 дня · двоим</h3>
+    <!-- CTA Form (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="cta-form" id="cta">
+        <div class="container">
+            <div class="form-container animate">
+                <h2 class="form-title">Создайте свой первый маршрут бесплатно</h2>
+                <form id="tripForm">
+                    <div class="form-group">
+                        <label class="form-label" for="city">Куда хотите поехать?</label>
+                        <input type="text" class="form-input" id="city" placeholder="Например: Рим, Италия" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="dates">Даты поездки</label>
+                        <input type="text" class="form-input" id="dates" placeholder="15 июня — 20 июня 2024" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="interests">Ваши интересы (через запятую)</label>
+                        <input type="text" class="form-input" id="interests" placeholder="Например: искусство, архитектура, местная кухня" required>
+                    </div>
+                    
+                    <button type="submit" class="form-button">
+                        Сгенерировать бесплатный маршрут <i class="fas fa-magic"></i>
+                    </button>
+                    
+                    <p class="form-note">Первый маршрут будет готов через 2 минуты. Это полностью бесплатно и не требует привязки карты.</p>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    <div class="day">
-      <p><strong>Утро:</strong> Готический квартал без туристов</p>
-      <p><strong>День:</strong> Бокерия и медленный обед</p>
-      <p><strong>Вечер:</strong> Море и район Грасия</p>
-    </div>
+    <!-- Footer (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">TripGenius</div>
+            <p class="footer-tagline">Искусственный интеллект, созданный с душой для ваших самых запоминающихся путешествий. Мы верим, что планирование должно быть простым, а поездки — совершенными.</p>
+            <p class="copyright">© 2024 TripGenius. Все права защищены. Сделано с ❤️ для путешественников.</p>
+        </div>
+    </footer>
 
-    <div class="budget">
-      <div><span>Жильё</span><span>€320</span></div>
-      <div><span>Питание</span><span>€400</span></div>
-      <div><span>Транспорт</span><span>€60</span></div>
-      <div><span>Развлечения</span><span>€400</span></div>
-      <div class="total"><span>Итого</span><span>€1 180</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="comparison">
-  <h2>Сравнение с ручным планированием</h2>
-  <div class="compare-grid">
-    <div class="bad">8+ часов поиска</div>
-    <div class="good">5 минут с ИИ</div>
-    <div class="bad">Примерный бюджет</div>
-    <div class="good">Точный расчёт</div>
-    <div class="bad">Маршрут «как у всех»</div>
-    <div class="good">Персональный план</div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta" id="cta">
-  <div class="cta-box">
-    <h2>Создайте свой первый маршрут бесплатно</h2>
-    <p>
-      Первый маршрут будет готов через 2 минуты.
-      Без карты. Без обязательств.
-    </p>
-
-    <form>
-      <input type="text" placeholder="Куда хотите поехать">
-      <input type="text" placeholder="Даты поездки">
-      <input type="text" placeholder="Интересы">
-      <button>Сгенерировать маршрут</button>
-    </form>
-  </div>
-</section>
-
-<footer class="footer">
-  © 2024 TripGenius — путешествия, созданные с вниманием к деталям
-</footer>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
