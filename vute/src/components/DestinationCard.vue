@@ -38,11 +38,6 @@ export default {
     height: 100%;
     object-fit: cover;
     border-radius: 28px;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.luxury-card:hover .destination-photo {
-    transform: scale(1.05);
 }
 
 .photo-overlay {

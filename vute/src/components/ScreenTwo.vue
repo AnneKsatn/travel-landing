@@ -9,21 +9,17 @@
     <div class="screen-container">
       <!-- Левый блок: описание системы -->
       <div class="left-panel">
-        <div class="section-label">
-          <i class="fas fa-clipboard-check"></i>
-          Шаг 1
-        </div>
-        
         <h2 class="section-title">
-          Ваши предпочтения – наш <span class="highlight">AI-алгоритм</span>
+          Чем больше вы расскажете, тем <span class="highlight">точнее </span> будет
+          маршрут от AI.
         </h2>
-        
+
         <p class="section-description">
-          Простая анкета помогает нам понять вашу уникальную путешественническую душу.
-          На основе 12 ключевых параметров AI создаёт математически точный профиль,
-          чтобы подобрать места, которые заставят ваше сердце биться чаще.
+          Простая анкета помогает нам лучше понять ваш идеальный маршрут. На
+          основе 12 ключевых параметров AI создаёт профиль, чтобы
+          подобрать места, которые заставят ваше сердце биться чаще.
         </p>
-        
+
         <div class="preference-list">
           <div class="preference-item">
             <i class="fas fa-heart"></i>
@@ -32,7 +28,7 @@
               <p>Искусство, гастрономия, природа, история, шопинг</p>
             </div>
           </div>
-          
+
           <div class="preference-item">
             <i class="fas fa-walking"></i>
             <div>
@@ -40,7 +36,7 @@
               <p>Расслабленный отдых, активные маршруты, баланс 50/50</p>
             </div>
           </div>
-          
+
           <div class="preference-item">
             <i class="fas fa-users"></i>
             <div>
@@ -48,7 +44,7 @@
               <p>Соло, пара, семья, друзья, бизнес-поездка</p>
             </div>
           </div>
-          
+
           <div class="preference-item">
             <i class="fas fa-coins"></i>
             <div>
@@ -57,44 +53,19 @@
             </div>
           </div>
         </div>
-        
-        <div class="ai-process">
-          <div class="process-step">
-            <div class="step-number">1</div>
-            <div class="step-text">Вы заполняете анкету</div>
-          </div>
-          
-          <div class="process-arrow">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-          
-          <div class="process-step">
-            <div class="step-number">2</div>
-            <div class="step-text">AI анализирует 1000+ точек</div>
-          </div>
-          
-          <div class="process-arrow">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-          
-          <div class="process-step">
-            <div class="step-number">3</div>
-            <div class="step-text">Вы получаете идеальный маршрут</div>
-          </div>
-        </div>
       </div>
-      
+
       <!-- Правый блок: карточки мест -->
       <div class="right-panel">
-        <div class="section-label right-label">
-          <i class="fas fa-map-marked-alt"></i>
-          AI подбирает идеальные места
-        </div>
-        
         <div class="places-grid">
           <!-- Карточка музея -->
           <div class="place-card museum-card">
-            <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div
+              class="place-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+              "
+            ></div>
             <div class="place-content">
               <div class="place-icon">
                 <i class="fas fa-landmark"></i>
@@ -104,10 +75,15 @@
               <div class="place-tag">Искусство</div>
             </div>
           </div>
-          
+
           <!-- Карточка парка -->
           <div class="place-card park-card">
-            <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div
+              class="place-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+              "
+            ></div>
             <div class="place-content">
               <div class="place-icon">
                 <i class="fas fa-tree"></i>
@@ -117,10 +93,15 @@
               <div class="place-tag">Природа</div>
             </div>
           </div>
-          
+
           <!-- Карточка ресторана -->
           <div class="place-card restaurant-card">
-            <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div
+              class="place-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+              "
+            ></div>
             <div class="place-content">
               <div class="place-icon">
                 <i class="fas fa-utensils"></i>
@@ -130,10 +111,15 @@
               <div class="place-tag">Гастрономия</div>
             </div>
           </div>
-          
+
           <!-- Карточка смотровой -->
           <div class="place-card viewpoint-card">
-            <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+            <div
+              class="place-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+              "
+            ></div>
             <div class="place-content">
               <div class="place-icon">
                 <i class="fas fa-binoculars"></i>
@@ -144,7 +130,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="ai-stats">
           <div class="stat-item">
             <div class="stat-value">1000+</div>
@@ -166,32 +152,35 @@
 
 <script>
 export default {
-  name: 'ScreenTwo',
+  name: "ScreenTwo",
   mounted() {
     this.setupScrollAnimations();
   },
   methods: {
     setupScrollAnimations() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      }, { threshold: 0.1 });
-      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-in");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
       // Анимируем карточки
-      document.querySelectorAll('.place-card').forEach(card => {
+      document.querySelectorAll(".place-card").forEach((card) => {
         observer.observe(card);
       });
-      
+
       // Анимируем элементы списка
-      document.querySelectorAll('.preference-item').forEach(item => {
+      document.querySelectorAll(".preference-item").forEach((item) => {
         observer.observe(item);
       });
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -213,6 +202,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 0;
+  background: white;
 }
 
 .bg-gradient {
@@ -309,9 +299,15 @@ export default {
   animation: slideUp 0.6s ease forwards;
 }
 
-.preference-item:nth-child(2) { animation-delay: 0.1s; }
-.preference-item:nth-child(3) { animation-delay: 0.2s; }
-.preference-item:nth-child(4) { animation-delay: 0.3s; }
+.preference-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.preference-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.preference-item:nth-child(4) {
+  animation-delay: 0.3s;
+}
 
 @keyframes slideUp {
   to {
@@ -428,9 +424,15 @@ export default {
   animation: cardAppear 0.6s ease forwards;
 }
 
-.place-card:nth-child(2) { animation-delay: 0.1s; }
-.place-card:nth-child(3) { animation-delay: 0.2s; }
-.place-card:nth-child(4) { animation-delay: 0.3s; }
+.place-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.place-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.place-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
 
 @keyframes cardAppear {
   to {
@@ -540,18 +542,18 @@ export default {
     grid-template-columns: 1fr;
     gap: 60px;
   }
-  
+
   .left-panel {
     padding-right: 0;
     text-align: center;
   }
-  
+
   .preference-item {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .ai-process {
     max-width: 500px;
     margin: 0 auto;
@@ -562,27 +564,27 @@ export default {
   .screen-two {
     padding: 60px 20px;
   }
-  
+
   .section-title {
     font-size: 32px;
   }
-  
+
   .places-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
   }
-  
+
   .ai-stats {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .ai-process {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .process-arrow {
     transform: rotate(90deg);
   }

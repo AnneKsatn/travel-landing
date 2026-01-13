@@ -51,7 +51,7 @@ export default {
 .ai-card {
   padding: 20px;
   min-height: auto;
-  height: fit-content;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -162,11 +162,12 @@ export default {
 
 /* Сообщение */
 .constructor-message {
-  margin: 15px 0;
+  margin: 0;
   padding: 12px;
   background: rgba(139, 92, 246, 0.03);
   border-radius: 10px;
   border-left: 3px solid var(--primary);
+  margin-top: auto;
 }
 
 .constructor-message p {
