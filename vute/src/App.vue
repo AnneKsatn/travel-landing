@@ -1,36 +1,26 @@
 <template>
   <div id="app">
     <!-- Частицы фона -->
-    <div class="particles-bg" id="particles"></div>
     
-    <div class="luxury-container">
-      <!-- Левая часть - текст -->
-      <LuxuryHeader 
-        @start-planning="startPlanning" 
-        @learn-more="learnMore" 
-      />
-      
-      <!-- Правая часть - карточки -->
-      <div class="luxury-cards-section">
-        <DestinationCard 
-          :destination="currentDestination"
-          class="floating delay-1"
-        />
-        
-        <ScheduleCard class="floating delay-2" />
-        
-        <BudgetCard 
-          :initial-budget="87500"
-          class="floating delay-3"
-          @budget-analyzed="onBudgetAnalyzed"
-        />
-        
-        <AICard class="floating" />
-      </div>
-    </div>
+    <!-- TechStats наверху первого экрана -->
+    <TechStats class="tech-stats-top" />
     
-    <!-- Футер со статистикой -->
-    <!-- <TechStats class="luxury-footer" /> -->
+    <!-- Главный герой-секция -->
+    <HeroSection 
+      :current-destination="currentDestination"
+      @start-planning="startPlanning"
+      @learn-more="learnMore"
+      @budget-analyzed="onBudgetAnalyzed"
+    />
+    
+    <!-- Второй экран -->
+    <ScreenTwo />
+    
+    <!-- Третий экран: Конструктор -->
+    <ConstructorBlock />
+    
+    <!-- Четвертый экран: Форма -->
+    <SimpleCTA @destination-submitted="handleDestinationSubmit" />
     
     <!-- Уведомления -->
     <div v-if="notification.show" class="notification" :style="notificationStyle">
@@ -41,22 +31,20 @@
 </template>
 
 <script>
-import LuxuryHeader from './components/LuxuryHeader.vue'
-import DestinationCard from './components/DestinationCard.vue'
-import BudgetCard from './components/BudgetCard.vue'
-import ScheduleCard from './components/ScheduleCard.vue'
-import AICard from './components/AICard.vue'
 import TechStats from './components/TechStats.vue'
+import ScreenTwo from './components/ScreenTwo.vue'
+import ConstructorBlock from './components/ConstructorBlock.vue'
+import SimpleCTA from './components/CTAForm.vue'
+import HeroSection from './components/HeroSection.vue' // Импортируем новый компонент
 
 export default {
   name: 'App',
   components: {
-    LuxuryHeader,
-    DestinationCard,
-    BudgetCard,
-    ScheduleCard,
-    AICard,
-    TechStats
+    TechStats,
+    ScreenTwo,
+    ConstructorBlock,
+    SimpleCTA,
+    HeroSection
   },
   data() {
     return {
@@ -170,6 +158,11 @@ export default {
         const delay = Math.random() * 3
         card.style.animationDelay = `${delay}s`
       })
+    },
+    handleDestinationSubmit(destination) {
+      this.showNotification(`AI начинает подготовку маршрута для ${destination}! Переходим в анкету...`)
+      // Здесь будет реальный редирект:
+      // window.location.href = `/questionnaire?destination=${encodeURIComponent(destination)}`
     }
   },
   mounted() {
@@ -189,7 +182,8 @@ export default {
 </script>
 
 <style>
-/* Весь CSS стиль из оригинального файла остается здесь */
+/* Весь CSS стиль остается здесь, кроме стилей для .luxury-container и .luxury-cards-section 
+   которые теперь перенесены в HeroSection.vue */
 * {
     margin: 0;
     padding: 0;
@@ -221,45 +215,29 @@ body {
     position: relative;
 }
 
-/* Футуристичный фон с частицами */
-.particles-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.3;
+
+
+/* TechStats наверху */
+.tech-stats-top {
+    max-width: 800px;
+    margin: 20px auto 40px;
+    position: relative;
+    z-index: 10;
+    animation: fadeInDown 0.8s ease-out;
 }
 
-.particle {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    opacity: 0.1;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Основной контейнер */
-.luxury-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    min-height: 100vh;
-    align-items: center;
-}
-
-/* Правая часть - карточки */
-.luxury-cards-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    perspective: 1000px;
-}
-
-/* Стили для карточек */
+/* Стили для карточек (остаются, так как используются в дочерних компонентах) */
 .luxury-card {
     background: var(--glass);
     backdrop-filter: blur(20px);
@@ -288,47 +266,6 @@ body {
 .luxury-card:hover {
     transform: translateY(-15px) rotateX(5deg);
     box-shadow: var(--shadow-heavy);
-}
-
-/* Футер с информацией */
-.luxury-footer {
-    position: fixed;
-    bottom: 30px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-}
-
-.tech-stats {
-    background: var(--glass);
-    backdrop-filter: blur(20px);
-    border-radius: 100px;
-    padding: 16px 32px;
-    display: flex;
-    gap: 40px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--glass-border);
-}
-
-.stat {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-light);
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.stat i {
-    color: var(--primary);
-}
-
-.stat-value {
-    font-weight: 700;
-    color: var(--text);
-    margin-left: 5px;
 }
 
 /* Уведомления */
@@ -361,11 +298,6 @@ body {
 
 /* Адаптивность */
 @media (max-width: 1200px) {
-    .luxury-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    
     .luxury-text-section {
         padding-right: 0;
         text-align: center;
@@ -384,58 +316,31 @@ body {
         transform: translateX(-50%);
         top: -25px;
     }
+    
+    .tech-stats-top {
+        margin: 30px 20px;
+    }
 }
 
 @media (max-width: 768px) {
-    .luxury-cards-section {
-        grid-template-columns: 1fr;
-    }
-    
     .luxury-headline {
         font-size: 36px;
     }
     
-    .luxury-container {
-        padding: 30px 20px;
-    }
-    
-    .tech-stats {
+    .tech-stats-top {
+        padding: 12px 20px;
+        gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
         border-radius: 30px;
-        padding: 20px;
     }
     
-    .luxury-footer {
-        position: relative;
-        bottom: 0;
-        margin-top: 40px;
+    .tech-stats-top .stat {
+        font-size: 12px;
     }
 }
 
 /* Анимации */
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-.floating {
-    animation: float 6s ease-in-out infinite;
-}
-
-.delay-1 {
-    animation-delay: 1s;
-}
-
-.delay-2 {
-    animation-delay: 2s;
-}
-
-.delay-3 {
-    animation-delay: 3s;
-}
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }

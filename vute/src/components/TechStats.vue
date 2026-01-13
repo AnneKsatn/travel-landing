@@ -28,6 +28,7 @@ export default {
     border-radius: 100px;
     padding: 16px 32px;
     display: flex;
+    justify-content: center;
     gap: 40px;
     box-shadow: var(--shadow);
     border: 1px solid var(--glass-border);

@@ -6,13 +6,9 @@
           <i class="fas fa-calculator"></i>
         </div>
         <div>
-          <h3 class="card-title">AI-бюджет</h3>
-          <div class="card-subtitle">Учтём ВСЕ расходы</div>
+          <h3 class="card-title">Таблица расходов</h3>
+          <div class="card-subtitle">Генерируется вместе с планом</div>
         </div>
-      </div>
-      <div class="budget-badge">
-        <i class="fas fa-brain"></i>
-        98.7%
       </div>
     </div>
 
@@ -42,7 +38,7 @@
         <i class="fas fa-lightbulb"></i>
       </div>
       <div class="insight-text">
-        AI помнит про <strong>чаевые, налоги, воду, туалеты</strong> и другие мелочи, 
+        AI помнит про <strong>чаевые, суверниры, налоги </strong> и другие мелочи, 
         о которых забывают 83% туристов
       </div>
     </div>
