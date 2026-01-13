@@ -3,298 +3,593 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TripGenius — Идеальные путешествия от искусственного интеллекта</title>
+    <title>TravelGenius - AI планировщик путешествий</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            min-height: 100vh;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Левая панель */
+        .left-panel {
+            flex: 1;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            color: #4a6de5;
+            margin-right: 15px;
+            background: linear-gradient(135deg, #4a6de5, #6d8eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #222, #4a6de5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #6c757d;
+            font-weight: 300;
+            margin-bottom: 50px;
+            position: relative;
+            padding-left: 48px;
+        }
+
+        .tagline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background-color: #4a6de5;
+        }
+
+        .main-heading {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+            color: #1a1a1a;
+        }
+
+        .ai-highlight {
+            background: linear-gradient(135deg, #4a6de5, #6d8eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .main-text {
+            font-size: 18px;
+            color: #495057;
+            max-width: 500px;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #4a6de5, #6d8eff);
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(74, 109, 229, 0.2);
+            max-width: fit-content;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(74, 109, 229, 0.3);
+        }
+
+        .cta-button i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Правая панель с каруселью */
+        .right-panel {
+            flex: 1;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .card {
+            position: absolute;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .card-large {
+            width: 380px;
+            height: 480px;
+            z-index: 10;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card-small {
+            width: 300px;
+            height: 400px;
+            opacity: 0.7;
+            z-index: 5;
+        }
+
+        .card-left {
+            left: 10%;
+            transform: translateX(0) scale(0.9);
+        }
+
+        .card-right {
+            right: 10%;
+            transform: translateX(0) scale(0.9);
+        }
+
+        .card-hidden {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #4a6de5, #6d8eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .card-content {
+            flex: 1;
+            color: #495057;
+            font-size: 16px;
+        }
+
+        .budget-display {
+            display: flex;
+            align-items: baseline;
+            margin-top: 20px;
+        }
+
+        .budget-amount {
+            font-size: 36px;
+            font-weight: 800;
+            color: #4a6de5;
+            margin-right: 10px;
+        }
+
+        .budget-currency {
+            font-size: 24px;
+            color: #6c757d;
+            font-weight: 600;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .schedule-time {
+            font-weight: 700;
+            color: #4a6de5;
+            min-width: 80px;
+        }
+
+        .schedule-activity {
+            flex: 1;
+        }
+
+        .photo-placeholder {
+            height: 180px;
+            background: linear-gradient(135deg, #e3e7ff, #f0f2ff);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .photo-placeholder i {
+            font-size: 60px;
+            color: #a5b4fc;
+            opacity: 0.7;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #4a6de5;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: #4a6de5;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Анимации */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .card-large {
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        .budget-amount {
+            animation: pulse 2s infinite;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .left-panel, .right-panel {
+                padding: 40px 20px;
+            }
+            
+            .carousel-container {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 36px;
+            }
+            
+            .card-large {
+                width: 320px;
+                height: 420px;
+            }
+            
+            .card-small {
+                width: 250px;
+                height: 350px;
+            }
+            
+            .card-left {
+                left: 5%;
+            }
+            
+            .card-right {
+                right: 5%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 14px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header (обновленный по стилю второго лендинга) -->
-    <header class="topbar">
-        <div class="container">
-            <div class="logo">TripGenius</div>
-            <div class="topbar-link">
-                <a href="#cta" class="hero-link">Начать</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section (обновленная по стилю второго лендинга) -->
-    <section class="hero-collage">
-        <div class="container">
-            <div class="hero-grid">
-                <!-- TEXT -->
-                <div class="hero-text">
-                    <span class="overline">Искусство идеального путешествия</span>
-                    <h1>Ваше идеальное путешествие начинается здесь</h1>
-                    <p>Искусственный интеллект создаст персонализированный маршрут, рассчитает точный бюджет и спланирует каждый день вашего путешествия. Просто расслабьтесь и наслаждайтесь.</p>
-                    <a href="#cta" class="hero-link">Создать маршрут</a>
+    <div class="container">
+        <!-- Левая панель с текстом -->
+        <div class="left-panel">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-compass"></i>
                 </div>
-
-                <!-- COLLAGE -->
-                <div class="collage">
-                    <div class="card tall"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Путешествие 1"></div>
-                    <div class="card small"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w-600" alt="Путешествие 2"></div>
-                    <div class="card medium"><img src="https://images.unsplash.com/photo-1500048993959-d6b34b1f4a0c?w=800" alt="Путешествие 3"></div>
-                    <div class="card small offset"><img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?w=600" alt="Путешествие 4"></div>
-                    <div class="card tall"><img src="https://images.unsplash.com/photo-1500534314209-a26db0f5b18d?w=800" alt="Путешествие 5"></div>
-                </div>
+                <div class="logo-text">TravelGenius</div>
             </div>
-        </div>
-    </section>
-
-    <!-- MANIFEST (новая секция из второго лендинга) -->
-    <section class="manifest">
-        <div class="container">
-            <p class="manifest-big">
-                Мы верим, что путешествие<br>
-                начинается задолго до аэропорта.
+            
+            <div class="tagline">Искусство идеального путешествия</div>
+            
+            <h1 class="main-heading">
+                Ваше идеальное путешествие <span class="ai-highlight">спланирует AI</span>
+            </h1>
+            
+            <p class="main-text">
+                Искусственный интеллект создаст персонализированный маршрут, 
+                рассчитает точный бюджет и спланирует каждый день вашего путешествия. 
+                Просто расслабьтесь и наслаждайтесь.
             </p>
-            <p class="manifest-small">
-                В ощущении ритма, деталей и уверенности,
-                что всё продумано именно для вас.
-            </p>
+            
+            <button class="cta-button">
+                Начать планирование <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
-    </section>
-
-    <!-- Features (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Почему выбирают TripGenius</h2>
-            <div class="features-grid">
-                <div class="feature-card animate">
-                    <div class="feature-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3 class="feature-title">Точный бюджет до копейки</h3>
-                    <p class="feature-description">ИИ учитывает сезонные цены, местные налоги, транспорт и даже ежедневные расходы. Ваш бюджет будет совпадать с реальностью.</p>
-                </div>
-                <div class="feature-card animate">
-                    <div class="feature-icon">
-                        <i class="fas fa-route"></i>
-                    </div>
-                    <h3 class="feature-title">Интеллектуальный маршрут</h3>
-                    <p class="feature-description">Персонализированный план под ваши интересы: архитектура, искусство, гастрономия или природа. Всё логично и удобно расположено.</p>
-                </div>
-                <div class="feature-card animate">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="feature-title">Расписание, которое работает</h3>
-                    <p class="feature-description">Учет времени на дорогу, часов работы заведений и оптимального времени посещения. Никаких очередей и пробежек по городу.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2 class="section-title">Как это работает</h2>
-            <div class="steps">
-                <div class="step animate">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Введите параметры</h3>
-                    <p class="step-description">Город, даты, количество человек, интересы и бюджет. Это займет 2 минуты.</p>
-                </div>
-                <div class="step animate">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">ИИ анализирует</h3>
-                    <p class="step-description">Наш интеллект сравнивает цены, оптимизирует логистику и выбирает лучшие места.</p>
-                </div>
-                <div class="step animate">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Получите план</h3>
-                    <p class="step-description">Готовый PDF с маршрутом, картой, бюджетной таблицей и советами.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Example (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <section class="example">
-        <div class="container">
-            <h2 class="section-title">Пример маршрута</h2>
-            <div class="example-card animate">
-                <h3 class="example-title">Барселона, 4 дня, двоим</h3>
-                
-                <div class="day-card">
-                    <h4 class="day-title"><i class="fas fa-sun"></i> День 1: Готический квартал и море</h4>
-                    <div class="activity">
-                        <div class="time">10:00</div>
-                        <div class="activity-description">Прогулка по Готическому кварталу с аудиогидом</div>
-                    </div>
-                    <div class="activity">
-                        <div class="time">12:00</div>
-                        <div class="activity-description">Кафедральный собор (бесплатный вход до 12:30)</div>
-                    </div>
-                    <div class="activity">
-                        <div class="time">14:00</div>
-                        <div class="activity-description">Обед на рынке Бокерия, паэлья и тапас</div>
-                    </div>
-                    <div class="activity">
-                        <div class="time">16:00</div>
-                        <div class="activity-description">Пляж Барселонета, отдых у моря</div>
-                    </div>
-                    <div class="activity">
-                        <div class="time">20:00</div>
-                        <div class="activity-description">Ужин в аутентичном тапас-баре в районе Грасия</div>
-                    </div>
-                </div>
-                
-                <div class="budget-summary">
-                    <h4 class="budget-title">Бюджет на поездку</h4>
-                    <div class="budget-item">
-                        <span>Жилье (4 ночи, центр)</span>
-                        <span>€320</span>
-                    </div>
-                    <div class="budget-item">
-                        <span>Питание и рестораны</span>
-                        <span>€400</span>
-                    </div>
-                    <div class="budget-item">
-                        <span>Транспорт и билеты</span>
-                        <span>€60</span>
-                    </div>
-                    <div class="budget-item">
-                        <span>Развлечения и музеи</span>
-                        <span>€400</span>
-                    </div>
-                    <div class="budget-item">
-                        <span>Итого на двоих</span>
-                        <span>€1,180</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <section class="comparison">
-        <div class="container">
-            <h2 class="section-title">Сравнение с ручным планированием</h2>
-            <div class="comparison-table animate">
-                <div class="comparison-row">
-                    <div class="comparison-item comparison-bad">8+ часов в Google и на форумах</div>
-                    <div class="comparison-item comparison-good">5 минут работы с ИИ</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-item comparison-bad">Устаревшие цены из туристических блогов</div>
-                    <div class="comparison-item comparison-good">Актуальные данные в реальном времени</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-item comparison-bad">"Примерный бюджет", который никогда не сходится</div>
-                    <div class="comparison-item comparison-good">Точный расчет до €10-20</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-item comparison-bad">Маршрут "как у всех" из путеводителей</div>
-                    <div class="comparison-item comparison-good">Персонализированный план под ваши интересы</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-item comparison-bad">PDF и карты нужно делать самостоятельно</div>
-                    <div class="comparison-item comparison-good">Готовые документы для поездки</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Free Section (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <section class="free-section">
-        <div class="container">
-            <h2 class="section-title">Бесплатные возможности</h2>
-            <div class="free-features">
-                <div class="free-feature animate">
-                    <div class="free-number">5</div>
-                    <div class="free-text">полноценных маршрутов можно создать бесплатно</div>
-                </div>
-                <div class="free-feature animate">
-                    <div class="free-text">Экспорт в PDF и Google Maps для оффлайн-доступа</div>
-                </div>
-                <div class="free-feature animate">
-                    <div class="free-text">Общение с ИИ-помощником для правок и улучшений</div>
-                </div>
-                <div class="free-feature animate">
-                    <div class="free-text">Персональные советы по экономии и лучшему времени</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <section class="premium-section">
-        <div class="container">
-            <h2 class="section-title">Когда может понадобиться премиум</h2>
-            <div class="premium-card animate">
-                <h3 class="premium-title">Бесплатного достаточно для большинства поездок</h3>
-                <p class="premium-description">5 маршрутов, неограниченные правки, экспорт в PDF и поддержка ИИ-помощника — всё это доступно совершенно бесплатно.</p>
-                <p class="premium-description">Премиум функции пригодятся, если после 5 маршрутов вы захотите детализировать конкретный план, добавить бронирование отелей и билетов, или получить персональные рекомендации от экспертов.</p>
-                <p class="premium-description" style="color: var(--color-accent-warm); font-weight: 500;">Сначала создайте свои 5 бесплатных маршрутов, а затем решите, нужен ли вам премиум.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Отзывы путешественников</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card animate">
-                    <p class="testimonial-text">Впервые бюджет в поездке совпал с реальностью. Обычно мы тратили на 20-30% больше, а тут всё сошлось до €50.</p>
-                    <p class="testimonial-author">— Анна, поездка в Париж</p>
-                </div>
-                <div class="testimonial-card animate">
-                    <p class="testimonial-text">Сэкономил 3 дня на планировании. Просто ввел параметры и получил готовый маршрут. Идеально для занятых людей.</p>
-                    <p class="testimonial-author">— Михаил, путешествие по Испании</p>
-                </div>
-                <div class="testimonial-card animate">
-                    <p class="testimonial-text">Маршрут был настолько логичным, что мы ничего не меняли. Всё рядом, ничего не нужно жертвовать. Идеальный баланс.</p>
-                    <p class="testimonial-author">— Ольга и Алексей, медовый месяц в Италии</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Form (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <section class="cta-form" id="cta">
-        <div class="container">
-            <div class="form-container animate">
-                <h2 class="form-title">Создайте свой первый маршрут бесплатно</h2>
-                <form id="tripForm">
-                    <div class="form-group">
-                        <label class="form-label" for="city">Куда хотите поехать?</label>
-                        <input type="text" class="form-input" id="city" placeholder="Например: Рим, Италия" required>
+        
+        <!-- Правая панель с каруселью карточек -->
+        <div class="right-panel">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- Карточка 1 (слева) -->
+                    <div class="card card-small card-left">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="card-title">Персонализированный маршрут</h3>
+                        <div class="card-content">
+                            <p>AI анализирует ваши предпочтения и создаёт уникальный маршрут, учитывая ваши интересы, бюджет и время.</p>
+                            <div class="photo-placeholder">
+                                <i class="fas fa-route"></i>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label class="form-label" for="dates">Даты поездки</label>
-                        <input type="text" class="form-input" id="dates" placeholder="15 июня — 20 июня 2024" required>
+                    <!-- Карточка 2 (по центру) -->
+                    <div class="card card-large">
+                        <div class="card-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3 class="card-title">Расчёт бюджета</h3>
+                        <div class="card-content">
+                            <p>Точный расчёт всех расходов: перелёты, отели, питание, развлечения. AI находит лучшие предложения.</p>
+                            <div class="budget-display">
+                                <div class="budget-amount">1,850</div>
+                                <div class="budget-currency">$</div>
+                            </div>
+                            <p>Итоговая стоимость для 7-дневного путешествия в Европу на двоих</p>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label class="form-label" for="interests">Ваши интересы (через запятую)</label>
-                        <input type="text" class="form-input" id="interests" placeholder="Например: искусство, архитектура, местная кухня" required>
+                    <!-- Карточка 3 (справа) -->
+                    <div class="card card-small card-right">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="card-title">Расписание дня</h3>
+                        <div class="card-content">
+                            <p>Детальное расписание каждого дня путешествия с оптимальными временными интервалами.</p>
+                            <div class="schedule-item">
+                                <div class="schedule-time">09:00</div>
+                                <div class="schedule-activity">Завтрак в отеле</div>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="schedule-time">11:00</div>
+                                <div class="schedule-activity">Экскурсия по старому городу</div>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="schedule-time">14:00</div>
+                                <div class="schedule-activity">Обед в ресторане</div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <button type="submit" class="form-button">
-                        Сгенерировать бесплатный маршрут <i class="fas fa-magic"></i>
-                    </button>
+                    <!-- Скрытые карточки для эффекта бесконечной карусели -->
+                    <div class="card card-small card-hidden">
+                        <div class="card-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3 class="card-title">Билеты и трансферы</h3>
+                        <div class="card-content">
+                            <p>AI подбирает оптимальные перелёты и забронирует все необходимые трансферы.</p>
+                        </div>
+                    </div>
                     
-                    <p class="form-note">Первый маршрут будет готов через 2 минуты. Это полностью бесплатно и не требует привязки карты.</p>
-                </form>
+                    <div class="card card-small card-hidden">
+                        <div class="card-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="card-title">Рестораны и питание</h3>
+                        <div class="card-content">
+                            <p>Подбор ресторанов на основе ваших вкусовых предпочтений и диетических ограничений.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-controls">
+                <button class="control-btn" id="prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="control-btn" id="next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
-    </section>
-
-    <!-- Footer (ОРИГИНАЛЬНАЯ секция из первого лендинга - БЕЗ ИЗМЕНЕНИЙ) -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">TripGenius</div>
-            <p class="footer-tagline">Искусственный интеллект, созданный с душой для ваших самых запоминающихся путешествий. Мы верим, что планирование должно быть простым, а поездки — совершенными.</p>
-            <p class="copyright">© 2024 TripGenius. Все права защищены. Сделано с ❤️ для путешественников.</p>
-        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 TravelGenius. Все права защищены. AI-планировщик путешествий нового поколения.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 1; // Индекс центральной карточки
+            
+            // Функция для обновления позиций карточек
+            function updateCarousel() {
+                cards.forEach((card, index) => {
+                    card.classList.remove('card-large', 'card-small', 'card-left', 'card-right', 'card-hidden');
+                    
+                    // Определяем позицию карточки относительно текущей
+                    const position = index - currentIndex;
+                    
+                    if (position === 0) {
+                        // Центральная карточка
+                        card.classList.add('card-large');
+                    } else if (position === -1) {
+                        // Левая карточка
+                        card.classList.add('card-small', 'card-left');
+                    } else if (position === 1) {
+                        // Правая карточка
+                        card.classList.add('card-small', 'card-right');
+                    } else {
+                        // Скрытые карточки
+                        card.classList.add('card-small', 'card-hidden');
+                    }
+                });
+            }
+            
+            // Инициализация карусели
+            updateCarousel();
+            
+            // Анимация суммы в бюджете
+            const budgetAmount = document.querySelector('.budget-amount');
+            let currentBudget = 1850;
+            let targetBudget = 1850;
+            
+            function animateBudget() {
+                // Случайное изменение бюджета для демонстрации
+                targetBudget = 1500 + Math.floor(Math.random() * 700);
+                
+                let step = (targetBudget - currentBudget) / 20;
+                let steps = 0;
+                
+                const interval = setInterval(() => {
+                    currentBudget += step;
+                    steps++;
+                    
+                    if (steps >= 20) {
+                        currentBudget = targetBudget;
+                        clearInterval(interval);
+                    }
+                    
+                    budgetAmount.textContent = Math.round(currentBudget).toLocaleString();
+                }, 50);
+            }
+            
+            // Запуск анимации бюджета каждые 3 секунды
+            setInterval(animateBudget, 3000);
+            
+            // Обработчики кнопок карусели
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                updateCarousel();
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % cards.length;
+                updateCarousel();
+            });
+            
+            // Кнопка CTA
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.addEventListener('click', function() {
+                alert('Добро пожаловать в TravelGenius! Наш AI начнёт планировать ваше идеальное путешествие.');
+            });
+            
+            // Автоматическое переключение карусели каждые 5 секунд
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % cards.length;
+                updateCarousel();
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
