@@ -6,34 +6,20 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #f9f9f9;
+  background: #f6f6f4;
   color: #111;
+  line-height: 1.6;
 }
 
-/* HERO */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-media {
+/* TOP */
+.topbar {
   position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.55)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80");
-  background-size: cover;
-  background-position: center;
-}
-
-.header {
-  position: relative;
-  z-index: 2;
-  padding: 40px 60px;
+  top: 40px;
+  left: 60px;
+  right: 60px;
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  z-index: 5;
 }
 
 .logo {
@@ -41,39 +27,90 @@ body {
   font-size: 22px;
 }
 
-.menu {
-  opacity: .7;
+.topbar-link {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero-collage {
+  min-height: 100vh;
+  padding: 140px 80px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: center;
 }
 
 .hero-text {
-  position: relative;
-  z-index: 2;
-  max-width: 520px;
-  padding: 140px 60px;
-  color: #fff;
+  max-width: 420px;
 }
 
 .overline {
   font-size: 12px;
   letter-spacing: 3px;
-  opacity: .7;
+  text-transform: uppercase;
+  color: #888;
 }
 
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 72px;
+  font-size: 64px;
   line-height: 1.05;
-  margin: 30px 0;
+  margin: 24px 0;
 }
 
 .hero-text p {
-  font-size: 18px;
-  opacity: .85;
+  font-size: 17px;
+  color: #555;
+}
+
+.hero-link {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+}
+
+/* COLLAGE */
+.collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 160px;
+  gap: 20px;
+}
+
+.card {
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card.tall { grid-row: span 3; }
+.card.medium { grid-row: span 2; }
+.card.small { grid-row: span 1; }
+
+.card.offset {
+  transform: translateY(40px);
 }
 
 /* MANIFEST */
 .manifest {
-  padding: 180px 20px;
+  padding: 200px 20px;
   text-align: center;
 }
 
@@ -105,57 +142,103 @@ body {
   margin: 10px 0;
 }
 
-/* EXPERIENCE */
-.experience {
-  padding: 200px 60px;
-  background: #111;
-  color: #fff;
+/* EXAMPLE */
+.example {
+  padding: 180px 20px;
+  background: #fff;
 }
 
-.experience h2 {
+.example-inner {
+  max-width: 640px;
+  margin: auto;
+}
+
+.example h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  margin-bottom: 60px;
 }
 
-.experience-card {
-  max-width: 400px;
-  border-left: 1px solid rgba(255,255,255,.3);
-  padding-left: 40px;
+.day p {
+  margin-top: 10px;
 }
 
 .budget {
   margin-top: 40px;
+}
+
+.budget div {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+}
+
+.total {
+  margin-top: 20px;
   font-weight: 600;
 }
 
-/* CTA */
-.cta {
-  padding: 180px 20px;
+/* COMPARISON */
+.comparison {
+  padding: 160px 20px;
   text-align: center;
 }
 
-.cta-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
+.compare-grid {
+  max-width: 600px;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.cta-link {
-  display: inline-block;
-  margin-top: 40px;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
+.bad { color: #aaa; }
+.good { font-weight: 500; }
+
+/* CTA */
+.cta {
+  padding: 200px 20px;
+  background: #111;
+  color: #fff;
+}
+
+.cta-box {
+  max-width: 520px;
+  margin: auto;
+  text-align: center;
+}
+
+.cta input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.cta button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  background: #fff;
   color: #111;
-  border-bottom: 1px solid #111;
+  border: none;
 }
 
 /* FOOTER */
 .footer {
   padding: 40px;
   text-align: center;
-  color: #888;
+  color: #777;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
 }

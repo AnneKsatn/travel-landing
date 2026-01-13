@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>TripGenius — Искусство путешествия</title>
- жээ  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TripGenius — Искусство идеального путешествия</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -11,38 +11,52 @@
 <body>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-media"></div>
+<section class="hero-collage">
 
-  <header class="header">
+  <header class="topbar">
     <div class="logo">TripGenius</div>
-    <div class="menu">Menu</div>
+    <div class="topbar-link">Начать</div>
   </header>
 
-  <div class="hero-text">
-    <span class="overline">Искусство идеального путешествия</span>
-    <h1>
-      Путешествия,<br>
-      которые<br>
-      ощущаются
-    </h1>
-    <p>
-      Искусственный интеллект, который проектирует маршруты,
-      бюджеты и дни так, будто их создавал личный travel-консьерж.
-    </p>
+  <div class="hero-grid">
+
+    <!-- TEXT -->
+    <div class="hero-text">
+      <span class="overline">Искусство идеального путешествия</span>
+      <h1>
+        Путешествия,<br>
+        которые<br>
+        хочется прожить
+      </h1>
+      <p>
+        Искусственный интеллект создаёт персонализированные маршруты,
+        точные бюджеты и продуманные дни —
+        как если бы у вас был личный travel-консьерж.
+      </p>
+      <a href="#cta" class="hero-link">Создать маршрут</a>
+    </div>
+
+    <!-- COLLAGE -->
+    <div class="collage">
+      <div class="card tall"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800"></div>
+      <div class="card small"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600"></div>
+      <div class="card medium"><img src="https://images.unsplash.com/photo-1500048993959-d6b34b1f4a0c?w=800"></div>
+      <div class="card small offset"><img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?w=600"></div>
+      <div class="card tall"><img src="https://images.unsplash.com/photo-1500534314209-a26db0f5b18d?w=800"></div>
+    </div>
+
   </div>
 </section>
 
 <!-- MANIFEST -->
 <section class="manifest">
   <p class="manifest-big">
-    Мы верим, что путешествие начинается<br>
-    задолго до аэропорта.
+    Мы верим, что путешествие<br>
+    начинается задолго до аэропорта.
   </p>
-
   <p class="manifest-small">
-    В деталях. В ритме. В ощущении, что всё
-    продумано — и при этом легко.
+    В ощущении ритма, деталей и уверенности,
+    что всё продумано именно для вас.
   </p>
 </section>
 
@@ -50,16 +64,16 @@
 <section class="features">
   <div class="feature">
     <span>01</span>
-    <h3>Точный бюджет</h3>
+    <h3>Точный бюджет до копейки</h3>
     <p>
-      Не «примерно», а так, как будет на самом деле.
-      ИИ учитывает сезон, район, стиль жизни.
+      ИИ учитывает сезонные цены, районы,
+      транспорт и реальные ежедневные расходы.
     </p>
   </div>
 
   <div class="feature">
     <span>02</span>
-    <h3>Маршрут с ритмом</h3>
+    <h3>Интеллектуальный маршрут</h3>
     <p>
       Не список мест, а логичное течение дней —
       без спешки и бессмысленных переездов.
@@ -68,46 +82,69 @@
 
   <div class="feature">
     <span>03</span>
-    <h3>Время как ценность</h3>
+    <h3>Расписание, которое работает</h3>
     <p>
-      Мы планируем не активность, а ощущение —
-      когда быть, где быть и зачем.
+      Учет времени, часов работы и лучших
+      периодов для посещения.
     </p>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="experience">
-  <h2>
-    Барселона.<br>
-    Четыре дня.<br>
-    Без спешки.
-  </h2>
+<!-- EXAMPLE -->
+<section class="example">
+  <div class="example-inner">
+    <h2>Пример маршрута</h2>
+    <h3>Барселона · 4 дня · двоим</h3>
 
-  <div class="experience-card">
-    <p><strong>Утро:</strong> Готический квартал до туристов</p>
-    <p><strong>День:</strong> Бокерия и медленный обед</p>
-    <p><strong>Вечер:</strong> Море и Грасия</p>
+    <div class="day">
+      <p><strong>Утро:</strong> Готический квартал без туристов</p>
+      <p><strong>День:</strong> Бокерия и медленный обед</p>
+      <p><strong>Вечер:</strong> Море и район Грасия</p>
+    </div>
 
     <div class="budget">
-      <span>Итого</span>
-      <span>€1 180</span>
+      <div><span>Жильё</span><span>€320</span></div>
+      <div><span>Питание</span><span>€400</span></div>
+      <div><span>Транспорт</span><span>€60</span></div>
+      <div><span>Развлечения</span><span>€400</span></div>
+      <div class="total"><span>Итого</span><span>€1 180</span></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <p class="cta-text">
-    Создайте свой первый маршрут.<br>
-    Бесплатно. Спокойно. Без обязательств.
-  </p>
+<!-- COMPARISON -->
+<section class="comparison">
+  <h2>Сравнение с ручным планированием</h2>
+  <div class="compare-grid">
+    <div class="bad">8+ часов поиска</div>
+    <div class="good">5 минут с ИИ</div>
+    <div class="bad">Примерный бюджет</div>
+    <div class="good">Точный расчёт</div>
+    <div class="bad">Маршрут «как у всех»</div>
+    <div class="good">Персональный план</div>
+  </div>
+</section>
 
-  <a href="#" class="cta-link">Начать путешествие</a>
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-box">
+    <h2>Создайте свой первый маршрут бесплатно</h2>
+    <p>
+      Первый маршрут будет готов через 2 минуты.
+      Без карты. Без обязательств.
+    </p>
+
+    <form>
+      <input type="text" placeholder="Куда хотите поехать">
+      <input type="text" placeholder="Даты поездки">
+      <input type="text" placeholder="Интересы">
+      <button>Сгенерировать маршрут</button>
+    </form>
+  </div>
 </section>
 
 <footer class="footer">
-  © 2024 TripGenius
+  © 2024 TripGenius — путешествия, созданные с вниманием к деталям
 </footer>
 
 </body>
