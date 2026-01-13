@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  color: #111;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.menu {
+  opacity: .7;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  padding: 140px 60px;
+  color: #fff;
+}
+
+.overline {
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: .7;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  line-height: 1.05;
+  margin: 30px 0;
+}
+
+.hero-text p {
+  font-size: 18px;
+  opacity: .85;
+}
+
+/* MANIFEST */
+.manifest {
+  padding: 180px 20px;
+  text-align: center;
+}
+
+.manifest-big {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+}
+
+.manifest-small {
+  margin-top: 30px;
+  color: #555;
+}
+
+/* FEATURES */
+.features {
+  padding: 160px 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+.feature span {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.feature h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 10px 0;
+}
+
+/* EXPERIENCE */
+.experience {
+  padding: 200px 60px;
+  background: #111;
+  color: #fff;
+}
+
+.experience h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  margin-bottom: 60px;
+}
+
+.experience-card {
+  max-width: 400px;
+  border-left: 1px solid rgba(255,255,255,.3);
+  padding-left: 40px;
+}
+
+.budget {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+/* CTA */
+.cta {
+  padding: 180px 20px;
+  text-align: center;
+}
+
+.cta-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+}
+
+.cta-link {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111;
+  border-bottom: 1px solid #111;
+}
+
+/* FOOTER */
+.footer {
+  padding: 40px;
+  text-align: center;
+  color: #888;
+}
