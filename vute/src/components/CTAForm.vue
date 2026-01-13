@@ -12,7 +12,7 @@
         </p>
         
         <!-- Простая форма -->
-        <form @submit.prevent="handleSubmit" class="simple-form">
+        <form @submit.prevent="handleSubmit" class="simple-form" autocomplete="off">
           <div class="input-wrapper">
             <div class="input-icon">
               <i class="fas fa-map-marker-alt"></i>
@@ -24,7 +24,6 @@
               placeholder="Например: Санторини, Токио, Бали..."
               class="destination-input"
               required
-              autofocus
             >
             
             <button 
