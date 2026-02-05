@@ -60,7 +60,7 @@ export default {
 .luxury-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px 40px;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 60px;

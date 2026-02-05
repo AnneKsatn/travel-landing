@@ -1,3 +1,4 @@
+
 <template>
   <div class="luxury-card budget-card">
     <div class="card-header">
@@ -6,18 +7,18 @@
           <i class="fas fa-calculator"></i>
         </div>
         <div>
-          <h3 class="card-title">Таблица расходов</h3>
-          <div class="card-subtitle">Генерируется вместе с планом</div>
+          <h3 class="card-title">{{ t('cards.budget.title') }}</h3>
+          <div class="card-subtitle">{{ t('cards.budget.subtitle') }}</div>
         </div>
       </div>
     </div>
 
     <div class="expenses-list">
       <!-- Конкретные пункты расходов -->
-      <div class="expense-item" v-for="expense in expenses" :key="expense.name">
+      <div class="expense-item" v-for="(expense, index) in expenses" :key="index">
         <div class="expense-info">
           <i :class="expense.icon"></i>
-          <span class="expense-name">{{ expense.name }}</span>
+          <span class="expense-name">{{ t(expense.translationKey, expense.params) }}</span>
           <span class="expense-note" v-if="expense.note">{{ expense.note }}</span>
         </div>
         <div class="expense-amount">{{ formatCurrency(expense.amount) }}</div>
@@ -27,7 +28,7 @@
       <div class="expense-total">
         <div class="total-label">
           <i class="fas fa-check-double"></i>
-          <span>Всего расходов AI учёл:</span>
+          <span>{{ t('expenses.total') }}:</span>
         </div>
         <div class="total-amount">{{ formatCurrency(total) }}</div>
       </div>
@@ -38,40 +39,90 @@
         <i class="fas fa-lightbulb"></i>
       </div>
       <div class="insight-text">
-        AI помнит про <strong>чаевые, суверниры, налоги </strong> и другие мелочи, 
-        о которых забывают 83% туристов
+        {{ t('ai.remembers') }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: 'BudgetCard',
-  data() {
+  setup() {
+    const { t, formatCurrency } = useLanguage()
+    
+    const expenses = [
+      { 
+        translationKey: 'expenses.flight', 
+        amount: 18500, 
+        icon: 'fas fa-plane',
+        params: {}
+      },
+      { 
+        translationKey: 'expenses.hotel', 
+        amount: 24500, 
+        icon: 'fas fa-hotel',
+        params: { nights: 7 }
+      },
+      { 
+        translationKey: 'expenses.vignette', 
+        amount: 1200, 
+        icon: 'fas fa-road',
+        params: {}
+      },
+      { 
+        translationKey: 'expenses.parking', 
+        amount: 800, 
+        icon: 'fas fa-parking',
+        params: {}
+      },
+      { 
+        translationKey: 'expenses.dinner', 
+        amount: 2500, 
+        icon: 'fas fa-utensils',
+        params: {}
+      },
+      { 
+        translationKey: 'expenses.museum', 
+        amount: 700, 
+        icon: 'fas fa-landmark',
+        params: {}
+      },
+      { 
+        translationKey: 'expenses.souvenirs', 
+        amount: 1500, 
+        icon: 'fas fa-gift',
+        params: {}
+      },
+      { 
+        translationKey: 'expenses.mobile', 
+        amount: 500, 
+        icon: 'fas fa-sim-card',
+        params: {}
+      },
+      { 
+        translationKey: 'expenses.insurance', 
+        amount: 900, 
+        icon: 'fas fa-shield-alt',
+        params: {}
+      },
+      { 
+        translationKey: 'expenses.transfer', 
+        amount: 1400, 
+        icon: 'fas fa-taxi',
+        params: {}
+      }
+    ]
+
+    const total = expenses.reduce((sum, expense) => sum + expense.amount, 0)
+
     return {
-      expenses: [
-        { name: 'Авиабилет', amount: 18500, icon: 'fas fa-plane' },
-        { name: 'Отель 7 ночей', amount: 24500, icon: 'fas fa-hotel' },
-        { name: 'Виньетка дорожная', amount: 1200, icon: 'fas fa-road' },
-        { name: 'Парковка в аэропорту', amount: 800, icon: 'fas fa-parking' },
-        { name: 'Ужин в ресторане', amount: 2500, icon: 'fas fa-utensils' },
-        { name: 'Билет в музей', amount: 700, icon: 'fas fa-landmark' },
-        { name: 'Сувениры', amount: 1500, icon: 'fas fa-gift' },
-        { name: 'Мобильная связь', amount: 500, icon: 'fas fa-sim-card' },
-        { name: 'Страховка', amount: 900, icon: 'fas fa-shield-alt' },
-        { name: 'Трансфер', amount: 1400, icon: 'fas fa-taxi' }
-      ]
-    }
-  },
-  computed: {
-    total() {
-      return this.expenses.reduce((sum, expense) => sum + expense.amount, 0)
-    }
-  },
-  methods: {
-    formatCurrency(num) {
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' ₽'
+      t,
+      formatCurrency,
+      expenses,
+      total
     }
   }
 }

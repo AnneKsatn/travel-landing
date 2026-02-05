@@ -1,0 +1,99 @@
+
+{
+  "app": {
+    "name": "TravelGenius",
+    "slogan": "We believe planning should be simple, and trips — perfect.",
+    "title": "Your perfect journey",
+    "aiHighlight": "planned by AI",
+    "description": "Artificial intelligence will create a personalized route, calculate an accurate budget and plan every day of your trip.",
+    "startPlanning": "Start Planning",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started"
+  },
+  "techStats": {
+    "users": "Users",
+    "routes": "Routes planned",
+    "accuracy": "AI Accuracy"
+  },
+  "cards": {
+    "destination": {
+      "title": "Destination",
+      "rating": "Rating"
+    },
+    "schedule": {
+      "title": "Schedule",
+      "subtitle": "Perfectly planned day"
+    },
+    "budget": {
+      "title": "Expense Table",
+      "subtitle": "Generated with the plan"
+    },
+    "aiConstructor": {
+      "title": "AI Constructor",
+      "subtitle": "Edit AI plan to your liking"
+    }
+  },
+  "schedule": {
+    "breakfast": "Breakfast",
+    "walk": "Walk",
+    "lunch": "Lunch",
+    "beach": "Beach",
+    "sunset": "Sunset"
+  },
+  "ai": {
+    "insight": "AI will consider your preferences and physical activity",
+    "remembers": "AI remembers tips, souvenirs, taxes and other little things that 83% of tourists forget",
+    "createsBase": "AI creates a base based on the experience of {count}+ travelers",
+    "youCustomize": "You customize according to your preferences and budget"
+  },
+  "expenses": {
+    "flight": "Flight ticket",
+    "hotel": "Hotel {nights} nights",
+    "vignette": "Road vignette",
+    "parking": "Airport parking",
+    "dinner": "Dinner at restaurant",
+    "museum": "Museum ticket",
+    "souvenirs": "Souvenirs",
+    "mobile": "Mobile connection",
+    "insurance": "Insurance",
+    "transfer": "Transfer",
+    "total": "Total expenses AI accounted for"
+  },
+  "constructor": {
+    "title": "Editable AI Constructor",
+    "description": "AI creates a smart foundation, and you customize it to your liking. Change expenses, choose categories — everything updates in real time.",
+    "editExpenses": "Edit AI Expenses",
+    "chooseCategories": "Choose Categories"
+  },
+  "cta": {
+    "title": "Where do you want to go?",
+    "subtitle": "Enter destination — AI will create perfect route in 2 minutes",
+    "placeholder": "For example: Santorini, Tokyo, Bali...",
+    "submit": "Let's Go!",
+    "suggestions": "Popular destinations",
+    "guarantees": {
+      "fast": "2 minutes",
+      "editable": "Editable plan",
+      "secure": "Secure"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "view": "View",
+    "download": "Download",
+    "share": "Share",
+    "currency": "$",
+    "currencyFull": "dollars"
+  }
+}

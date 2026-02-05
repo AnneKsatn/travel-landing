@@ -1,5 +1,10 @@
 <template>
   <header class="luxury-text-section">
+    <LanguageSwitcher
+      class="language-switcher-header"
+      @language-changed="$emit('language-changed', $event)"
+    />
+
     <!-- Логотип -->
     <div class="luxury-logo">
       <div class="logo-orb floating">
@@ -14,6 +19,7 @@
           <path d="M9 4L11 8" stroke-width="1.5" stroke-linecap="round" />
         </svg>
       </div>
+
       <div class="logo-content">
         <h1 class="luxury-logo-text">TravelGenius</h1>
         <div class="logo-slogan">
@@ -46,9 +52,14 @@
   </header>
 </template>
 <script>
+import LanguageSwitcher from "./LanguageSwitcher.vue";
+
 export default {
   name: "LuxuryHeader",
   emits: ["start-planning"],
+  components: {
+    LanguageSwitcher,
+  },
 };
 </script>
 
@@ -194,7 +205,6 @@ export default {
   position: relative;
   padding-left: 5px;
 }
-
 
 /* Кнопки CTA */
 .luxury-cta {
@@ -355,7 +365,6 @@ export default {
   }
 }
 
-
 /* Базовые стили */
 .luxury-text-section {
   padding-right: 40px;
@@ -378,9 +387,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.1), 
-    0 20px 40px rgba(139, 92, 246, 0.15),
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 20px 40px rgba(139, 92, 246, 0.15),
     0 0 60px rgba(139, 92, 246, 0.1);
   position: relative;
   overflow: hidden;
@@ -450,6 +457,8 @@ export default {
   );
   border-radius: 1px;
 }
+
+.language-switcher-header {
+  margin-bottom: 40px;
+}
 </style>
-
-
