@@ -439,7 +439,6 @@ export default {
 
 /* Демо таблица для левой колонки */
 .demo-table {
-  background: rgba(139, 92, 246, 0.02);
   border-radius: 16px;
   border: 1px solid rgba(139, 92, 246, 0.1);
   overflow: hidden;
@@ -551,17 +550,9 @@ export default {
   color: var(--primary);
 }
 
-.user-added {
-  background: rgba(249, 115, 22, 0.03);
-}
 
 .user-added .row-item i {
   color: #f97316;
-}
-
-.ai-hidden {
-  background: rgba(239, 68, 68, 0.03);
-  opacity: 0.7;
 }
 
 .ai-hidden .row-item i {
@@ -623,7 +614,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
 }
 
 .category-header i {
