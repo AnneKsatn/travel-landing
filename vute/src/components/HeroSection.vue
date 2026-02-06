@@ -13,13 +13,13 @@
         class="floating delay-1"
       />
       
-      <ScheduleCard class="floating delay-2" />
-      
       <BudgetCard 
         :initial-budget="initialBudget"
-        class="floating delay-3"
+        class="floating delay-2"
         @budget-analyzed="$emit('budget-analyzed', $event)"
       />
+
+      <ScheduleCard class="floating delay-3" />
       
       <AICard class="floating" />
     </div>

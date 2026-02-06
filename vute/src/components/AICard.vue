@@ -6,8 +6,8 @@
           <i class="fas fa-sliders-h"></i>
         </div>
         <div>
-          <h3 class="card-title">Конструктор</h3>
-          <div class="card-subtitle">Настройте план под себя</div>
+          <h3 class="card-title">{{ t('cards.aiConstructor.title') }}</h3>
+          <div class="card-subtitle">{{ t('cards.aiConstructor.subtitle') }}</div>
         </div>
       </div>
     </div>
@@ -15,35 +15,44 @@
     <div class="capabilities">
       <div class="capability">
         <i class="fas fa-check-circle"></i>
-        <span>Добавляйте свои расходы</span>
+        <span>{{ t('aiCard.capabilities.addExpenses') }}</span>
       </div>
       <div class="capability">
         <i class="fas fa-check-circle"></i>
-        <span>Меняйте категории</span>
+        <span>{{ t('aiCard.capabilities.changeCategories') }}</span>
       </div>
       <div class="capability">
         <i class="fas fa-check-circle"></i>
-        <span>Регулируйте бюджет</span>
+        <span>{{ t('aiCard.capabilities.adjustBudget') }}</span>
       </div>
       <div class="capability">
         <i class="fas fa-check-circle"></i>
-        <span>Персонализируйте маршрут</span>
+        <span>{{ t('aiCard.capabilities.personalizeRoute') }}</span>
       </div>
     </div>
 
     <!-- Текстовая пояснение -->
     <div class="constructor-message">
       <p>
-        <strong>AI создаёт основу</strong> на основе опыта 42,678+ путешественников.
-        <strong>Вы настраиваете</strong> под свои предпочтения и бюджет.
+        <strong>{{ t('ai.createsBase', { count: '42,678' }) }}</strong>
+        <strong>{{ t('ai.youCustomize') }}</strong>
       </p>
     </div>
   </div>
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: "AICard",
+  setup() {
+    const { t } = useLanguage()
+    
+    return {
+      t
+    }
+  }
 };
 </script>
 

@@ -10,17 +10,26 @@
         <span>{{ destination.location }}</span>
       </div>
     </div>
-    <div class="destination-rating">{{ destination.rating }}</div>
+    <div class="destination-rating">{{ t('cards.destination.rating') }}: {{ destination.rating }}</div>
   </div>
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: 'DestinationCard',
   props: {
     destination: {
       type: Object,
       required: true
+    }
+  },
+  setup() {
+    const { t } = useLanguage()
+    
+    return {
+      t
     }
   }
 }

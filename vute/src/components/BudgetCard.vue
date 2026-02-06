@@ -55,12 +55,6 @@ export default {
     
     const expenses = [
       { 
-        translationKey: 'expenses.flight', 
-        amount: 18500, 
-        icon: 'fas fa-plane',
-        params: {}
-      },
-      { 
         translationKey: 'expenses.hotel', 
         amount: 24500, 
         icon: 'fas fa-hotel',
@@ -132,7 +126,7 @@ export default {
 .budget-card {
   padding: 20px;
   min-height: auto;
-  height: fit-content;
+  min-height: 100%;
   max-width: 320px;
 }
 
@@ -188,7 +182,7 @@ export default {
 /* Список расходов */
 .expenses-list {
   margin-bottom: 15px;
-  max-height: 240px;
+  max-height: 290px;
   overflow-y: auto;
   padding-right: 5px;
 }

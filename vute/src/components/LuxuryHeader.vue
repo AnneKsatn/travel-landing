@@ -21,38 +21,39 @@
       </div>
 
       <div class="logo-content">
-        <h1 class="luxury-logo-text">TravelGenius</h1>
+        <h1 class="luxury-logo-text">{{ t('app.name') }}</h1>
         <div class="logo-slogan">
-          Мы верим, что планирование должно быть простым, а поездки — совершенными.
+          {{ t('app.slogan') }}
         </div>
       </div>
     </div>
 
     <!-- Главный заголовок -->
     <h2 class="luxury-headline">
-      Ваше идеальное путешествие
+      {{ t('app.title') }}
       <span class="ai-highlight">
-        <span class="ai-text">спланирует AI</span>
+        <span class="ai-text">{{ t('app.aiHighlight') }}</span>
       </span>
     </h2>
 
     <!-- Описание -->
     <p class="luxury-main-text">
-      Искусственный интеллект создаст персонализированный маршрут, рассчитает точный
-      бюджет и спланирует каждый день вашего путешествия.
+      {{ t('app.description') }}
     </p>
 
     <!-- Кнопки CTA -->
     <div class="luxury-cta">
       <button class="cta-primary" @click="$emit('start-planning')">
-        <span class="cta-text">Начать планирование</span>
+        <span class="cta-text">{{ t('app.startPlanning') }}</span>
         <span class="cta-icon">→</span>
       </button>
     </div>
   </header>
 </template>
+
 <script>
 import LanguageSwitcher from "./LanguageSwitcher.vue";
+import { useLanguage } from '../i18n/useLanguage'
 
 export default {
   name: "LuxuryHeader",
@@ -60,6 +61,13 @@ export default {
   components: {
     LanguageSwitcher,
   },
+  setup() {
+    const { t } = useLanguage()
+    
+    return {
+      t
+    }
+  }
 };
 </script>
 
@@ -426,7 +434,6 @@ export default {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.5px;
-  line-height: 1;
 }
 
 .logo-slogan {
@@ -439,6 +446,7 @@ export default {
   max-width: 500px;
   position: relative;
   padding-left: 16px;
+  margin-top: 3px;
 }
 
 .logo-slogan::before {

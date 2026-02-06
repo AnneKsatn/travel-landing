@@ -6,8 +6,8 @@
           <i class="fas fa-calendar-alt"></i>
         </div>
         <div>
-          <h3 class="card-title">Расписание</h3>
-          <div class="card-subtitle">Идеально спланированный день</div>
+          <h3 class="card-title">{{ t('cards.schedule.title') }}</h3>
+          <div class="card-subtitle">{{ t('cards.schedule.subtitle') }}</div>
         </div>
       </div>
     </div>
@@ -16,7 +16,7 @@
       <div class="timeline-item" v-for="item in schedule" :key="item.time">
         <div class="time-badge">{{ item.time }}</div>
         <div class="timeline-content">
-          <div class="activity-name">{{ item.activity }}</div>
+          <div class="activity-name">{{ t(item.activityKey) }}</div>
           <div class="activity-details">{{ item.details }}</div>
         </div>
       </div>
@@ -24,23 +24,30 @@
 
     <div class="schedule-note">
       <i class="fas fa-robot"></i>
-      <span>AI учтёт ваши предпочтения и физическую нагрузку</span>
+      <span>{{ t('ai.insight') }}</span>
     </div>
   </div>
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: 'ScheduleCard',
-  data() {
+  setup() {
+    const { t } = useLanguage()
+    
+    const schedule = [
+      { time: '9:00', activityKey: 'schedule.breakfast', details: 'В кафе с видом на кальдеру' },
+      { time: '10:30', activityKey: 'schedule.walk', details: 'По улицам Ии' },
+      { time: '13:00', activityKey: 'schedule.lunch', details: 'Местная таверна' },
+      { time: '15:00', activityKey: 'schedule.beach', details: 'Чёрный песок Периссы' },
+      { time: '18:00', activityKey: 'schedule.sunset', details: 'Смотровая площадка' }
+    ]
+
     return {
-      schedule: [
-        { time: '9:00', activity: 'Завтрак', details: 'В кафе с видом на кальдеру' },
-        { time: '10:30', activity: 'Прогулка', details: 'По улицам Ии' },
-        { time: '13:00', activity: 'Обед', details: 'Местная таверна' },
-        { time: '15:00', activity: 'Пляж', details: 'Чёрный песок Периссы' },
-        { time: '18:00', activity: 'Закат', details: 'Смотровая площадка' }
-      ]
+      t,
+      schedule
     }
   }
 }

@@ -9,47 +9,42 @@
     <div class="screen-container">
       <!-- Левый блок: описание системы -->
       <div class="left-panel">
-        <h2 class="section-title">
-          Чем больше вы расскажете, тем <span class="highlight">точнее </span> будет
-          маршрут от AI.
-        </h2>
+        <h2 class="section-title" v-html="t('screenTwo.title')"></h2>
 
         <p class="section-description">
-          Простая анкета помогает нам лучше понять ваш идеальный маршрут. На
-          основе 12 ключевых параметров AI создаёт профиль, чтобы
-          подобрать места, которые заставят ваше сердце биться чаще.
+          {{ t('screenTwo.description') }}
         </p>
 
         <div class="preference-list">
           <div class="preference-item">
             <i class="fas fa-heart"></i>
             <div>
-              <h4>Интересы</h4>
-              <p>Искусство, гастрономия, природа, история, шопинг</p>
+              <h4>{{ t('screenTwo.preferences.interests.title') }}</h4>
+              <p>{{ t('screenTwo.preferences.interests.description') }}</p>
             </div>
           </div>
 
           <div class="preference-item">
             <i class="fas fa-walking"></i>
             <div>
-              <h4>Активность</h4>
-              <p>Расслабленный отдых, активные маршруты, баланс 50/50</p>
+              <h4>{{ t('screenTwo.preferences.activity.title') }}</h4>
+              <p>{{ t('screenTwo.preferences.activity.description') }}</p>
             </div>
           </div>
 
           <div class="preference-item">
             <i class="fas fa-users"></i>
             <div>
-              <h4>Компания</h4>
-              <p>Соло, пара, семья, друзья, бизнес-поездка</p>
+              <h4>{{ t('screenTwo.preferences.company.title') }}</h4>
+              <p>{{ t('screenTwo.preferences.company.description') }}</p>
             </div>
           </div>
 
           <div class="preference-item">
             <i class="fas fa-coins"></i>
             <div>
-              <h4>Бюджет</h4>
-              <p>Эконом, комфорт, премиум, люкс — без компромиссов</p>
+              <h4>{{ t('screenTwo.preferences.budget.title') }}</h4>
+              <p>{{ t('screenTwo.preferences.budget.description') }}</p>
             </div>
           </div>
         </div>
@@ -70,9 +65,9 @@
               <div class="place-icon">
                 <i class="fas fa-landmark"></i>
               </div>
-              <h4>Музеи & Галереи</h4>
-              <p>Точное соответствие вашим художественным вкусам</p>
-              <div class="place-tag">Искусство</div>
+              <h4>{{ t('screenTwo.places.museum.title') }}</h4>
+              <p>{{ t('screenTwo.places.museum.description') }}</p>
+              <div class="place-tag">{{ t('screenTwo.places.museum.tag') }}</div>
             </div>
           </div>
 
@@ -88,9 +83,9 @@
               <div class="place-icon">
                 <i class="fas fa-tree"></i>
               </div>
-              <h4>Природные парки</h4>
-              <p>Маршруты по уровню сложности и живописности</p>
-              <div class="place-tag">Природа</div>
+              <h4>{{ t('screenTwo.places.park.title') }}</h4>
+              <p>{{ t('screenTwo.places.park.description') }}</p>
+              <div class="place-tag">{{ t('screenTwo.places.park.tag') }}</div>
             </div>
           </div>
 
@@ -106,9 +101,9 @@
               <div class="place-icon">
                 <i class="fas fa-utensils"></i>
               </div>
-              <h4>Рестораны</h4>
-              <p>Кухня, атмосфера, цена — всё по вашим предпочтениям</p>
-              <div class="place-tag">Гастрономия</div>
+              <h4>{{ t('screenTwo.places.restaurant.title') }}</h4>
+              <p>{{ t('screenTwo.places.restaurant.description') }}</p>
+              <div class="place-tag">{{ t('screenTwo.places.restaurant.tag') }}</div>
             </div>
           </div>
 
@@ -124,9 +119,9 @@
               <div class="place-icon">
                 <i class="fas fa-binoculars"></i>
               </div>
-              <h4>Смотровые площадки</h4>
-              <p>Лучшие виды в лучшее время суток</p>
-              <div class="place-tag">Фото-точки</div>
+              <h4>{{ t('screenTwo.places.viewpoint.title') }}</h4>
+              <p>{{ t('screenTwo.places.viewpoint.description') }}</p>
+              <div class="place-tag">{{ t('screenTwo.places.viewpoint.tag') }}</div>
             </div>
           </div>
         </div>
@@ -134,15 +129,15 @@
         <div class="ai-stats">
           <div class="stat-item">
             <div class="stat-value">1000+</div>
-            <div class="stat-label">точек в базе AI</div>
+            <div class="stat-label">{{ t('screenTwo.stats.points') }}</div>
           </div>
           <div class="stat-item">
             <div class="stat-value">94%</div>
-            <div class="stat-label">точность подбора</div>
+            <div class="stat-label">{{ t('screenTwo.stats.accuracy') }}</div>
           </div>
           <div class="stat-item">
             <div class="stat-value">12</div>
-            <div class="stat-label">параметров анализа</div>
+            <div class="stat-label">{{ t('screenTwo.stats.parameters') }}</div>
           </div>
         </div>
       </div>
@@ -151,8 +146,17 @@
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: "ScreenTwo",
+  setup() {
+    const { t } = useLanguage()
+    
+    return {
+      t
+    }
+  },
   mounted() {
     this.setupScrollAnimations();
   },

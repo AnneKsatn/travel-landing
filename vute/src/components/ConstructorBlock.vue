@@ -11,16 +11,15 @@
       <div class="constructor-header">
         <div class="section-label">
           <i class="fas fa-cogs"></i>
-          AI + Человек = Идеальный план
+          {{ t('ai.humanCombination') }}
         </div>
         
         <h2 class="section-title">
-          Редактируемый <span class="highlight">AI-конструктор</span>
+          {{ t('constructor.title') }}
         </h2>
         
         <p class="section-description">
-          AI создаёт умную основу, а вы настраиваете её под себя. 
-          Изменяйте расходы, выбирайте категории — всё обновляется в реальном времени.
+          {{ t('constructor.description') }}
         </p>
       </div>
 
@@ -33,27 +32,27 @@
               <div class="feature-icon">
                 <i class="fas fa-edit"></i>
               </div>
-              <h3 class="feature-title">Редактируйте AI-расходы</h3>
-              <p class="feature-subtitle">AI считает, вы корректируете</p>
+              <h3 class="feature-title">{{ t('constructor.editExpenses') }}</h3>
+              <p class="feature-subtitle">{{ t('ai.calculates') }}</p>
             </div>
 
             <div class="feature-demo">
               <!-- Пример редактируемой таблицы -->
               <div class="demo-table">
                 <div class="table-header">
-                  <div class="header-item">Статья расходов</div>
-                  <div class="header-item">AI рассчитал</div>
-                  <div class="header-item">Ваша правка</div>
+                  <div class="header-item">{{ t('constructor.tableHeaders.item') }}</div>
+                  <div class="header-item">{{ t('constructor.tableHeaders.aiCalculated') }}</div>
+                  <div class="header-item">{{ t('constructor.tableHeaders.yourEdit') }}</div>
                   <div class="header-item"></div>
                 </div>
                 
                 <div class="table-row ai-item">
                   <div class="row-item">
                     <i class="fas fa-utensils"></i>
-                    <span>Ужин в ресторане</span>
+                    <span>{{ t('expenses.dinner') }}</span>
                   </div>
-                  <div class="row-item price-ai">2 500 ₽</div>
-                  <div class="row-item price-edited">3 200 ₽</div>
+                  <div class="row-item price-ai">{{ formatCurrency(2500) }}</div>
+                  <div class="row-item price-edited">{{ formatCurrency(3200) }}</div>
                   <div class="row-item actions">
                     <span class="action-icon edited">
                       <i class="fas fa-pen"></i>
@@ -64,10 +63,10 @@
                 <div class="table-row ai-item">
                   <div class="row-item">
                     <i class="fas fa-taxi"></i>
-                    <span>Трансфер из аэропорта</span>
+                    <span>{{ t('expenses.transfer') }}</span>
                   </div>
-                  <div class="row-item price-ai">1 400 ₽</div>
-                  <div class="row-item price-edited">1 400 ₽</div>
+                  <div class="row-item price-ai">{{ formatCurrency(1400) }}</div>
+                  <div class="row-item price-edited">{{ formatCurrency(1400) }}</div>
                   <div class="row-item actions">
                     <span class="action-icon unchanged">
                       <i class="fas fa-check"></i>
@@ -78,10 +77,10 @@
                 <div class="table-row user-added">
                   <div class="row-item">
                     <i class="fas fa-plus-circle"></i>
-                    <span>Сувениры (добавили вы)</span>
+                    <span>{{ t('expenses.souvenirs') }}</span>
                   </div>
                   <div class="row-item price-ai">—</div>
-                  <div class="row-item price-edited">1 500 ₽</div>
+                  <div class="row-item price-edited">{{ formatCurrency(1500) }}</div>
                   <div class="row-item actions">
                     <span class="action-icon added">
                       <i class="fas fa-plus"></i>
@@ -92,10 +91,10 @@
                 <div class="table-row ai-hidden">
                   <div class="row-item">
                     <i class="fas fa-eye-slash"></i>
-                    <span>Парковка (скрыли)</span>
+                    <span>{{ t('expenses.parking') }}</span>
                   </div>
-                  <div class="row-item price-ai">800 ₽</div>
-                  <div class="row-item price-edited">0 ₽</div>
+                  <div class="row-item price-ai">{{ formatCurrency(800) }}</div>
+                  <div class="row-item price-edited">{{ formatCurrency(0) }}</div>
                   <div class="row-item actions">
                     <span class="action-icon hidden">
                       <i class="fas fa-times"></i>
@@ -109,24 +108,24 @@
               <div class="explanation-item">
                 <i class="fas fa-pen-fancy"></i>
                 <div>
-                  <h4>Меняйте суммы</h4>
-                  <p>AI предложил 2 500 ₽ за ужин? Поставьте свою цену</p>
+                  <h4>{{ t('constructor.features.changeAmounts.title') }}</h4>
+                  <p>{{ t('constructor.features.changeAmounts.description', { amount: formatCurrency(2500) }) }}</p>
                 </div>
               </div>
               
               <div class="explanation-item">
                 <i class="fas fa-plus-square"></i>
                 <div>
-                  <h4>Добавляйте расходы</h4>
-                  <p>AI не учёл сувениры? Просто добавьте новую строку</p>
+                  <h4>{{ t('constructor.features.addExpenses.title') }}</h4>
+                  <p>{{ t('constructor.features.addExpenses.description') }}</p>
                 </div>
               </div>
               
               <div class="explanation-item">
                 <i class="fas fa-eye-slash"></i>
                 <div>
-                  <h4>Скрывайте лишнее</h4>
-                  <p>Не нужна парковка? Скрывайте — бюджет пересчитается</p>
+                  <h4>{{ t('constructor.features.hideUnnecessary.title') }}</h4>
+                  <p>{{ t('constructor.features.hideUnnecessary.description') }}</p>
                 </div>
               </div>
             </div>
@@ -140,16 +139,16 @@
               <div class="feature-icon">
                 <i class="fas fa-layer-group"></i>
               </div>
-              <h3 class="feature-title">Выбирайте категории</h3>
-              <p class="feature-subtitle">AI рекомендует, вы решаете</p>
+              <h3 class="feature-title">{{ t('constructor.chooseCategories') }}</h3>
+              <p class="feature-subtitle">{{ t('ai.recommends') }}</p>
             </div>
 
             <!-- Пример выбора категорий для дня -->
             <div class="day-example">
               <div class="day-header">
-                <h4>День 3 в Санторини</h4>
+                <h4>{{ t('constructor.demo.dayTitle', { day: 3, destination: 'Санторини' }) }}</h4>
                 <div class="day-total">
-                  Итого: <span class="total-amount">12 400 ₽</span>
+                  {{ t('expenses.total') }}: <span class="total-amount">{{ formatCurrency(12400) }}</span>
                 </div>
               </div>
 
@@ -158,114 +157,47 @@
                 <div class="category-header">
                   <i class="fas fa-hotel"></i>
                   <div class="category-info">
-                    <div class="category-name">Проживание</div>
+                    <div class="category-name">{{ t('constructor.demo.accommodation') }}</div>
                     <div class="category-status">
-                      AI рекомендует: <span class="ai-choice">Стандарт</span>
+                      {{ t('constructor.demo.aiRecommends') }} <span class="ai-choice">{{ t('constructor.demo.levels.standard') }}</span>
                     </div>
                   </div>
-                  <div class="category-price">6 400 ₽</div>
+                  <div class="category-price">{{ formatCurrency(6400) }}</div>
                 </div>
                 
                 <div class="category-options">
                   <div class="option" :class="{ 'selected': selectedOptions.hotel === 'budget' }">
                     <div class="option-label">
-                      <span class="option-name">Эконом</span>
-                      <span class="option-price">4 200 ₽</span>
+                      <span class="option-name">{{ t('constructor.demo.levels.economy') }}</span>
+                      <span class="option-price">{{ formatCurrency(4200) }}</span>
                     </div>
                     <div class="option-status" v-if="selectedOptions.hotel === 'budget'">
                       <i class="fas fa-check-circle"></i>
-                      Ваш выбор
+                      {{ t('constructor.demo.yourChoice') }}
                     </div>
                   </div>
                   
                   <div class="option" :class="{ 'selected': selectedOptions.hotel === 'standard' }">
                     <div class="option-label">
-                      <span class="option-name">Стандарт</span>
-                      <span class="option-price">6 400 ₽</span>
+                      <span class="option-name">{{ t('constructor.demo.levels.standard') }}</span>
+                      <span class="option-price">{{ formatCurrency(6400) }}</span>
                     </div>
                     <div class="option-status" v-if="selectedOptions.hotel === 'standard'">
                       <i class="fas fa-robot"></i>
-                      AI рекомендует
+                      {{ t('constructor.demo.aiRecommendsLabel') }}
                     </div>
                   </div>
                   
                   <div class="option" :class="{ 'selected': selectedOptions.hotel === 'comfort' }">
                     <div class="option-label">
-                      <span class="option-name">Комфорт</span>
-                      <span class="option-price">9 800 ₽</span>
+                      <span class="option-name">{{ t('constructor.demo.levels.comfort') }}</span>
+                      <span class="option-price">{{ formatCurrency(9800) }}</span>
                     </div>
                     <div class="option-status" v-if="selectedOptions.hotel === 'comfort'">
                       <i class="fas fa-check-circle"></i>
-                      Ваш выбор
+                      {{ t('constructor.demo.yourChoice') }}
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <!-- Категория "Питание" -->
-              <div class="category-selector">
-                <div class="category-header">
-                  <i class="fas fa-utensils"></i>
-                  <div class="category-info">
-                    <div class="category-name">Питание</div>
-                    <div class="category-status">
-                      AI рекомендует: <span class="ai-choice">Премиум</span>
-                    </div>
-                  </div>
-                  <div class="category-price">4 500 ₽</div>
-                </div>
-                
-                <div class="category-options">
-                  <div class="option" :class="{ 'selected': selectedOptions.food === 'standard' }">
-                    <div class="option-label">
-                      <span class="option-name">Стандарт</span>
-                      <span class="option-price">3 200 ₽</span>
-                    </div>
-                    <div class="option-status" v-if="selectedOptions.food === 'standard'">
-                      <i class="fas fa-check-circle"></i>
-                      Ваш выбор
-                    </div>
-                  </div>
-                  
-                  <div class="option" :class="{ 'selected': selectedOptions.food === 'premium' }">
-                    <div class="option-label">
-                      <span class="option-name">Премиум</span>
-                      <span class="option-price">4 500 ₽</span>
-                    </div>
-                    <div class="option-status" v-if="selectedOptions.food === 'premium'">
-                      <i class="fas fa-robot"></i>
-                      AI рекомендует
-                    </div>
-                  </div>
-                  
-                  <div class="option" :class="{ 'selected': selectedOptions.food === 'luxury' }">
-                    <div class="option-label">
-                      <span class="option-name">Люкс</span>
-                      <span class="option-price">7 000 ₽</span>
-                    </div>
-                    <div class="option-status" v-if="selectedOptions.food === 'luxury'">
-                      <i class="fas fa-check-circle"></i>
-                      Ваш выбор
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="budget-recalculation">
-                <div class="budget-before">
-                  <span>Было:</span>
-                  <span class="amount">10 900 ₽</span>
-                </div>
-                <div class="budget-arrow">
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-                <div class="budget-after">
-                  <span>Стало:</span>
-                  <span class="amount updated">12 400 ₽</span>
-                </div>
-                <div class="budget-note">
-                  <i class="fas fa-sync-alt"></i>
-                  <span>Бюджет пересчитался автоматически</span>
                 </div>
               </div>
             </div>
@@ -274,24 +206,24 @@
               <div class="explanation-item">
                 <i class="fas fa-sliders-h"></i>
                 <div>
-                  <h4>Три уровня на выбор</h4>
-                  <p>Для каждой категории — эконом, стандарт и премиум</p>
+                  <h4>{{ t('constructor.features.threeLevels.title') }}</h4>
+                  <p>{{ t('constructor.features.threeLevels.description') }}</p>
                 </div>
               </div>
               
               <div class="explanation-item">
                 <i class="fas fa-robot"></i>
                 <div>
-                  <h4>AI рекомендует оптимальное</h4>
-                  <p>На основе ваших предпочтений и бюджета</p>
+                  <h4>{{ t('constructor.features.aiRecommends.title') }}</h4>
+                  <p>{{ t('constructor.features.aiRecommends.description') }}</p>
                 </div>
               </div>
               
               <div class="explanation-item">
                 <i class="fas fa-bolt"></i>
                 <div>
-                  <h4>Мгновенный пересчёт</h4>
-                  <p>Меняйте категории — бюджет обновляется сразу</p>
+                  <h4>{{ t('constructor.features.instantRecalculation.title') }}</h4>
+                  <p>{{ t('constructor.features.instantRecalculation.description') }}</p>
                 </div>
               </div>
             </div>
@@ -303,19 +235,19 @@
       <div class="constructor-stats">
         <div class="stat-card">
           <div class="stat-value">100%</div>
-          <div class="stat-label">контроль над бюджетом</div>
+          <div class="stat-label">{{ t('constructor.stats.budgetControl') }}</div>
         </div>
         <div class="stat-card">
           <div class="stat-value">3</div>
-          <div class="stat-label">уровня на каждую категорию</div>
+          <div class="stat-label">{{ t('constructor.stats.levelsPerCategory') }}</div>
         </div>
         <div class="stat-card">
           <div class="stat-value">∞</div>
-          <div class="stat-label">вариантов комбинаций</div>
+          <div class="stat-label">{{ t('constructor.stats.combinations') }}</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">AI + Вы</div>
-          <div class="stat-label">идеальное сочетание</div>
+          <div class="stat-value">{{ t('ai.humanCombination').split('=')[0].trim() }}</div>
+          <div class="stat-label">{{ t('constructor.stats.perfectCombination') }}</div>
         </div>
       </div>
     </div>
@@ -323,14 +255,22 @@
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: 'ConstructorBlock',
-  data() {
+  setup() {
+    const { t, formatCurrency } = useLanguage()
+    
+    const selectedOptions = {
+      hotel: 'comfort',
+      food: 'premium'
+    }
+
     return {
-      selectedOptions: {
-        hotel: 'comfort', // Показываем, что пользователь выбрал другой вариант
-        food: 'premium'  // AI рекомендует
-      }
+      t,
+      formatCurrency,
+      selectedOptions
     }
   },
   mounted() {
@@ -346,7 +286,6 @@ export default {
         })
       }, { threshold: 0.1 })
 
-      // Анимируем элементы
       document.querySelectorAll('.table-row, .category-selector, .stat-card').forEach(el => {
         observer.observe(el)
       })

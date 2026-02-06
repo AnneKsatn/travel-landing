@@ -2,22 +2,31 @@
   <div class="tech-stats">
     <div class="stat">
       <i class="fas fa-users"></i>
-      <span>Пользователей: <span class="stat-value">128K+</span></span>
+      <span>{{ t('techStats.users') }}: <span class="stat-value">128K+</span></span>
     </div>
     <div class="stat">
       <i class="fas fa-route"></i>
-      <span>Спланировано маршрутов: <span class="stat-value">42K+</span></span>
+      <span>{{ t('techStats.routes') }}: <span class="stat-value">42K+</span></span>
     </div>
     <div class="stat">
       <i class="fas fa-brain"></i>
-      <span>Точность AI: <span class="stat-value">98.7%</span></span>
+      <span>{{ t('techStats.accuracy') }}: <span class="stat-value">98.7%</span></span>
     </div>
   </div>
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
-  name: 'TechStats'
+  name: 'TechStats',
+  setup() {
+    const { t } = useLanguage()
+    
+    return {
+      t
+    }
+  }
 }
 </script>
 
