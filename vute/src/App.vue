@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <!-- Частицы фона -->
+    <ResponsiveLayout>
+      <!-- Десктопная версия -->
+      <template #desktop>
+        <div class="desktop-app">
+          <!-- Частицы фона -->
+          <div id="particles"></div>
+          
+          <!-- TechStats наверху первого экрана -->
+          <TechStats class="tech-stats-top" />
+          
+          <!-- Главный герой-секция -->
+          <HeroSection 
+            :current-destination="currentDestination"
+            @start-planning="startPlanning"
+            @learn-more="learnMore"
+            @budget-analyzed="onBudgetAnalyzed"
+          />
+          
+          <!-- Второй экран -->
+          <ScreenTwo />
+          
+          <!-- Третий экран: Конструктор -->
+          <ConstructorBlock />
+          
+          <!-- Четвертый экран: Форма -->
+          <SimpleCTA @destination-submitted="handleDestinationSubmit" />
+        </div>
+      </template>
+      
+      <!-- Мобильная версия -->
+      <template #mobile>
+        <MobileHero
+          @start-planning="startPlanningMobile"
+          @budget-updated="onBudgetAnalyzed"
+          @destination-submitted="handleDestinationSubmit"
+        />
+      </template>
+    </ResponsiveLayout>
     
-    <!-- TechStats наверху первого экрана -->
-    <TechStats class="tech-stats-top" />
-    
-    <!-- Главный герой-секция -->
-    <HeroSection 
-      :current-destination="currentDestination"
-      @start-planning="startPlanning"
-      @learn-more="learnMore"
-      @budget-analyzed="onBudgetAnalyzed"
-    />
-    
-    <!-- Второй экран -->
-    <ScreenTwo />
-    
-    <!-- Третий экран: Конструктор -->
-    <ConstructorBlock />
-    
-    <!-- Четвертый экран: Форма -->
-    <SimpleCTA @destination-submitted="handleDestinationSubmit" />
-    
-    <!-- Уведомления -->
+    <!-- Общие уведомления (для обеих версий) -->
     <div v-if="notification.show" class="notification" :style="notificationStyle">
       <i class="fas fa-info-circle"></i>
       <span>{{ notification.message }}</span>
@@ -35,7 +52,9 @@ import TechStats from './components/TechStats.vue'
 import ScreenTwo from './components/ScreenTwo.vue'
 import ConstructorBlock from './components/ConstructorBlock.vue'
 import SimpleCTA from './components/CTAForm.vue'
-import HeroSection from './components/HeroSection.vue' // Импортируем новый компонент
+import HeroSection from './components/HeroSection.vue'
+import ResponsiveLayout from './components/ResponsiveLayout.vue'
+import MobileHero from './components/MobileHero.vue'
 
 export default {
   name: 'App',
@@ -44,7 +63,9 @@ export default {
     ScreenTwo,
     ConstructorBlock,
     SimpleCTA,
-    HeroSection
+    HeroSection,
+    ResponsiveLayout,
+    MobileHero
   },
   data() {
     return {
@@ -88,13 +109,30 @@ export default {
       return this.destinations[this.currentDestinationIndex]
     },
     notificationStyle() {
-      return {
+      const baseStyle = {
         transform: this.notification.show ? 'translateX(0)' : 'translateX(150%)'
       }
+      
+      // Для мобильных делаем уведомление снизу
+      if (window.innerWidth <= 768) {
+        return {
+          ...baseStyle,
+          position: 'fixed',
+          bottom: '20px',
+          left: '20px',
+          right: '20px',
+          top: 'auto',
+          transform: this.notification.show ? 'translateY(0)' : 'translateY(100px)'
+        }
+      }
+      
+      return baseStyle
     }
   },
   methods: {
     createParticles() {
+      if (window.innerWidth <= 768) return // Не создаем частицы на мобильных
+      
       const particlesContainer = document.getElementById('particles')
       const particleCount = 20
       
@@ -117,18 +155,22 @@ export default {
       }
     },
     changeDestinationPhoto() {
+      if (window.innerWidth <= 768) return // Не меняем фото на мобильных
       this.currentDestinationIndex = (this.currentDestinationIndex + 1) % this.destinations.length
     },
     startPlanning() {
       this.showNotification('AI начал планирование вашего идеального путешествия!')
     },
+    startPlanningMobile() {
+      this.showNotification('Создаем ваш идеальный маршрут...')
+    },
     learnMore() {
       this.showNotification('Открываем подробную информацию о возможностях TravelGenius...')
     },
     onBudgetAnalyzed(amount) {
-      this.showNotification(`AI рассчитал точный бюджет: ${amount}`)
+      this.showNotification(`AI рассчитал точный бюджет: ${this.formatCurrency(amount)}`)
     },
-    showNotification(message, duration = 5000) {
+    showNotification(message, duration = 3000) {
       this.notification.message = message
       this.notification.show = true
       
@@ -141,6 +183,8 @@ export default {
       }, duration)
     },
     setupMouseParallax() {
+      if (window.innerWidth <= 768) return // Отключаем параллакс на мобильных
+      
       document.addEventListener('mousemove', (e) => {
         const particles = document.querySelectorAll('.particle')
         const xAxis = (window.innerWidth / 2 - e.pageX) / 50
@@ -153,6 +197,8 @@ export default {
       })
     },
     setupCardAnimations() {
+      if (window.innerWidth <= 768) return // Отключаем сложные анимации на мобильных
+      
       const cards = document.querySelectorAll('.luxury-card')
       cards.forEach(card => {
         const delay = Math.random() * 3
@@ -160,18 +206,26 @@ export default {
       })
     },
     handleDestinationSubmit(destination) {
-      this.showNotification(`AI начинает подготовку маршрута для ${destination}! Переходим в анкету...`)
-      // Здесь будет реальный редирект:
-      // window.location.href = `/questionnaire?destination=${encodeURIComponent(destination)}`
+      this.showNotification(`AI начинает подготовку маршрута для ${destination}!`)
+    },
+    formatCurrency(amount) {
+      return new Intl.NumberFormat('ru-RU', {
+        style: 'currency',
+        currency: 'RUB',
+        maximumFractionDigits: 0
+      }).format(amount)
     }
   },
   mounted() {
-    this.createParticles()
-    this.setupCardAnimations()
-    this.setupMouseParallax()
-    
-    // Автоматическая смена фотографий
-    setInterval(this.changeDestinationPhoto, 8000)
+    // Инициализация только для десктопа
+    if (window.innerWidth > 768) {
+      this.createParticles()
+      this.setupCardAnimations()
+      this.setupMouseParallax()
+      
+      // Автоматическая смена фотографий только на десктопе
+      setInterval(this.changeDestinationPhoto, 8000)
+    }
   },
   beforeDestroy() {
     if (this.notificationTimer) {
@@ -215,7 +269,31 @@ body {
     position: relative;
 }
 
+/* Частицы только для десктопа */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
 
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatParticle 15s infinite ease-in-out;
+    opacity: 0.3;
+}
+
+@keyframes floatParticle {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, -20px) rotate(90deg); }
+    50% { transform: translate(-15px, 15px) rotate(180deg); }
+    75% { transform: translate(-20px, -20px) rotate(270deg); }
+}
 
 /* TechStats наверху */
 .tech-stats-top {
@@ -296,6 +374,20 @@ body {
     font-size: 22px;
 }
 
+/* Мобильные стили для уведомлений */
+@media (max-width: 768px) {
+    .notification {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        max-width: none;
+        transform: translateY(100px);
+        transition: transform 0.3s ease;
+    }
+}
+
 /* Адаптивность */
 @media (max-width: 1200px) {
     .luxury-text-section {
@@ -338,6 +430,29 @@ body {
     .tech-stats-top .stat {
         font-size: 12px;
     }
+    
+    /* Убираем сложные анимации на мобильных */
+    .particle,
+    .floating,
+    .delay-1,
+    .delay-2,
+    .delay-3 {
+        display: none !important;
+    }
+    
+    /* Улучшаем производительность */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    /* Оптимизируем отображение для мобильных */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+    }
 }
 
 /* Анимации */
@@ -359,4 +474,75 @@ body {
 .pulse {
     animation: pulse 2s infinite;
 }
+
+
+/* В конец стилей App.vue добавь: */
+
+/* Мобильная версия - полное отключение десктопных анимаций */
+@media (max-width: 768px) {
+  #particles,
+  .particle,
+  .tech-stats-top,
+  .luxury-card:before,
+  .luxury-card:hover {
+    display: none !important;
+  }
+  
+  /* Улучшаем производительность на мобильных */
+  * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  /* Оптимизируем отображение текста */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Улучшаем скролл */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Оптимизируем кнопки для касаний */
+  button, 
+  .suggestion-tag,
+  .benefit-card {
+    min-height: 44px; /* Минимальный размер для касаний */
+    touch-action: manipulation;
+  }
+  
+  /* Убираем outline для мобильных (заменяем на другие индикаторы) */
+  :focus {
+    outline: none;
+  }
+  
+  /* Улучшаем выделение текста */
+  ::selection {
+    background: rgba(139, 92, 246, 0.2);
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 350px) {
+  .mobile-hero {
+    padding: 20px 15px;
+  }
+  
+  .hero-title {
+    font-size: 22px;
+  }
+  
+  .mobile-primary-btn {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+}
 </style>
+
