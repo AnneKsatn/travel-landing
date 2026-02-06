@@ -3,9 +3,7 @@
   <div class="day-example">
     <div class="day-header">
       <h4>{{ t('constructor.demo.dayTitle', { day: 3, destination: 'Санторини' }) }}</h4>
-      <div class="day-total">
-        {{ t('expenses.total') }}: <span class="total-amount">{{ formatCurrency(12400) }}</span>
-      </div>
+
     </div>
 
     <!-- Категория "Отель" -->
@@ -18,38 +16,50 @@
             {{ t('constructor.demo.aiRecommends') }} <span class="ai-choice">{{ t('constructor.demo.levels.standard') }}</span>
           </div>
         </div>
-        <div class="category-price">{{ formatCurrency(6400) }}</div>
+        <div class="category-price">{{ formatCurrency(hotelPrice) }}</div>
       </div>
       
       <div class="category-options">
-        <div class="option" :class="{ 'selected': selectedOptions.hotel === 'budget' }">
+        <div 
+          class="option" 
+          :class="{ 'selected': selectedHotel === 'budget' }"
+          @click="selectHotel('budget')"
+        >
           <div class="option-label">
             <span class="option-name">{{ t('constructor.demo.levels.economy') }}</span>
             <span class="option-price">{{ formatCurrency(4200) }}</span>
           </div>
-          <div class="option-status" v-if="selectedOptions.hotel === 'budget'">
+          <div class="option-status" v-if="selectedHotel === 'budget'">
             <i class="fas fa-check-circle"></i>
             {{ t('constructor.demo.yourChoice') }}
           </div>
         </div>
         
-        <div class="option" :class="{ 'selected': selectedOptions.hotel === 'standard' }">
+        <div 
+          class="option" 
+          :class="{ 'selected': selectedHotel === 'standard' }"
+          @click="selectHotel('standard')"
+        >
           <div class="option-label">
             <span class="option-name">{{ t('constructor.demo.levels.standard') }}</span>
             <span class="option-price">{{ formatCurrency(6400) }}</span>
           </div>
-          <div class="option-status" v-if="selectedOptions.hotel === 'standard'">
+          <div class="option-status" v-if="selectedHotel === 'standard'">
             <i class="fas fa-robot"></i>
             {{ t('constructor.demo.aiRecommendsLabel') }}
           </div>
         </div>
         
-        <div class="option" :class="{ 'selected': selectedOptions.hotel === 'comfort' }">
+        <div 
+          class="option" 
+          :class="{ 'selected': selectedHotel === 'comfort' }"
+          @click="selectHotel('comfort')"
+        >
           <div class="option-label">
             <span class="option-name">{{ t('constructor.demo.levels.comfort') }}</span>
             <span class="option-price">{{ formatCurrency(9800) }}</span>
           </div>
-          <div class="option-status" v-if="selectedOptions.hotel === 'comfort'">
+          <div class="option-status" v-if="selectedHotel === 'comfort'">
             <i class="fas fa-check-circle"></i>
             {{ t('constructor.demo.yourChoice') }}
           </div>
@@ -71,21 +81,81 @@ export default {
       type: Function,
       required: true
     },
+    // Убираем проп selectedOptions, теперь управляем локально
+  },
+  data() {
+    return {
+      selectedHotel: 'standard', // начальное значение - рекомендованный AI
+      otherDayExpenses: 6000, // другие расходы дня (транспорт, еда, развлечения)
+      hotelPrice: 6400, // начальная цена отеля (стандарт)
+    };
+  },
+  computed: {
+    dayTotal() {
+      // Сумма дня = цена отеля + другие расходы
+      return this.hotelPrice + this.otherDayExpenses;
+    }
+  },
+  methods: {
+    selectHotel(level) {
+      this.selectedHotel = level;
+      
+      // Обновляем цену отеля в зависимости от выбранного уровня
+      const prices = {
+        'budget': 4200,
+        'standard': 6400,
+        'comfort': 9800
+      };
+      
+      this.hotelPrice = prices[level] || 6400;
+      
+      // Если нужно, можно эмитировать событие в родительский компонент
+      this.$emit('hotel-selected', {
+        level: level,
+        price: this.hotelPrice,
+        dayTotal: this.dayTotal
+      });
+    }
+  },
+  // Если все же нужно поддерживать проп selectedOptions, можно добавить вотчер:
+  watch: {
+    selectedOptions: {
+      handler(newOptions) {
+        if (newOptions && newOptions.hotel) {
+          this.selectHotel(newOptions.hotel);
+        }
+      },
+      deep: true,
+      immediate: true
+    }
+  },
+  // Возвращаем проп selectedOptions обратно с модификацией
+  props: {
+    t: {
+      type: Function,
+      required: true
+    },
+    formatCurrency: {
+      type: Function,
+      required: true
+    },
     selectedOptions: {
       type: Object,
-      required: true
+      default: () => ({})
     }
   }
 }
 </script>
 
 <style scoped>
+/* Стили остаются без изменений */
 .day-example {
   background: rgba(16, 185, 129, 0.03);
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 25px;
   border: 1px solid rgba(16, 185, 129, 0.1);
+  height: 300px;
 }
 
 .day-header {

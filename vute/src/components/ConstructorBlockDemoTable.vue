@@ -93,6 +93,7 @@ export default {
   border-radius: 16px;
   border: 1px solid rgba(139, 92, 246, 0.1);
   overflow: hidden;
+  height: 300px;
 }
 
 .table-header {
@@ -166,13 +167,14 @@ export default {
 }
 
 .action-icon {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 10px;
+  padding: 10px;
 }
 
 .action-icon.edited {
