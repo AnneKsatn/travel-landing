@@ -1,64 +1,31 @@
 <template>
   <div class="hero-section-mobile">
     <div class="mobile-hero">
-      <!-- Ценности и социальное доказательство -->
-      <div class="value-section">
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-route"></i>
-            </div>
-            <div class="benefit-content">
-              <h3>Персональный маршрут</h3>
-              <p>С учетом ваших интересов и предпочтений</p>
-            </div>
-          </div>
-          
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-calculator"></i>
-            </div>
-            <div class="benefit-content">
-              <h3>Честный бюджет</h3>
-              <p>Без скрытых расходов и неожиданностей</p>
-            </div>
-          </div>
-        </div>
+      <FeaturesAudienceSection />
 
-        <div class="social-proof">
-          <div class="proof-content">
-            <i class="fas fa-users"></i>
-            <div class="proof-text">
-              <strong>42K+ туристов</strong> доверяют планирование нам
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Форма планирования -->
+      <!-- Форма -->
       <div class="form-section">
-        <h2 class="form-title">
-          Куда <span class="highlight">отправимся</span>?
-        </h2>
+        <h2 class="form-title">Просто скажите, куда хотите</h2>
+        <p class="form-subtitle">AI создаст черновик маршрута за 2 минуты</p>
 
         <form @submit.prevent="handleSubmit" class="simple-form" autocomplete="off">
           <div class="input-wrapper">
             <div class="input-icon">
               <i class="fas fa-map-marker-alt"></i>
             </div>
-            
+
             <input
               type="text"
               v-model="destination"
-              placeholder="Например: Санторини, Токио, Бали..."
+              placeholder="Куда хотите? Санторини, Токио, Бали..."
               class="destination-input"
               required
-            >
+            />
           </div>
 
           <!-- Быстрые подсказки -->
           <div class="quick-suggestions">
-            <span class="suggest-label">Популярные направления:</span>
+            <span class="suggest-label">Популярное сейчас:</span>
             <div class="suggestion-tags">
               <button
                 type="button"
@@ -73,14 +40,18 @@
           </div>
 
           <!-- Кнопка отправки -->
-          <button type="submit" class="submit-btn" :disabled="isLoading || !destination.trim()">
+          <button
+            type="submit"
+            class="submit-btn"
+            :disabled="isLoading || !destination.trim()"
+          >
             <span v-if="!isLoading">
-              <i class="fas fa-magic"></i>
-              Построить мой маршрут
+              <i class="fas fa-robot"></i>
+              Создать AI-план путешествия
             </span>
             <span v-else>
               <i class="fas fa-spinner fa-spin"></i>
-              Создаем план...
+              AI планирует...
             </span>
           </button>
         </form>
@@ -89,11 +60,11 @@
         <div class="guarantees">
           <div class="guarantee">
             <i class="fas fa-bolt"></i>
-            <span>2 минуты</span>
+            <span>2 минуты на черновик</span>
           </div>
           <div class="guarantee">
-            <i class="fas fa-edit"></i>
-            <span>Редактируемый</span>
+            <i class="fas fa-sliders-h"></i>
+            <span>Полный контроль в конструкторе</span>
           </div>
           <div class="guarantee">
             <i class="fas fa-shield-alt"></i>
@@ -106,13 +77,18 @@
 </template>
 
 <script>
+import FeaturesAudienceSection from "./FeaturesAudienceSection.vue";
+
 export default {
   name: "HeroSectionMobile",
+  components: {
+    FeaturesAudienceSection,
+  },
   data() {
     return {
       destination: "",
       isLoading: false,
-      popularPlaces: ["Санторини", "Токио", "Бали", "Париж"],
+      popularPlaces: ["Санторини", "Токио", "Бали", "Париж", "Испания", "Турция"],
     };
   },
   methods: {
@@ -141,9 +117,6 @@ export default {
 <style scoped>
 .hero-section-mobile {
   padding: 20px 20px 40px;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
 }
 
@@ -153,28 +126,60 @@ export default {
   margin: 0 auto;
 }
 
-/* Секция ценностей */
-.value-section {
+/* What Does Section */
+.what-does-section {
   margin-bottom: 30px;
 }
 
-.benefits-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.benefit-card {
-  background: white;
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(14, 165, 233, 0.1);
+.main-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 8px;
   text-align: center;
 }
 
-.benefit-icon {
+.highlight-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-medium);
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1);
+}
+
+.card-icon {
   width: 50px;
   height: 50px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -182,77 +187,93 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 12px;
+  margin-bottom: 14px;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
 }
 
-.benefit-content h3 {
-  font-size: 15px;
+.feature-card h3 {
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   line-height: 1.2;
 }
 
-.benefit-content p {
-  font-size: 12px;
+.feature-card p {
+  font-size: 13px;
   color: var(--text-medium);
   line-height: 1.3;
 }
 
-/* Социальное доказательство */
-.social-proof {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+/* For Who Section */
+.for-who-section {
+  background: rgba(14, 165, 233, 0.05);
   border-radius: 16px;
-  padding: 18px;
-  text-align: center;
-  color: white;
-  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15);
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(14, 165, 233, 0.1);
 }
 
-.proof-content {
+.section-title {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
 }
 
-.proof-content i {
-  font-size: 22px;
-  color: rgba(255, 255, 255, 0.9);
+.section-title i {
+  color: var(--primary);
+  font-size: 20px;
 }
 
-.proof-text {
-  text-align: left;
+.for-who-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.who-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.who-item i {
+  color: #10b981;
+  font-size: 16px;
+  margin-top: 2px;
+  min-width: 20px;
+}
+
+.who-item span {
   font-size: 15px;
+  color: var(--text-dark);
   line-height: 1.3;
 }
 
-.proof-text strong {
-  font-weight: 800;
-  display: block;
-  margin-bottom: 2px;
-}
-
-/* Форма */
+/* Form Section */
 .form-section {
   margin-bottom: 20px;
 }
 
 .form-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   color: var(--text-dark);
   line-height: 1.2;
   text-align: center;
 }
 
-.form-title .highlight {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.form-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-medium);
+  margin-bottom: 20px;
 }
 
 /* Форма */
@@ -375,10 +396,9 @@ export default {
 /* Гарантии */
 .guarantees {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 25px;
-  flex-wrap: wrap;
   padding-top: 25px;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -386,18 +406,19 @@ export default {
 .guarantee {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--text-medium);
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-dark);
   background: white;
-  padding: 10px 16px;
+  padding: 12px 16px;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
 }
 
 .guarantee i {
   color: var(--primary);
-  font-size: 13px;
+  font-size: 14px;
+  min-width: 20px;
 }
 
 /* Адаптивность */
@@ -405,86 +426,92 @@ export default {
   .hero-section-mobile {
     padding: 15px 16px 35px;
   }
-  
-  .form-title {
-    font-size: 26px;
-    margin-bottom: 18px;
+
+  .main-title {
+    font-size: 22px;
   }
-  
-  .benefits-grid {
+
+  .section-subtitle {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .features-grid {
     gap: 12px;
   }
-  
-  .benefit-card {
-    padding: 15px;
-  }
-  
-  .benefit-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .benefit-content h3 {
-    font-size: 14px;
-  }
-  
-  .benefit-content p {
-    font-size: 11px;
-  }
-  
-  .social-proof {
+
+  .feature-card {
     padding: 16px;
   }
-  
-  .proof-text {
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .feature-card h3 {
+    font-size: 15px;
+  }
+
+  .feature-card p {
+    font-size: 12px;
+  }
+
+  .for-who-section {
+    padding: 16px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .who-item span {
     font-size: 14px;
   }
-  
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .form-subtitle {
+    font-size: 14px;
+  }
+
   .input-wrapper {
     padding: 5px 5px 5px 16px;
   }
-  
+
   .destination-input {
     padding: 16px 10px;
     font-size: 16px;
   }
-  
+
   .suggestion-tag {
     padding: 8px 14px;
     font-size: 12px;
   }
-  
+
   .submit-btn {
     padding: 18px;
     font-size: 16px;
   }
-  
+
   .guarantee {
-    padding: 8px 14px;
-    font-size: 12px;
-  }
-  
-  .guarantees {
-    gap: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 360px) {
-  .benefits-grid {
+  .features-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
-  
+
   .suggestion-tags {
     gap: 6px;
-  }
-  
-  .guarantees {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
   }
 }
 </style>
