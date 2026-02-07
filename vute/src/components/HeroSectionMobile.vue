@@ -5,8 +5,7 @@
 
       <!-- Форма -->
       <div class="form-section">
-        <h2 class="form-title">Просто скажите, куда хотите</h2>
-        <p class="form-subtitle">AI создаст черновик маршрута за 2 минуты</p>
+        <h2 class="form-title">Куда хотите поехать?</h2>
 
         <form @submit.prevent="handleSubmit" class="simple-form" autocomplete="off">
           <div class="input-wrapper">
@@ -17,7 +16,7 @@
             <input
               type="text"
               v-model="destination"
-              placeholder="Куда хотите? Санторини, Токио, Бали..."
+              placeholder="Санторини, Токио, Бали..."
               class="destination-input"
               required
             />
@@ -40,32 +39,13 @@
           </div>
 
           <!-- Кнопка отправки -->
-          <button
-            type="submit"
-            class="submit-btn"
-            :disabled="isLoading || !destination.trim()"
-          >
-            <span v-if="!isLoading">
-              <i class="fas fa-robot"></i>
-              Создать AI-план путешествия
-            </span>
-            <span v-else>
-              <i class="fas fa-spinner fa-spin"></i>
-              AI планирует...
-            </span>
+          <button type="submit" class="submit-btn">
+            <span> Начать планирование </span>
           </button>
         </form>
 
         <!-- Гарантии -->
         <div class="guarantees">
-          <div class="guarantee">
-            <i class="fas fa-bolt"></i>
-            <span>2 минуты на черновик</span>
-          </div>
-          <div class="guarantee">
-            <i class="fas fa-sliders-h"></i>
-            <span>Полный контроль в конструкторе</span>
-          </div>
           <div class="guarantee">
             <i class="fas fa-shield-alt"></i>
             <span>Без регистрации</span>
@@ -88,7 +68,7 @@ export default {
     return {
       destination: "",
       isLoading: false,
-      popularPlaces: ["Санторини", "Токио", "Бали", "Париж", "Испания", "Турция"],
+      popularPlaces: ["Санторини", "Токио", "Бали", "Париж"],
     };
   },
   methods: {
@@ -263,7 +243,7 @@ export default {
 .form-title {
   font-size: 24px;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   color: var(--text-dark);
   line-height: 1.2;
   text-align: center;
