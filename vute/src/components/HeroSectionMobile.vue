@@ -1,7 +1,7 @@
 <template>
   <div class="hero-section-mobile">
     <div class="mobile-hero">
-      <FeaturesAudienceSection />
+      <FeaturesSection />
 
       <!-- Форма -->
       <div class="form-section">
@@ -77,12 +77,12 @@
 </template>
 
 <script>
-import FeaturesAudienceSection from "./FeaturesAudienceSection.vue";
+import FeaturesSection from "./FeaturesSection.vue";
 
 export default {
   name: "HeroSectionMobile",
   components: {
-    FeaturesAudienceSection,
+    FeaturesSection,
   },
   data() {
     return {
