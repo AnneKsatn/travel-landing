@@ -4,9 +4,10 @@
       <!-- Заголовок и форма ближе друг к другу -->
       <div class="form-section">
         <h2 class="form-title">
-          Куда хотите <span class="highlight">поехать?</span>
+          <span class="highlight">Ваше идеальное путешествие</span>
+          спланирует AI
         </h2>
-
+        
         <!-- Микро-иконки преимуществ -->
         <div class="benefits-icons">
           <div class="benefit-icon-item">
@@ -36,7 +37,7 @@
             <input
               type="text"
               v-model="destination"
-              placeholder="Например: Санторини, Токио, Бали..."
+              placeholder="Куда хотите поехать? Например: Санторини, Токио..."
               class="destination-input"
               required
             >
@@ -61,11 +62,12 @@
           <!-- Кнопка отправки -->
           <button type="submit" class="submit-btn" :disabled="isLoading || !destination.trim()">
             <span v-if="!isLoading">
-              <i class="fas fa-paper-plane"></i>
-              Начать планирование
+              <i class="fas fa-magic"></i>
+              Создать план путешествия
             </span>
             <span v-else>
               <i class="fas fa-spinner fa-spin"></i>
+              ИИ анализирует...
             </span>
           </button>
         </form>
@@ -79,23 +81,15 @@
         </div>
         <div class="guarantee">
           <i class="fas fa-edit"></i>
-          <span>Редактируемый план</span>
+          <span>Редактируемый</span>
         </div>
         <div class="guarantee">
           <i class="fas fa-shield-alt"></i>
           <span>Без регистрации</span>
         </div>
-      </div>
-
-      <!-- Минимальное социальное доказательство -->
-      <div class="mini-stats">
-        <div class="stat">
-          <div class="stat-number">42K+</div>
-          <div class="stat-label">планов создано</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">98.7%</div>
-          <div class="stat-label">точность ИИ</div>
+        <div class="guarantee">
+          <i class="fas fa-robot"></i>
+          <span>AI-помощник</span>
         </div>
       </div>
     </div>
@@ -137,8 +131,8 @@ export default {
 
 <style scoped>
 .hero-section-mobile {
-  padding: 20px 20px 40px;
-  min-height: 80vh;
+  padding: 30px 20px 40px;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
@@ -150,49 +144,59 @@ export default {
   margin: 0 auto;
 }
 
-/* Секция формы - заголовок ближе к инпуту */
+/* Секция формы - больше воздуха */
 .form-section {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .form-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   color: var(--text-dark);
-  line-height: 1.1;
+  line-height: 1.2;
   text-align: center;
 }
 
-.highlight {
+.form-title .highlight {
+  display: block;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
+  margin-bottom: 4px;
+}
+
+.form-subtitle {
+  font-size: 15px;
+  color: var(--text-medium);
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.4;
 }
 
 /* Микро-иконки преимуществ */
 .benefits-icons {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto 25px;
+  margin: 0 auto 30px;
   max-width: 400px;
-  gap: 10px;
+  gap: 12px;
+  padding: 0 5px;
 }
 
 .benefit-icon-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex: 1;
 }
 
 .benefit-icon-item i {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -332,6 +336,8 @@ export default {
   gap: 15px;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  padding-top: 25px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .guarantee {
@@ -351,54 +357,31 @@ export default {
   font-size: 13px;
 }
 
-/* Минимальная статистика */
-.mini-stats {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 4px;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 11px;
-  color: var(--text-medium);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 /* Адаптивность */
 @media (max-width: 480px) {
   .hero-section-mobile {
-    padding: 15px 16px 35px;
+    padding: 25px 16px 35px;
   }
   
   .form-title {
-    font-size: 28px;
-    margin-bottom: 16px;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .form-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
   }
   
   .benefits-icons {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     gap: 8px;
   }
   
   .benefit-icon-item i {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
   }
   
   .benefit-icon-item span {
@@ -429,12 +412,8 @@ export default {
     font-size: 12px;
   }
   
-  .mini-stats {
-    gap: 25px;
-  }
-  
-  .stat-number {
-    font-size: 24px;
+  .mini-guarantees {
+    gap: 10px;
   }
 }
 
