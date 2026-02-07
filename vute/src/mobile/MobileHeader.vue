@@ -44,19 +44,12 @@
           <span class="planner"> Planner</span>
         </h1>
 
-        <!-- НОВЫЙ ТЕКСТ -->
         <div class="header-taglines">
           <div class="tagline-main">Цифровой планёр путешествий</div>
-
-          <p>
+          <div class="tagline-philosophy">
             Планирование должно быть простым, <br />
             а поездки — совершенными.
-          </p>
-          <!-- <div class="tagline-sub">
-            <span class="ai-part">AI создаст маршрут</span>
-            <span class="separator">, </span>
-            <span class="you-part">вы его настроите</span>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -66,6 +59,7 @@
 <script>
 export default {
   name: "MobileHeader",
+  emits: ["language-changed"],
   data() {
     return {
       language: "ru",
@@ -100,19 +94,15 @@ export default {
     toggleDropdown() {
       this.dropdownOpen = !this.dropdownOpen;
     },
-
     closeDropdown() {
       this.dropdownOpen = false;
     },
-
     setLanguage(lang) {
       this.language = lang;
       this.$emit("language-changed", lang);
       this.closeDropdown();
     },
   },
-  emits: ["language-changed"],
-
   mounted() {
     document.addEventListener("click", (event) => {
       if (!this.$el.contains(event.target)) {
@@ -134,7 +124,6 @@ export default {
   border-radius: 0 0 30px 30px;
   margin-bottom: 0;
   position: relative;
-  overflow: hidden;
 }
 
 .mobile-header::before {
@@ -150,12 +139,11 @@ export default {
 .header-top {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   position: relative;
   z-index: 2;
 }
 
-/* Dropdown стили */
 .language-dropdown {
   position: relative;
 }
@@ -203,7 +191,6 @@ export default {
   opacity: 0.95;
 }
 
-/* Выпадающее меню */
 .dropdown-menu {
   position: absolute;
   top: calc(100% + 10px);
@@ -279,7 +266,6 @@ export default {
   margin-left: 8px;
 }
 
-/* Стиль для скроллбара */
 .dropdown-content::-webkit-scrollbar {
   width: 6px;
 }
@@ -307,7 +293,6 @@ export default {
 
 .mobile-logo {
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .logo-icon {
@@ -354,13 +339,6 @@ export default {
   margin-left: 10px;
 }
 
-.logo-subtitle {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-  line-height: 1.4;
-}
-
 .header-taglines {
   margin-top: 14px;
   text-align: center;
@@ -371,37 +349,37 @@ export default {
   color: white;
   font-weight: 600;
   line-height: 1.35;
-  margin-bottom: 6px;
+  margin-bottom: 20px;
   opacity: 0.98;
 }
 
-.tagline-sub {
-  font-size: 17px;
-  color: white;
-  line-height: 1.4;
-  opacity: 0.92;
-}
-
-.ai-part {
-  font-weight: 600;
-  color: #ffe066;
-}
-
-.separator {
-  opacity: 0.7;
-}
-
-.you-part {
+.tagline-philosophy {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
-  opacity: 0.98;
+  line-height: 1.4;
+  padding: 12px 0;
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-/* Адаптивность */
+.tagline-philosophy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+}
+
 @media (max-width: 480px) {
   .mobile-header {
     padding: 16px 18px 28px;
   }
-
   .logo-icon {
     width: 56px;
     height: 56px;
@@ -409,38 +387,33 @@ export default {
     border-radius: 16px;
     margin-bottom: 14px;
   }
-
   .logo-title {
     font-size: 32px;
   }
-
   .logo-title .trip,
   .logo-title .planner {
     font-size: 32px;
   }
-
   .logo-title .fy {
     font-size: 18px;
     top: -1px;
   }
-
   .tagline-main {
     font-size: 18px;
+    margin-bottom: 15px;
   }
-
-  .tagline-sub {
-    font-size: 16px;
+  .tagline-philosophy {
+    font-size: 15px;
+    padding: 10px 0;
+    max-width: 280px;
   }
-
   .dropdown-toggle {
     min-width: 140px;
     padding: 9px 16px;
   }
-
   .dropdown-menu {
     width: 210px;
   }
-
   .language-name {
     font-size: 13px;
   }
@@ -451,7 +424,6 @@ export default {
     padding: 14px 16px 24px;
     border-radius: 0 0 25px 25px;
   }
-
   .logo-icon {
     width: 52px;
     height: 52px;
@@ -459,54 +431,45 @@ export default {
     border-radius: 14px;
     margin-bottom: 12px;
   }
-
   .logo-title {
     font-size: 28px;
     margin-bottom: 6px;
   }
-
   .logo-title .trip,
   .logo-title .planner {
     font-size: 28px;
   }
-
   .logo-title .fy {
     font-size: 16px;
   }
-
   .header-taglines {
     margin-top: 12px;
   }
-
   .tagline-main {
     font-size: 17px;
   }
-
-  .tagline-sub {
-    font-size: 15px;
+  .tagline-philosophy {
+    font-size: 14px;
+    padding: 8px 0;
+    max-width: 260px;
   }
-
   .dropdown-toggle {
     min-width: 130px;
     padding: 8px 14px;
     font-size: 14px;
   }
-
   .dropdown-menu {
     width: 190px;
   }
-
   .dropdown-item {
     padding: 12px 16px;
     font-size: 14px;
   }
-
   .item-flag {
     font-size: 18px;
   }
 }
 
-/* Ховер-эффекты для десктопа */
 @media (hover: hover) and (pointer: fine) {
   .dropdown-toggle:hover {
     transform: translateY(-1px);

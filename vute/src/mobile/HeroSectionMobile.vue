@@ -3,6 +3,15 @@
     <div class="mobile-hero">
       <FeaturesSection />
 
+      <!-- Декоративный разделитель -->
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-icon">
+          <i class="fas fa-plane"></i>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
       <!-- Форма -->
       <div class="form-section">
         <h2 class="form-title">Куда хотите поехать?</h2>
@@ -39,8 +48,11 @@
           </div>
 
           <!-- Кнопка отправки -->
-          <button type="submit" class="submit-btn">
-            <span> Начать планирование </span>
+          <button type="submit" class="submit-btn" :disabled="isLoading">
+            <span v-if="!isLoading"> Начать планирование </span>
+            <span v-else class="loading-text">
+              <i class="fas fa-spinner fa-spin"></i> Обработка...
+            </span>
           </button>
         </form>
 
@@ -68,12 +80,17 @@ export default {
     return {
       destination: "",
       isLoading: false,
-      popularPlaces: ["Санторини", "Токио", "Бали", "Париж"],
+      popularPlaces: ["Санторини", "Токио", "Бали"],
     };
   },
   methods: {
     selectPlace(place) {
       this.destination = place;
+      // Небольшая анимация при выборе
+      const input = document.querySelector('.destination-input');
+      if (input) {
+        input.focus();
+      }
     },
 
     handleSubmit() {
@@ -106,147 +123,52 @@ export default {
   margin: 0 auto;
 }
 
-/* What Does Section */
-.what-does-section {
-  margin-bottom: 30px;
-}
-
-.main-title {
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--text-dark);
-  line-height: 1.2;
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.highlight-text {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: 16px;
-  color: var(--text-medium);
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.feature-card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1);
-}
-
-.card-icon {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border-radius: 12px;
+/* Декоративный разделитель */
+.section-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
-  color: white;
-  font-size: 20px;
+  margin: 40px 0 30px;
+  gap: 15px;
 }
 
-.feature-card h3 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 8px;
-  line-height: 1.2;
+.divider-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
 }
 
-.feature-card p {
-  font-size: 13px;
-  color: var(--text-medium);
-  line-height: 1.3;
-}
-
-/* For Who Section */
-.for-who-section {
-  background: rgba(14, 165, 233, 0.05);
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 30px;
-  border: 1px solid rgba(14, 165, 233, 0.1);
-}
-
-.section-title {
+.divider-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 16px;
-}
-
-.section-title i {
-  color: var(--primary);
-  font-size: 20px;
-}
-
-.for-who-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.who-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.who-item i {
-  color: #10b981;
+  justify-content: center;
+  color: white;
   font-size: 16px;
-  margin-top: 2px;
-  min-width: 20px;
-}
-
-.who-item span {
-  font-size: 15px;
-  color: var(--text-dark);
-  line-height: 1.3;
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
 }
 
 /* Form Section */
 .form-section {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 30px 25px;
+  border-radius: 24px;
 }
 
 .form-title {
-  font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 25px;
   color: var(--text-dark);
   line-height: 1.2;
   text-align: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .form-subtitle {
@@ -267,29 +189,29 @@ export default {
   background: white;
   border-radius: 16px;
   padding: 5px 5px 5px 20px;
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1), 0 0 0 1px rgba(139, 92, 246, 0.1);
-  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.12), 0 0 0 1px rgba(139, 92, 246, 0.15);
+  margin-bottom: 25px;
   transition: all 0.3s ease;
 }
 
 .input-wrapper:focus-within {
-  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.15), 0 0 0 2px var(--primary);
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.18), 0 0 0 2px var(--primary);
   transform: translateY(-2px);
 }
 
 .input-icon {
   color: var(--primary);
-  font-size: 18px;
+  font-size: 20px;
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 .destination-input {
   flex: 1;
   border: none;
-  padding: 18px 10px;
-  font-size: 17px;
+  padding: 20px 10px;
+  font-size: 18px;
   color: var(--text-dark);
   background: transparent;
   outline: none;
@@ -304,10 +226,10 @@ export default {
 .submit-btn {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   border: none;
-  padding: 20px;
-  border-radius: 16px;
+  padding: 22px;
+  border-radius: 18px;
   color: white;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -317,56 +239,68 @@ export default {
   gap: 12px;
   width: 100%;
   margin-bottom: 25px;
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.25);
 }
 
 .submit-btn:hover:not(:disabled) {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.35);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(-1px);
 }
 
 .submit-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.7;
   cursor: not-allowed;
   transform: none !important;
-  box-shadow: none !important;
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.15) !important;
+}
+
+.loading-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Быстрые подсказки */
 .quick-suggestions {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .suggest-label {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-medium);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   text-align: center;
+  font-weight: 600;
 }
 
 .suggestion-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
 }
 
 .suggestion-tag {
-  padding: 10px 16px;
+  padding: 12px 18px;
   background: rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.25);
   border-radius: 20px;
   color: var(--primary);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .suggestion-tag:hover {
   background: rgba(139, 92, 246, 0.15);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.15);
 }
 
 .suggestion-tag:active {
@@ -378,27 +312,36 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 25px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
 }
 
 .guarantee {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
+  gap: 12px;
+  font-size: 15px;
   color: var(--text-dark);
-  background: white;
-  padding: 12px 16px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  background: rgba(139, 92, 246, 0.03);
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(139, 92, 246, 0.08);
+  transition: all 0.2s ease;
+
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guarantee:hover {
+  background: rgba(139, 92, 246, 0.06);
+  transform: translateX(3px);
 }
 
 .guarantee i {
   color: var(--primary);
-  font-size: 14px;
-  min-width: 20px;
+  font-size: 16px;
+  min-width: 24px;
 }
 
 /* Адаптивность */
@@ -407,65 +350,70 @@ export default {
     padding: 15px 16px 35px;
   }
 
-  .main-title {
-    font-size: 22px;
+  .section-divider {
+    margin: 30px 0 25px;
+    gap: 10px;
   }
 
-  .section-subtitle {
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-
-  .features-grid {
-    gap: 12px;
-  }
-
-  .feature-card {
-    padding: 16px;
-  }
-
-  .card-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .feature-card h3 {
-    font-size: 15px;
-  }
-
-  .feature-card p {
-    font-size: 12px;
-  }
-
-  .for-who-section {
-    padding: 16px;
-  }
-
-  .section-title {
-    font-size: 16px;
-  }
-
-  .who-item span {
+  .divider-icon {
+    width: 36px;
+    height: 36px;
     font-size: 14px;
+  }
+
+  .form-section {
+    padding: 25px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
   }
 
   .form-title {
-    font-size: 20px;
-  }
-
-  .form-subtitle {
-    font-size: 14px;
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 
   .input-wrapper {
     padding: 5px 5px 5px 16px;
+    margin-bottom: 20px;
   }
 
   .destination-input {
-    padding: 16px 10px;
+    padding: 18px 10px;
     font-size: 16px;
+  }
+
+  .suggest-label {
+    font-size: 13px;
+  }
+
+  .suggestion-tag {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 20px;
+    font-size: 17px;
+    border-radius: 16px;
+  }
+
+  .guarantee {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .form-section {
+    padding: 20px 16px;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+
+  .suggestion-tags {
+    gap: 8px;
   }
 
   .suggestion-tag {
@@ -473,25 +421,14 @@ export default {
     font-size: 12px;
   }
 
-  .submit-btn {
-    padding: 18px;
-    font-size: 16px;
-  }
-
   .guarantee {
     padding: 10px 14px;
     font-size: 13px;
   }
-}
 
-@media (max-width: 360px) {
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .suggestion-tags {
-    gap: 6px;
+  .divider-icon {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>

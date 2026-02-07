@@ -4,9 +4,7 @@
       <!-- Десктопная версия -->
       <template #desktop>
         <div class="desktop-app">
-          <!-- Частицы фона -->
-          <div id="particles"></div>
-          
+
           <!-- TechStats наверху первого экрана -->
           <TechStats class="tech-stats-top" />
           
@@ -54,7 +52,7 @@ import ConstructorBlock from './components/ConstructorBlock.vue'
 import SimpleCTA from './components/CTAForm.vue'
 import HeroSection from './components/HeroSection.vue'
 import ResponsiveLayout from './components/ResponsiveLayout.vue'
-import MobileHero from './components/MobileHero.vue'
+import MobileHero from './mobile/MobileApp.vue'
 
 export default {
   name: 'App',
@@ -159,7 +157,7 @@ export default {
       this.currentDestinationIndex = (this.currentDestinationIndex + 1) % this.destinations.length
     },
     startPlanning() {
-      this.showNotification('AI начал планирование вашего идеального путешествия!')
+      
     },
     startPlanningMobile() {
       this.showNotification('Создаем ваш идеальный маршрут...')
