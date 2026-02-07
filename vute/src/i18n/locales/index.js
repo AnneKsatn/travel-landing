@@ -2,10 +2,13 @@
 // Динамический импорт всех файлов переводов
 const locales = {
   ru: () => import('./ru.json'),
-  en: () => import('./en.json')
-//   es: () => import('./es.json'),
-//   de: () => import('./de.json'),
-//   fr: () => import('./fr.json')
+  en: () => import('./en.json'),
+  es: () => import('./es.json'),
+  de: () => import('./de.json'),
+  fr: () => import('./fr.json'),
+  it: () => import('./it.json'),
+  zh: () => import('./zh.json'),
+  ja: () => import('./ja.json')
 }
 
 // Функция для загрузки переводов
@@ -14,7 +17,7 @@ export async function loadTranslations(langCode) {
   if (!loader) {
     throw new Error(`Translations for "${langCode}" not found`)
   }
-  
+
   try {
     const module = await loader()
     return module.default || module

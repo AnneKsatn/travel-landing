@@ -2,9 +2,9 @@
   <div class="demo-section">
     <div class="demo-header">
       <h2 class="demo-title">
-        Что вы <span class="highlight">получите</span>
+        {{ t('demoSection.title.part1') }} <span class="highlight">{{ t('demoSection.title.highlight') }}</span> {{ t('demoSection.title.part2') }}
       </h2>
-      <p class="demo-subtitle">Пример готового плана поездки на Санторини</p>
+      <p class="demo-subtitle">{{ t('demoSection.subtitle') }}</p>
     </div>
 
     <!-- Пример расчета бюджета -->
@@ -14,8 +14,8 @@
           <i class="fas fa-calculator"></i>
         </div>
         <div class="card-title-content">
-          <h3>Детальный расчет бюджета</h3>
-          <p>Все расходы разбиты по категориям</p>
+          <h3>{{ t('demoSection.budget.title') }}</h3>
+          <p>{{ t('demoSection.budget.subtitle') }}</p>
         </div>
       </div>
 
@@ -23,47 +23,47 @@
         <div class="budget-item">
           <div class="budget-category">
             <i class="fas fa-hotel"></i>
-            <span>Отель</span>
+            <span>{{ t('expenses.hotelShort') }}</span>
           </div>
-          <div class="budget-amount">4 500 ₽</div>
+          <div class="budget-amount">{{ t('demoSection.budget.items.hotel') }}</div>
         </div>
         
         <div class="budget-item">
           <div class="budget-category">
             <i class="fas fa-utensils"></i>
-            <span>Ужин в ресторане</span>
+            <span>{{ t('expenses.dinner') }}</span>
           </div>
-          <div class="budget-amount">2 500 ₽</div>
+          <div class="budget-amount">{{ t('demoSection.budget.items.dinner') }}</div>
         </div>
         
         <div class="budget-item">
           <div class="budget-category">
             <i class="fas fa-taxi"></i>
-            <span>Трансфер из аэропорта</span>
+            <span>{{ t('expenses.transfer') }}</span>
           </div>
-          <div class="budget-amount">1 400 ₽</div>
+          <div class="budget-amount">{{ t('demoSection.budget.items.transfer') }}</div>
         </div>
         
         <div class="budget-item">
           <div class="budget-category">
             <i class="fas fa-gift"></i>
-            <span>Сувениры</span>
+            <span>{{ t('expenses.souvenirs') }}</span>
           </div>
-          <div class="budget-amount">1 500 ₽</div>
+          <div class="budget-amount">{{ t('demoSection.budget.items.souvenirs') }}</div>
         </div>
         
         <div class="budget-item total">
           <div class="budget-category">
             <i class="fas fa-check-double"></i>
-            <strong>Итого за день:</strong>
+            <strong>{{ t('demoSection.budget.total') }}</strong>
           </div>
-          <div class="budget-amount total-amount">9 900 ₽</div>
+          <div class="budget-amount total-amount">{{ t('demoSection.budget.totalAmount') }}</div>
         </div>
       </div>
 
       <div class="demo-insight">
         <i class="fas fa-lightbulb"></i>
-        <span>AI помнит про чаевые, сувениры, налоги и другие мелочи, о которых забывают 83% туристов</span>
+        <span>{{ t('ai.remembers') }}</span>
       </div>
     </div>
 
@@ -74,8 +74,8 @@
           <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="card-title-content">
-          <h3>План дня по часам</h3>
-          <p>Что, где и когда делать</p>
+          <h3>{{ t('demoSection.schedule.title') }}</h3>
+          <p>{{ t('demoSection.schedule.subtitle') }}</p>
         </div>
       </div>
 
@@ -83,47 +83,47 @@
         <div class="timeline-item">
           <div class="time-badge">9:00</div>
           <div class="timeline-content">
-            <div class="activity-title">Завтрак с видом на кальдеру</div>
-            <div class="activity-desc">Кафе "Sunset View" в Ие</div>
+            <div class="activity-title">{{ t('demoSection.schedule.activities.breakfast.title') }}</div>
+            <div class="activity-desc">{{ t('demoSection.schedule.activities.breakfast.description') }}</div>
           </div>
         </div>
         
         <div class="timeline-item">
           <div class="time-badge">10:30</div>
           <div class="timeline-content">
-            <div class="activity-title">Прогулка по улицам</div>
-            <div class="activity-desc">Голубые купола и белые домики</div>
+            <div class="activity-title">{{ t('demoSection.schedule.activities.walk.title') }}</div>
+            <div class="activity-desc">{{ t('demoSection.schedule.activities.walk.description') }}</div>
           </div>
         </div>
         
         <div class="timeline-item">
           <div class="time-badge">13:00</div>
           <div class="timeline-content">
-            <div class="activity-title">Обед в местной таверне</div>
-            <div class="activity-desc">Греческая кухня, морепродукты</div>
+            <div class="activity-title">{{ t('demoSection.schedule.activities.lunch.title') }}</div>
+            <div class="activity-desc">{{ t('demoSection.schedule.activities.lunch.description') }}</div>
           </div>
         </div>
         
         <div class="timeline-item">
           <div class="time-badge">15:00</div>
           <div class="timeline-content">
-            <div class="activity-title">Пляж Перисса</div>
-            <div class="activity-desc">Черный вулканический песок</div>
+            <div class="activity-title">{{ t('demoSection.schedule.activities.beach.title') }}</div>
+            <div class="activity-desc">{{ t('demoSection.schedule.activities.beach.description') }}</div>
           </div>
         </div>
         
         <div class="timeline-item">
           <div class="time-badge">18:00</div>
           <div class="timeline-content">
-            <div class="activity-title">Закат на смотровой</div>
-            <div class="activity-desc">Лучший вид на закат</div>
+            <div class="activity-title">{{ t('demoSection.schedule.activities.sunset.title') }}</div>
+            <div class="activity-desc">{{ t('demoSection.schedule.activities.sunset.description') }}</div>
           </div>
         </div>
       </div>
 
       <div class="demo-insight">
         <i class="fas fa-robot"></i>
-        <span>AI оптимизирует маршрут, чтобы вы ничего не пропустили</span>
+        <span>{{ t('demoSection.schedule.insight') }}</span>
       </div>
     </div>
 
@@ -134,8 +134,8 @@
           <i class="fas fa-sliders-h"></i>
         </div>
         <div class="card-title-content">
-          <h3>Редактируйте как конструктор</h3>
-          <p>Меняйте пункты, добавляйте свое</p>
+          <h3>{{ t('demoSection.constructor.title') }}</h3>
+          <p>{{ t('demoSection.constructor.subtitle') }}</p>
         </div>
       </div>
 
@@ -145,8 +145,8 @@
             <i class="fas fa-pen"></i>
           </div>
           <div class="example-text">
-            <strong>Изменили ужин</strong>
-            <span>2 500 ₽ → 3 200 ₽</span>
+            <strong>{{ t('demoSection.constructor.examples.edited.title') }}</strong>
+            <span>{{ t('demoSection.constructor.examples.edited.amount') }}</span>
           </div>
         </div>
         
@@ -155,8 +155,8 @@
             <i class="fas fa-plus"></i>
           </div>
           <div class="example-text">
-            <strong>Добавили сувениры</strong>
-            <span>+1 500 ₽ к бюджету</span>
+            <strong>{{ t('demoSection.constructor.examples.added.title') }}</strong>
+            <span>{{ t('demoSection.constructor.examples.added.amount') }}</span>
           </div>
         </div>
         
@@ -165,24 +165,33 @@
             <i class="fas fa-times"></i>
           </div>
           <div class="example-text">
-            <strong>Убрали парковку</strong>
-            <span>— 800 ₽ из расчета</span>
+            <strong>{{ t('demoSection.constructor.examples.hidden.title') }}</strong>
+            <span>{{ t('demoSection.constructor.examples.hidden.amount') }}</span>
           </div>
         </div>
       </div>
 
       <button class="constructor-btn" @click="startPlanning">
         <i class="fas fa-wand-magic-sparkles"></i>
-        Создать свой план
+        {{ t('demoSection.constructor.button') }}
       </button>
     </div>
   </div>
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: "DemoSection",
   emits: ["start-planning"],
+  setup() {
+    const { t } = useLanguage()
+    
+    return {
+      t
+    }
+  },
   methods: {
     startPlanning() {
       this.$emit("start-planning");
@@ -190,6 +199,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 .demo-section {

@@ -1,18 +1,17 @@
-
 {
   "app": {
-    "name": "TravelGenius",
-    "slogan": "We believe planning should be simple, and trips — perfect.",
-    "title": "Your perfect journey",
+    "name": "Tripfy Planner",
+    "slogan": "We believe planning should be simple, and trips should be perfect.",
+    "title": "Your Perfect Journey",
     "aiHighlight": "planned by AI",
-    "description": "Artificial intelligence will create a personalized route, calculate an accurate budget and plan every day of your trip.",
+    "description": "Artificial intelligence will create a personalized itinerary, calculate an accurate budget, and plan each day of your journey.",
     "startPlanning": "Start Planning",
     "learnMore": "Learn More",
     "getStarted": "Get Started"
   },
   "techStats": {
     "users": "Users",
-    "routes": "Routes planned",
+    "routes": "Routes Planned",
     "accuracy": "AI Accuracy"
   },
   "cards": {
@@ -22,15 +21,15 @@
     },
     "schedule": {
       "title": "Schedule",
-      "subtitle": "Perfectly planned day"
+      "subtitle": "Perfectly Planned Day"
     },
     "budget": {
       "title": "Expense Table",
-      "subtitle": "Generated with the plan"
+      "subtitle": "Generated Along With Plan"
     },
     "aiConstructor": {
-      "title": "AI Constructor",
-      "subtitle": "Edit AI plan to your liking"
+      "title": "Constructor",
+      "subtitle": "Customize Plan to Your Needs"
     }
   },
   "schedule": {
@@ -42,44 +41,291 @@
   },
   "ai": {
     "insight": "AI will consider your preferences and physical activity",
-    "remembers": "AI remembers tips, souvenirs, taxes and other little things that 83% of tourists forget",
-    "createsBase": "AI creates a base based on the experience of {count}+ travelers",
-    "youCustomize": "You customize according to your preferences and budget"
+    "remembers": "AI remembers tips, souvenirs, taxes, and other details that 83% of tourists forget",
+    "createsBase": "AI creates a foundation based on the experience of hundreds of travelers. ",
+    "youCustomize": "You customize according to your preferences and budget",
+    "humanCombination": "AI + Human = Perfect Plan",
+    "calculates": "AI calculates, you adjust",
+    "recommends": "AI recommends, you decide"
   },
   "expenses": {
-    "flight": "Flight ticket",
-    "hotel": "Hotel {nights} nights",
-    "vignette": "Road vignette",
-    "parking": "Airport parking",
-    "dinner": "Dinner at restaurant",
-    "museum": "Museum ticket",
+    "flight": "Air Ticket",
+    "hotel": "Hotel 10 Nights",
+    "hotelShort": "Hotel",
+    "vignette": "Road Vignette",
+    "parking": "Airport Parking",
+    "dinner": "Restaurant Dinner",
+    "museum": "Museum Ticket",
     "souvenirs": "Souvenirs",
-    "mobile": "Mobile connection",
+    "mobile": "Mobile Connection",
     "insurance": "Insurance",
     "transfer": "Transfer",
-    "total": "Total expenses AI accounted for"
+    "total": "Total Expenses AI Considered"
   },
   "constructor": {
     "title": "Editable AI Constructor",
-    "description": "AI creates a smart foundation, and you customize it to your liking. Change expenses, choose categories — everything updates in real time.",
+    "description": "AI creates a smart foundation, and you customize it to your needs. Change expenses, choose categories - everything updates in real time.",
     "editExpenses": "Edit AI Expenses",
-    "chooseCategories": "Choose Categories"
+    "chooseCategories": "Choose Categories",
+    "tableHeaders": {
+      "item": "Expense Item",
+      "aiCalculated": "AI Calculated",
+      "yourEdit": "Your Edit"
+    },
+    "features": {
+      "changeAmounts": {
+        "title": "Change Amounts",
+        "description": "AI suggested dinner amount? Set your own price"
+      },
+      "addExpenses": {
+        "title": "Add Expenses",
+        "description": "AI didn't include souvenirs? Just add a new line"
+      },
+      "hideUnnecessary": {
+        "title": "Hide Unnecessary",
+        "description": "Don't need parking? Hide it - budget will be recalculated"
+      },
+      "threeLevels": {
+        "title": "Three Levels to Choose",
+        "description": "For each category - economy, standard, and premium"
+      },
+      "aiRecommends": {
+        "title": "AI Recommends Optimal",
+        "description": "Based on your preferences and budget"
+      },
+      "instantRecalculation": {
+        "title": "Instant Recalculation",
+        "description": "Change categories - budget updates immediately"
+      }
+    },
+    "stats": {
+      "budgetControl": "control over budget",
+      "levelsPerCategory": "levels per category",
+      "combinations": "combination options",
+      "perfectCombination": "perfect combination"
+    },
+    "demo": {
+      "dayTitle": "Day #1 in Paris",
+      "accommodation": "Accommodation",
+      "food": "Food",
+      "levels": {
+        "economy": "Economy",
+        "standard": "Standard",
+        "comfort": "Comfort",
+        "premium": "Premium",
+        "luxury": "Luxury"
+      },
+      "aiRecommends": "AI Recommends:",
+      "yourChoice": "Your Choice",
+      "aiRecommendsLabel": "AI Recommends",
+      "budgetWas": "Was:",
+      "budgetNow": "Now:"
+    }
+  },
+  "screenTwo": {
+    "title": "The more you tell, the <span class=\"highlight\">more accurate</span> the AI route will be.",
+    "description": "A simple questionnaire helps us better understand your ideal route. Based on 12 key parameters, AI creates a profile to select a unique route.",
+    "preferences": {
+      "interests": {
+        "title": "Interests",
+        "description": "Art, gastronomy, nature, history, shopping"
+      },
+      "activity": {
+        "title": "Activity",
+        "description": "Relaxed rest, active routes, 50/50 balance"
+      },
+      "company": {
+        "title": "Company",
+        "description": "Solo, couple, family, friends, business trip"
+      },
+      "budget": {
+        "title": "Budget",
+        "description": "Economy, comfort, premium, luxury - no compromises"
+      }
+    },
+    "places": {
+      "museum": {
+        "title": "Museums & Galleries",
+        "description": "Exact match to your artistic tastes",
+        "tag": "Art"
+      },
+      "park": {
+        "title": "Nature Parks",
+        "description": "Routes by difficulty level and scenic beauty",
+        "tag": "Nature"
+      },
+      "restaurant": {
+        "title": "Restaurants",
+        "description": "Cuisine, atmosphere, price - all according to your preferences",
+        "tag": "Gastronomy"
+      },
+      "viewpoint": {
+        "title": "Viewpoints",
+        "description": "Best views at the best time of day",
+        "tag": "Photo Spots"
+      }
+    },
+    "stats": {
+      "points": "points in AI database",
+      "accuracy": "selection accuracy",
+      "parameters": "analysis parameters"
+    }
+  },
+  "aiCard": {
+    "capabilities": {
+      "addExpenses": "Add Your Expenses",
+      "changeCategories": "Change Categories",
+      "adjustBudget": "Adjust Budget",
+      "personalizeRoute": "Personalize Route"
+    }
+  },
+  "demoSection": {
+    "title": {
+      "part1": "What You",
+      "highlight": "Will Get",
+      "part2": ""
+    },
+    "subtitle": "Example of a ready-made trip plan to Santorini",
+    "budget": {
+      "title": "Detailed Budget Calculation",
+      "subtitle": "All expenses broken down by categories",
+      "items": {
+        "hotel": "4 500 ₽",
+        "dinner": "2 500 ₽",
+        "transfer": "1 400 ₽",
+        "souvenirs": "1 500 ₽"
+      },
+      "total": "Total per day:",
+      "totalAmount": "9 900 ₽"
+    },
+    "schedule": {
+      "title": "Daily Plan by Hours",
+      "subtitle": "What, where and when to do",
+      "insight": "AI optimizes the route so you don't miss anything",
+      "activities": {
+        "breakfast": {
+          "title": "Breakfast with Caldera View",
+          "description": "Cafe \"Sunset View\" in Oia"
+        },
+        "walk": {
+          "title": "Walk Through the Streets",
+          "description": "Blue domes and white houses"
+        },
+        "lunch": {
+          "title": "Lunch at Local Tavern",
+          "description": "Greek cuisine, seafood"
+        },
+        "beach": {
+          "title": "Perissa Beach",
+          "description": "Black volcanic sand"
+        },
+        "sunset": {
+          "title": "Sunset at Viewpoint",
+          "description": "Best view of sunset"
+        }
+      }
+    },
+    "constructor": {
+      "title": "Edit Like a Constructor",
+      "subtitle": "Change items, add your own",
+      "button": "Create Your Plan",
+      "examples": {
+        "edited": {
+          "title": "Changed Dinner",
+          "amount": "2 500 ₽ → 3 200 ₽"
+        },
+        "added": {
+          "title": "Added Souvenirs",
+          "amount": "+1 500 ₽ to budget"
+        },
+        "hidden": {
+          "title": "Removed Parking",
+          "amount": "— 800 ₽ from calculation"
+        }
+      }
+    }
+  },
+  "featuresSection": {
+    "aiPlans": "AI Plans",
+    "youControl": "You Control",
+    "steps": {
+      "step1": {
+        "title": "Route in Minutes",
+        "description": "AI will create an hourly plan according to your interests"
+      },
+      "step2": {
+        "title": "Budget Considering Details",
+        "description": "All expenses, including small details that people forget"
+      },
+      "step3": {
+        "title": "Flexible Customization",
+        "description": "Edit route and budget in constructor"
+      }
+    }
   },
   "cta": {
     "title": "Where do you want to go?",
-    "subtitle": "Enter destination — AI will create perfect route in 2 minutes",
+    "subtitle": "Enter destination - AI will create perfect route in 2 minutes",
     "placeholder": "For example: Santorini, Tokyo, Bali...",
     "submit": "Let's Go!",
-    "suggestions": "Popular destinations",
+    "suggestions": "Popular Destinations",
     "guarantees": {
       "fast": "2 minutes",
-      "editable": "Editable plan",
+      "editable": "Editable Plan",
       "secure": "Secure"
+    }
+  },
+  "mobileHeader": {
+    "logo": {
+      "trip": "Trip",
+      "fy": "fy",
+      "planner": "Planner"
+    },
+    "tagline": {
+      "main": "Digital Travel Planner"
+    },
+    "languages": {
+      "ru": {
+        "name": "Russian"
+      },
+      "en": {
+        "name": "English"
+      },
+      "es": {
+        "name": "Spanish"
+      },
+      "fr": {
+        "name": "French"
+      },
+      "de": {
+        "name": "German"
+      },
+      "it": {
+        "name": "Italian"
+      },
+      "pt": {
+        "name": "Portuguese"
+      },
+      "ja": {
+        "name": "Japanese"
+      },
+      "ko": {
+        "name": "Korean"
+      },
+      "zh": {
+        "name": "Chinese"
+      },
+      "ar": {
+        "name": "Arabic"
+      },
+      "tr": {
+        "name": "Turkish"
+      }
     }
   },
   "common": {
     "loading": "Loading...",
-    "error": "An error occurred",
+    "error": "An Error Occurred",
     "success": "Success",
     "save": "Save",
     "cancel": "Cancel",
@@ -93,7 +339,7 @@
     "view": "View",
     "download": "Download",
     "share": "Share",
-    "currency": "$",
-    "currencyFull": "dollars"
+    "currency": "₽",
+    "currencyFull": "rubles"
   }
 }

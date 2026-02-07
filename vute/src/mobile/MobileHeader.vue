@@ -6,27 +6,39 @@
           class="dropdown-toggle"
           @click="toggleDropdown"
           :aria-expanded="dropdownOpen.toString()"
+          :disabled="isLoading"
         >
           <span class="current-language">
-            <span class="language-flag">{{ getCurrentFlag }}</span>
-            <span class="language-name">{{ getCurrentName }}</span>
+            <span class="language-flag">
+              <img
+                :src="currentLanguage.flagIcon"
+                :alt="currentLanguage.code"
+                class="flag-icon"
+              />
+            </span>
+            <span class="language-name">{{ currentLanguage.displayName }}</span>
           </span>
           <i class="fas" :class="dropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+          <span v-if="isLoading" class="loading-spinner"></span>
         </button>
 
         <div v-if="dropdownOpen" class="dropdown-menu">
           <div class="dropdown-backdrop" @click="closeDropdown"></div>
           <div class="dropdown-content">
             <button
-              v-for="lang in languages"
+              v-for="lang in availableLanguages"
               :key="lang.code"
               class="dropdown-item"
-              :class="{ active: language === lang.code }"
-              @click="setLanguage(lang.code)"
+              :class="{ active: currentLang === lang.code, disabled: !lang.enabled }"
+              @click="lang.enabled && selectLanguage(lang)"
+              :disabled="!lang.enabled"
             >
-              <span class="item-flag">{{ lang.flag }}</span>
-              <span class="item-name">{{ lang.name }}</span>
-              <i v-if="language === lang.code" class="fas fa-check"></i>
+              <span class="item-flag">
+                <img :src="lang.flagIcon" :alt="lang.code" class="flag-icon" />
+                <span v-if="!lang.enabled" class="coming-soon">Soon</span>
+              </span>
+              <span class="item-name">{{ lang.displayName }}</span>
+              <i v-if="currentLang === lang.code" class="fas fa-check"></i>
             </button>
           </div>
         </div>
@@ -39,16 +51,15 @@
           <i class="fas fa-compass"></i>
         </div>
         <h1 class="logo-title">
-          <span class="trip">Trip</span>
-          <span class="fy">fy</span>
-          <span class="planner"> Planner</span>
+          <span class="trip">{{ t('mobileHeader.logo.trip') }}</span>
+          <span class="fy">{{ t('mobileHeader.logo.fy') }}</span>
+          <span class="planner"> {{ t('mobileHeader.logo.planner') }}</span>
         </h1>
 
         <div class="header-taglines">
-          <div class="tagline-main">Цифровой планёр путешествий</div>
+          <div class="tagline-main">{{ t('mobileHeader.tagline.main') }}</div>
           <div class="tagline-philosophy">
-            Планирование должно быть простым, <br />
-            а поездки — совершенными.
+            {{ t('app.slogan') }}
           </div>
         </div>
       </div>
@@ -57,38 +68,31 @@
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: "MobileHeader",
   emits: ["language-changed"],
+  setup() {
+    const { t, currentLanguage, availableLanguages, changeLanguage, isLoading } = useLanguage()
+    
+    return {
+      t,
+      currentLanguage,
+      availableLanguages,
+      changeLanguage,
+      isLoading
+    }
+  },
   data() {
     return {
-      language: "ru",
       dropdownOpen: false,
-      languages: [
-        { code: "ru", name: "Русский", flag: "🇷🇺" },
-        { code: "en", name: "English", flag: "🇺🇸" },
-        { code: "es", name: "Español", flag: "🇪🇸" },
-        { code: "fr", name: "Français", flag: "🇫🇷" },
-        { code: "de", name: "Deutsch", flag: "🇩🇪" },
-        { code: "it", name: "Italiano", flag: "🇮🇹" },
-        { code: "pt", name: "Português", flag: "🇵🇹" },
-        { code: "ja", name: "日本語", flag: "🇯🇵" },
-        { code: "ko", name: "한국어", flag: "🇰🇷" },
-        { code: "zh", name: "中文", flag: "🇨🇳" },
-        { code: "ar", name: "العربية", flag: "🇸🇦" },
-        { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-      ],
     };
   },
   computed: {
-    getCurrentFlag() {
-      const lang = this.languages.find((l) => l.code === this.language);
-      return lang ? lang.flag : "🇷🇺";
-    },
-    getCurrentName() {
-      const lang = this.languages.find((l) => l.code === this.language);
-      return lang ? lang.name : "Русский";
-    },
+    currentLang() {
+      return this.currentLanguage?.code
+    }
   },
   methods: {
     toggleDropdown() {
@@ -97,10 +101,14 @@ export default {
     closeDropdown() {
       this.dropdownOpen = false;
     },
-    setLanguage(lang) {
-      this.language = lang;
-      this.$emit("language-changed", lang);
-      this.closeDropdown();
+    async selectLanguage(lang) {
+      try {
+        await this.changeLanguage(lang.code);
+        this.$emit("language-changed", lang.code);
+        this.closeDropdown();
+      } catch (error) {
+        console.error("Failed to change language:", error);
+      }
     },
   },
   mounted() {
@@ -164,9 +172,15 @@ export default {
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 150px;
+  position: relative;
 }
 
-.dropdown-toggle:hover {
+.dropdown-toggle:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.dropdown-toggle:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.25);
 }
 
@@ -183,7 +197,22 @@ export default {
 }
 
 .language-flag {
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.flag-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .language-name {
@@ -238,21 +267,36 @@ export default {
   border-bottom: none;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover:not(.disabled) {
   background: rgba(14, 165, 233, 0.08);
 }
 
-.dropdown-item.active {
+.dropdown-item.active:not(.disabled) {
   background: rgba(14, 165, 233, 0.12);
   color: var(--primary);
   font-weight: 600;
 }
 
+.dropdown-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dropdown-item.disabled:hover {
+  background: inherit;
+}
+
 .item-flag {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
   margin-right: 14px;
-  width: 26px;
-  text-align: center;
+  position: relative;
+  flex-shrink: 0;
 }
 
 .item-name {
@@ -264,6 +308,37 @@ export default {
   color: var(--primary);
   font-size: 13px;
   margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.coming-soon {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--primary);
+  color: white;
+  font-size: 8px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .dropdown-content::-webkit-scrollbar {
@@ -466,12 +541,14 @@ export default {
     font-size: 14px;
   }
   .item-flag {
-    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .dropdown-toggle:hover {
+  .dropdown-toggle:hover:not(:disabled) {
     transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
   }

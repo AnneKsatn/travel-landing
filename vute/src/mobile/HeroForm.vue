@@ -11,7 +11,7 @@
 
     <!-- Форма -->
     <div class="form-section">
-      <h2 class="form-title">Куда хотите поехать?</h2>
+      <h2 class="form-title">{{ t('cta.title') }}</h2>
 
       <form @submit.prevent="handleSubmit" class="simple-form" autocomplete="off">
         <div class="input-wrapper">
@@ -22,7 +22,7 @@
           <input
             type="text"
             v-model="destination"
-            placeholder="Санторини, Токио, Бали..."
+            :placeholder="t('cta.placeholder')"
             class="destination-input"
             required
           />
@@ -30,7 +30,7 @@
 
         <!-- Быстрые подсказки -->
         <div class="quick-suggestions">
-          <span class="suggest-label">Популярное сейчас:</span>
+          <span class="suggest-label">{{ t('cta.suggestions') }}:</span>
           <div class="suggestion-tags">
             <button
               type="button"
@@ -46,9 +46,9 @@
 
         <!-- Кнопка отправки -->
         <button type="submit" class="submit-btn" :disabled="isLoading">
-          <span v-if="!isLoading"> Начать планирование </span>
+          <span v-if="!isLoading">{{ t('cta.submit') }}</span>
           <span v-else class="loading-text">
-            <i class="fas fa-spinner fa-spin"></i> Обработка...
+            <i class="fas fa-spinner fa-spin"></i> {{ t('common.loading') }}
           </span>
         </button>
       </form>
@@ -57,7 +57,7 @@
       <div class="guarantees">
         <div class="guarantee">
           <i class="fas fa-shield-alt"></i>
-          <span>Без регистрации</span>
+          <span>{{ t('cta.guarantees.secure') }}</span>
         </div>
       </div>
     </div>
@@ -65,9 +65,18 @@
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: "HeroForm",
   emits: ["destination-submitted"],
+  setup() {
+    const { t } = useLanguage()
+    
+    return {
+      t
+    }
+  },
   data() {
     return {
       destination: "",

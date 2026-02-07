@@ -1,0 +1,345 @@
+{
+  "app": {
+    "name": "Tripfy Planner",
+    "slogan": "Wir glauben, dass die Planung einfach und Reisen perfekt sein sollten.",
+    "title": "Deine perfekte Reise",
+    "aiHighlight": "geplant von KI",
+    "description": "Künstliche Intelligenz erstellt einen personalisierten Reiseplan, berechnet ein genaues Budget und plant jeden Tag deiner Reise.",
+    "startPlanning": "Planung beginnen",
+    "learnMore": "Mehr erfahren",
+    "getStarted": "Loslegen"
+  },
+  "techStats": {
+    "users": "Nutzer",
+    "routes": "Geplante Routen",
+    "accuracy": "KI-Genauigkeit"
+  },
+  "cards": {
+    "destination": {
+      "title": "Reiseziel",
+      "rating": "Bewertung"
+    },
+    "schedule": {
+      "title": "Zeitplan",
+      "subtitle": "Perfekt geplanter Tag"
+    },
+    "budget": {
+      "title": "Ausgabentabelle",
+      "subtitle": "Zusammen mit dem Plan generiert"
+    },
+    "aiConstructor": {
+      "title": "Konstruktor",
+      "subtitle": "Passe den Plan an deine Bedürfnisse an"
+    }
+  },
+  "schedule": {
+    "breakfast": "Frühstück",
+    "walk": "Spaziergang",
+    "lunch": "Mittagessen",
+    "beach": "Strand",
+    "sunset": "Sonnenuntergang"
+  },
+  "ai": {
+    "insight": "KI berücksichtigt deine Vorlieben und körperliche Aktivität",
+    "remembers": "KI erinnert sich an Trinkgelder, Souvenirs, Steuern und andere Details, die 83% der Touristen vergessen",
+    "createsBase": "KI schafft eine Grundlage basierend auf der Erfahrung Hunderter Reisender. ",
+    "youCustomize": "Du passt es nach deinen Vorlieben und Budget an",
+    "humanCombination": "KI + Mensch = Perfekter Plan",
+    "calculates": "KI berechnet, du passt an",
+    "recommends": "KI empfiehlt, du entscheidest"
+  },
+  "expenses": {
+    "flight": "Flugticket",
+    "hotel": "Hotel 10 Nächte",
+    "hotelShort": "Hotel",
+    "vignette": "Straßenvignette",
+    "parking": "Flughafenparkplatz",
+    "dinner": "Restaurant-Abendessen",
+    "museum": "Museumseintritt",
+    "souvenirs": "Souvenirs",
+    "mobile": "Mobilfunkverbindung",
+    "insurance": "Versicherung",
+    "transfer": "Transfer",
+    "total": "Gesamtausgaben die KI berücksichtigt hat"
+  },
+  "constructor": {
+    "title": "Editierbarer KI-Konstruktor",
+    "description": "KI schafft eine intelligente Grundlage und du passt sie an deine Bedürfnisse an. Ändere Ausgaben, wähle Kategorien - alles aktualisiert sich in Echtzeit.",
+    "editExpenses": "KI-Ausgaben bearbeiten",
+    "chooseCategories": "Kategorien auswählen",
+    "tableHeaders": {
+      "item": "Ausgabenposten",
+      "aiCalculated": "KI berechnete",
+      "yourEdit": "Deine Bearbeitung"
+    },
+    "features": {
+      "changeAmounts": {
+        "title": "Beträge ändern",
+        "description": "KI hat einen Betrag für Abendessen vorgeschlagen? Setze deinen eigenen Preis"
+      },
+      "addExpenses": {
+        "title": "Ausgaben hinzufügen",
+        "description": "KI hat Souvenirs nicht berücksichtigt? Füge einfach eine neue Zeile hinzu"
+      },
+      "hideUnnecessary": {
+        "title": "Unnötiges ausblenden",
+        "description": "Parkplatz nicht benötigt? Blende es aus - Budget wird neu berechnet"
+      },
+      "threeLevels": {
+        "title": "Drei Level zur Auswahl",
+        "description": "Für jede Kategorie - Economy, Standard und Premium"
+      },
+      "aiRecommends": {
+        "title": "KI empfiehlt Optimales",
+        "description": "Basierend auf deinen Vorlieben und Budget"
+      },
+      "instantRecalculation": {
+        "title": "Sofortige Neuberechnung",
+        "description": "Ändere Kategorien - Budget aktualisiert sich sofort"
+      }
+    },
+    "stats": {
+      "budgetControl": "Kontrolle über das Budget",
+      "levelsPerCategory": "Level pro Kategorie",
+      "combinations": "Kombinationsmöglichkeiten",
+      "perfectCombination": "Perfekte Kombination"
+    },
+    "demo": {
+      "dayTitle": "Tag #1 in Paris",
+      "accommodation": "Unterkunft",
+      "food": "Verpflegung",
+      "levels": {
+        "economy": "Economy",
+        "standard": "Standard",
+        "comfort": "Komfort",
+        "premium": "Premium",
+        "luxury": "Luxus"
+      },
+      "aiRecommends": "KI empfiehlt:",
+      "yourChoice": "Deine Wahl",
+      "aiRecommendsLabel": "KI empfiehlt",
+      "budgetWas": "War:",
+      "budgetNow": "Jetzt:"
+    }
+  },
+  "screenTwo": {
+    "title": "Je mehr du erzählst, desto <span class=\"highlight\">genauer</span> wird die KI-Route.",
+    "description": "Ein einfacher Fragebogen hilft uns, deine ideale Route besser zu verstehen. Basierend auf 12 Schlüsselparametern erstellt KI ein Profil, um eine einzigartige Route auszuwählen.",
+    "preferences": {
+      "interests": {
+        "title": "Interessen",
+        "description": "Kunst, Gastronomie, Natur, Geschichte, Einkaufen"
+      },
+      "activity": {
+        "title": "Aktivität",
+        "description": "Entspannter Ruhe, aktive Routen, 50/50 Balance"
+      },
+      "company": {
+        "title": "Begleitung",
+        "description": "Alleinreisend, Paar, Familie, Freunde, Geschäftsreise"
+      },
+      "budget": {
+        "title": "Budget",
+        "description": "Economy, Komfort, Premium, Luxus - keine Kompromisse"
+      }
+    },
+    "places": {
+      "museum": {
+        "title": "Museen & Galerien",
+        "description": "Exakte Übereinstimmung mit deinen künstlerischen Vorlieben",
+        "tag": "Kunst"
+      },
+      "park": {
+        "title": "Naturparks",
+        "description": "Routen nach Schwierigkeitsgrad und landschaftlicher Schönheit",
+        "tag": "Natur"
+      },
+      "restaurant": {
+        "title": "Restaurants",
+        "description": "Küche, Atmosphäre, Preis - alles nach deinen Vorlieben",
+        "tag": "Gastronomie"
+      },
+      "viewpoint": {
+        "title": "Aussichtspunkte",
+        "description": "Beste Aussichten zur besten Tageszeit",
+        "tag": "Fotospots"
+      }
+    },
+    "stats": {
+      "points": "Punkte in KI-Datenbank",
+      "accuracy": "Auswahlgenauigkeit",
+      "parameters": "Analyseparameter"
+    }
+  },
+  "aiCard": {
+    "capabilities": {
+      "addExpenses": "Füge deine Ausgaben hinzu",
+      "changeCategories": "Ändere Kategorien",
+      "adjustBudget": "Passe Budget an",
+      "personalizeRoute": "Personalisiere Route"
+    }
+  },
+  "demoSection": {
+    "title": {
+      "part1": "Was du",
+      "highlight": "erhalten wirst",
+      "part2": ""
+    },
+    "subtitle": "Beispiel eines fertigen Reiseplans nach Santorini",
+    "budget": {
+      "title": "Detaillierte Budgetberechnung",
+      "subtitle": "Alle Ausgaben nach Kategorien aufgeschlüsselt",
+      "items": {
+        "hotel": "4 500 ₽",
+        "dinner": "2 500 ₽",
+        "transfer": "1 400 ₽",
+        "souvenirs": "1 500 ₽"
+      },
+      "total": "Gesamt pro Tag:",
+      "totalAmount": "9 900 ₽"
+    },
+    "schedule": {
+      "title": "Tagesplan nach Stunden",
+      "subtitle": "Was, wo und wann zu tun",
+      "insight": "KI optimiert die Route, damit du nichts verpasst",
+      "activities": {
+        "breakfast": {
+          "title": "Frühstück mit Caldera-Blick",
+          "description": "Café \"Sunset View\" in Oia"
+        },
+        "walk": {
+          "title": "Spaziergang durch die Straßen",
+          "description": "Blaue Kuppeln und weiße Häuser"
+        },
+        "lunch": {
+          "title": "Mittagessen in lokaler Taverne",
+          "description": "Griechische Küche, Meeresfrüchte"
+        },
+        "beach": {
+          "title": "Perissa Strand",
+          "description": "Schwarzer Vulkansand"
+        },
+        "sunset": {
+          "title": "Sonnenuntergang am Aussichtspunkt",
+          "description": "Beste Aussicht auf Sonnenuntergang"
+        }
+      }
+    },
+    "constructor": {
+      "title": "Bearbeiten wie ein Konstruktor",
+      "subtitle": "Ändere Elemente, füge eigene hinzu",
+      "button": "Erstelle deinen Plan",
+      "examples": {
+        "edited": {
+          "title": "Abendessen geändert",
+          "amount": "2 500 ₽ → 3 200 ₽"
+        },
+        "added": {
+          "title": "Souvenirs hinzugefügt",
+          "amount": "+1 500 ₽ zum Budget"
+        },
+        "hidden": {
+          "title": "Parkplatz entfernt",
+          "amount": "— 800 ₽ von Berechnung"
+        }
+      }
+    }
+  },
+  "featuresSection": {
+    "aiPlans": "KI plant",
+    "youControl": "Du kontrollierst",
+    "steps": {
+      "step1": {
+        "title": "Route in Minuten",
+        "description": "KI erstellt einen Stundenplan nach deinen Interessen"
+      },
+      "step2": {
+        "title": "Budget mit Berücksichtigung von Details",
+        "description": "Alle Ausgaben, einschließlich kleiner Details, die Leute vergessen"
+      },
+      "step3": {
+        "title": "Flexible Anpassung",
+        "description": "Bearbeite Route und Budget im Konstruktor"
+      }
+    }
+  },
+  "cta": {
+    "title": "Wohin möchtest du reisen?",
+    "subtitle": "Gib Reiseziel ein - KI erstellt perfekte Route in 2 Minuten",
+    "placeholder": "Zum Beispiel: Santorini, Tokio, Bali...",
+    "submit": "Los geht's!",
+    "suggestions": "Beliebte Reiseziele",
+    "guarantees": {
+      "fast": "2 Minuten",
+      "editable": "Bearbeitbarer Plan",
+      "secure": "Sicher"
+    }
+  },
+  "mobileHeader": {
+    "logo": {
+      "trip": "Trip",
+      "fy": "fy",
+      "planner": "Planner"
+    },
+    "tagline": {
+      "main": "Digitaler Reiseplaner"
+    },
+    "languages": {
+      "ru": {
+        "name": "Russisch"
+      },
+      "en": {
+        "name": "Englisch"
+      },
+      "es": {
+        "name": "Spanisch"
+      },
+      "fr": {
+        "name": "Französisch"
+      },
+      "de": {
+        "name": "Deutsch"
+      },
+      "it": {
+        "name": "Italienisch"
+      },
+      "pt": {
+        "name": "Portugiesisch"
+      },
+      "ja": {
+        "name": "Japanisch"
+      },
+      "ko": {
+        "name": "Koreanisch"
+      },
+      "zh": {
+        "name": "Chinesisch"
+      },
+      "ar": {
+        "name": "Arabisch"
+      },
+      "tr": {
+        "name": "Türkisch"
+      }
+    }
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Ein Fehler ist aufgetreten",
+    "success": "Erfolg",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "add": "Hinzufügen",
+    "close": "Schließen",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "view": "Anzeigen",
+    "download": "Herunterladen",
+    "share": "Teilen",
+    "currency": "₽",
+    "currencyFull": "Rubel"
+  }
+}

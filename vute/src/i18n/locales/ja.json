@@ -1,0 +1,345 @@
+{
+  "app": {
+    "name": "Tripfy Planner",
+    "slogan": "私たちは、計画はシンプルに、旅行は完璧であるべきと信じています。",
+    "title": "あなたの完璧な旅",
+    "aiHighlight": "AIが計画",
+    "description": "人工知能が個人に合わせた旅程を作成し、正確な予算を計算し、旅の毎日を計画します。",
+    "startPlanning": "計画を始める",
+    "learnMore": "詳細を見る",
+    "getStarted": "始める"
+  },
+  "techStats": {
+    "users": "ユーザー数",
+    "routes": "計画済みルート",
+    "accuracy": "AI精度"
+  },
+  "cards": {
+    "destination": {
+      "title": "目的地",
+      "rating": "評価"
+    },
+    "schedule": {
+      "title": "スケジュール",
+      "subtitle": "完璧に計画された一日"
+    },
+    "budget": {
+      "title": "費用表",
+      "subtitle": "計画と共に生成"
+    },
+    "aiConstructor": {
+      "title": "コンストラクター",
+      "subtitle": "あなたのニーズに合わせて計画をカスタマイズ"
+    }
+  },
+  "schedule": {
+    "breakfast": "朝食",
+    "walk": "散歩",
+    "lunch": "昼食",
+    "beach": "ビーチ",
+    "sunset": "夕日"
+  },
+  "ai": {
+    "insight": "AIはあなたの好みと身体活動を考慮します",
+    "remembers": "AIはチップ、お土産、税金、観光客の83％が忘れるその他の詳細を記憶します",
+    "createsBase": "AIは数百人の旅行者の経験に基づいて基礎を作成します。",
+    "youCustomize": "あなたは自分の好みと予算に合わせてカスタマイズします",
+    "humanCombination": "AI + 人間 = 完璧な計画",
+    "calculates": "AIが計算、あなたが調整",
+    "recommends": "AIが推奨、あなたが決定"
+  },
+  "expenses": {
+    "flight": "航空券",
+    "hotel": "ホテル10泊",
+    "hotelShort": "ホテル",
+    "vignette": "道路利用税",
+    "parking": "空港駐車場",
+    "dinner": "レストランの夕食",
+    "museum": "博物館入場券",
+    "souvenirs": "お土産",
+    "mobile": "モバイル通信",
+    "insurance": "保険",
+    "transfer": "送迎",
+    "total": "AIが考慮した総費用"
+  },
+  "constructor": {
+    "title": "編集可能なAIコンストラクター",
+    "description": "AIがスマートな基礎を作成し、あなたがニーズに合わせてカスタマイズします。費用を変更し、カテゴリを選択 - すべてリアルタイムで更新されます。",
+    "editExpenses": "AI費用を編集",
+    "chooseCategories": "カテゴリを選択",
+    "tableHeaders": {
+      "item": "費用項目",
+      "aiCalculated": "AI計算",
+      "yourEdit": "あなたの編集"
+    },
+    "features": {
+      "changeAmounts": {
+        "title": "金額を変更",
+        "description": "AIが夕食の金額を提案しましたか？自分の価格を設定してください"
+      },
+      "addExpenses": {
+        "title": "費用を追加",
+        "description": "AIにお土産が含まれていませんか？新しい行を追加するだけです"
+      },
+      "hideUnnecessary": {
+        "title": "不要なものを非表示",
+        "description": "駐車場は不要ですか？非表示にすると予算が再計算されます"
+      },
+      "threeLevels": {
+        "title": "3つのレベルから選択",
+        "description": "各カテゴリ - エコノミー、スタンダード、プレミアム"
+      },
+      "aiRecommends": {
+        "title": "AIが最適を推奨",
+        "description": "あなたの好みと予算に基づいて"
+      },
+      "instantRecalculation": {
+        "title": "即時再計算",
+        "description": "カテゴリを変更 - 予算は即座に更新されます"
+      }
+    },
+    "stats": {
+      "budgetControl": "予算のコントロール",
+      "levelsPerCategory": "カテゴリごとのレベル数",
+      "combinations": "組み合わせオプション",
+      "perfectCombination": "完璧な組み合わせ"
+    },
+    "demo": {
+      "dayTitle": "パリ1日目",
+      "accommodation": "宿泊",
+      "food": "食事",
+      "levels": {
+        "economy": "エコノミー",
+        "standard": "スタンダード",
+        "comfort": "コンフォート",
+        "premium": "プレミアム",
+        "luxury": "ラグジュアリー"
+      },
+      "aiRecommends": "AI推奨：",
+      "yourChoice": "あなたの選択",
+      "aiRecommendsLabel": "AI推奨",
+      "budgetWas": "以前：",
+      "budgetNow": "現在："
+    }
+  },
+  "screenTwo": {
+    "title": "話せば話すほど、AIルートは<span class=\"highlight\">正確</span>になります。",
+    "description": "簡単なアンケートは、あなたの理想的なルートをよりよく理解するのに役立ちます。12の主要パラメータに基づいて、AIはユニークなルートを選択するためのプロファイルを作成します。",
+    "preferences": {
+      "interests": {
+        "title": "興味",
+        "description": "芸術、美食、自然、歴史、ショッピング"
+      },
+      "activity": {
+        "title": "活動レベル",
+        "description": "リラックスした休息、活発なルート、50/50のバランス"
+      },
+      "company": {
+        "title": "同行者",
+        "description": "一人旅、カップル、家族、友人、出張"
+      },
+      "budget": {
+        "title": "予算",
+        "description": "エコノミー、コンフォート、プレミアム、ラグジュアリー - 妥協なし"
+      }
+    },
+    "places": {
+      "museum": {
+        "title": "博物館と美術館",
+        "description": "あなたの芸術的趣味に完全に一致",
+        "tag": "芸術"
+      },
+      "park": {
+        "title": "自然公園",
+        "description": "難易度レベルと風景の美しさによるルート",
+        "tag": "自然"
+      },
+      "restaurant": {
+        "title": "レストラン",
+        "description": "料理、雰囲気、価格 - すべてあなたの好みに合わせて",
+        "tag": "美食"
+      },
+      "viewpoint": {
+        "title": "展望スポット",
+        "description": "一日の中で最高の時間に最高の景色",
+        "tag": "写真スポット"
+      }
+    },
+    "stats": {
+      "points": "AIデータベース内のポイント数",
+      "accuracy": "選択精度",
+      "parameters": "分析パラメータ"
+    }
+  },
+  "aiCard": {
+    "capabilities": {
+      "addExpenses": "あなたの費用を追加",
+      "changeCategories": "カテゴリを変更",
+      "adjustBudget": "予算を調整",
+      "personalizeRoute": "ルートをパーソナライズ"
+    }
+  },
+  "demoSection": {
+    "title": {
+      "part1": "あなたが",
+      "highlight": "得るもの",
+      "part2": ""
+    },
+    "subtitle": "サントリーニへの既成旅行計画の例",
+    "budget": {
+      "title": "詳細な予算計算",
+      "subtitle": "すべての費用をカテゴリ別に分類",
+      "items": {
+        "hotel": "4 500 ₽",
+        "dinner": "2 500 ₽",
+        "transfer": "1 400 ₽",
+        "souvenirs": "1 500 ₽"
+      },
+      "total": "一日あたりの合計：",
+      "totalAmount": "9 900 ₽"
+    },
+    "schedule": {
+      "title": "時間別の日次計画",
+      "subtitle": "何を、どこで、いつ行うか",
+      "insight": "AIがルートを最適化し、何も見逃さないようにします",
+      "activities": {
+        "breakfast": {
+          "title": "カルデラの景色を楽しむ朝食",
+          "description": "イアの「サンセットビュー」カフェ"
+        },
+        "walk": {
+          "title": "街歩き",
+          "description": "青いドームと白い家々"
+        },
+        "lunch": {
+          "title": "地元のタバルナでの昼食",
+          "description": "ギリシャ料理、シーフード"
+        },
+        "beach": {
+          "title": "ペリッサビーチ",
+          "description": "黒い火山砂"
+        },
+        "sunset": {
+          "title": "展望スポットでの夕日",
+          "description": "最高の夕日の景色"
+        }
+      }
+    },
+    "constructor": {
+      "title": "コンストラクターのように編集",
+      "subtitle": "項目を変更し、自分自身のものを追加",
+      "button": "あなたの計画を作成",
+      "examples": {
+        "edited": {
+          "title": "夕食を変更",
+          "amount": "2 500 ₽ → 3 200 ₽"
+        },
+        "added": {
+          "title": "お土産を追加",
+          "amount": "+1 500 ₽を予算に追加"
+        },
+        "hidden": {
+          "title": "駐車場を削除",
+          "amount": "— 800 ₽を計算から削除"
+        }
+      }
+    }
+  },
+  "featuresSection": {
+    "aiPlans": "AIが計画",
+    "youControl": "あなたが制御",
+    "steps": {
+      "step1": {
+        "title": "数分でルート作成",
+        "description": "AIがあなたの興味に合わせて時間別計画を作成します"
+      },
+      "step2": {
+        "title": "詳細を考慮した予算",
+        "description": "すべての費用、人々が忘れがちな細かい詳細を含む"
+      },
+      "step3": {
+        "title": "柔軟なカスタマイズ",
+        "description": "コンストラクターでルートと予算を編集"
+      }
+    }
+  },
+  "cta": {
+    "title": "どこに行きたいですか？",
+    "subtitle": "目的地を入力 - AIが2分で完璧なルートを作成します",
+    "placeholder": "例：サントリーニ、東京、バリ...",
+    "submit": "行きましょう！",
+    "suggestions": "人気の目的地",
+    "guarantees": {
+      "fast": "2分",
+      "editable": "編集可能な計画",
+      "secure": "安全"
+    }
+  },
+  "mobileHeader": {
+    "logo": {
+      "trip": "Trip",
+      "fy": "fy",
+      "planner": "Planner"
+    },
+    "tagline": {
+      "main": "デジタル旅行プランナー"
+    },
+    "languages": {
+      "ru": {
+        "name": "ロシア語"
+      },
+      "en": {
+        "name": "英語"
+      },
+      "es": {
+        "name": "スペイン語"
+      },
+      "fr": {
+        "name": "フランス語"
+      },
+      "de": {
+        "name": "ドイツ語"
+      },
+      "it": {
+        "name": "イタリア語"
+      },
+      "pt": {
+        "name": "ポルトガル語"
+      },
+      "ja": {
+        "name": "日本語"
+      },
+      "ko": {
+        "name": "韓国語"
+      },
+      "zh": {
+        "name": "中国語"
+      },
+      "ar": {
+        "name": "アラビア語"
+      },
+      "tr": {
+        "name": "トルコ語"
+      }
+    }
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "success": "成功",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "edit": "編集",
+    "delete": "削除",
+    "add": "追加",
+    "close": "閉じる",
+    "search": "検索",
+    "filter": "フィルター",
+    "sort": "ソート",
+    "view": "表示",
+    "download": "ダウンロード",
+    "share": "共有",
+    "currency": "₽",
+    "currencyFull": "ルーブル"
+  }
+}

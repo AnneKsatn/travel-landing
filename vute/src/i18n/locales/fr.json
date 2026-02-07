@@ -1,0 +1,345 @@
+{
+  "app": {
+    "name": "Tripfy Planner",
+    "slogan": "Nous croyons que la planification doit être simple et les voyages parfaits.",
+    "title": "Votre Voyage Parfait",
+    "aiHighlight": "planifié par IA",
+    "description": "L'intelligence artificielle créera un itinéraire personnalisé, calculera un budget précis et planifiera chaque jour de votre voyage.",
+    "startPlanning": "Commencer à Planifier",
+    "learnMore": "En Savoir Plus",
+    "getStarted": "Commencer"
+  },
+  "techStats": {
+    "users": "Utilisateurs",
+    "routes": "Itinéraires Planifiés",
+    "accuracy": "Précision de l'IA"
+  },
+  "cards": {
+    "destination": {
+      "title": "Destination",
+      "rating": "Note"
+    },
+    "schedule": {
+      "title": "Emploi du Temps",
+      "subtitle": "Journée Parfaitement Planifiée"
+    },
+    "budget": {
+      "title": "Tableau des Dépenses",
+      "subtitle": "Généré avec le Plan"
+    },
+    "aiConstructor": {
+      "title": "Constructeur",
+      "subtitle": "Personnalisez le Plan à Vos Besoins"
+    }
+  },
+  "schedule": {
+    "breakfast": "Petit-déjeuner",
+    "walk": "Promenade",
+    "lunch": "Déjeuner",
+    "beach": "Plage",
+    "sunset": "Coucher de Soleil"
+  },
+  "ai": {
+    "insight": "L'IA prendra en compte vos préférences et votre activité physique",
+    "remembers": "L'IA se souvient des pourboires, souvenirs, taxes et autres détails que 83% des touristes oublient",
+    "createsBase": "L'IA crée une base basée sur l'expérience de centaines de voyageurs. ",
+    "youCustomize": "Vous personnalisez selon vos préférences et votre budget",
+    "humanCombination": "IA + Humain = Plan Parfait",
+    "calculates": "L'IA calcule, vous ajustez",
+    "recommends": "L'IA recommande, vous décidez"
+  },
+  "expenses": {
+    "flight": "Billet d'Avion",
+    "hotel": "Hôtel 10 Nuits",
+    "hotelShort": "Hôtel",
+    "vignette": "Vignette Routière",
+    "parking": "Stationnement Aéroport",
+    "dinner": "Dîner au Restaurant",
+    "museum": "Billet de Musée",
+    "souvenirs": "Souvenirs",
+    "mobile": "Connexion Mobile",
+    "insurance": "Assurance",
+    "transfer": "Transfert",
+    "total": "Dépenses Totales que l'IA a Prises en Compte"
+  },
+  "constructor": {
+    "title": "Constructeur d'IA Modifiable",
+    "description": "L'IA crée une base intelligente, et vous la personnalisez à vos besoins. Changez les dépenses, choisissez les catégories - tout se met à jour en temps réel.",
+    "editExpenses": "Modifier les Dépenses de l'IA",
+    "chooseCategories": "Choisir les Catégories",
+    "tableHeaders": {
+      "item": "Article de Dépense",
+      "aiCalculated": "L'IA a Calculé",
+      "yourEdit": "Votre Modification"
+    },
+    "features": {
+      "changeAmounts": {
+        "title": "Changer les Montants",
+        "description": "L'IA a suggéré un montant pour le dîner ? Fixez votre propre prix"
+      },
+      "addExpenses": {
+        "title": "Ajouter des Dépenses",
+        "description": "L'IA n'a pas inclus de souvenirs ? Ajoutez simplement une nouvelle ligne"
+      },
+      "hideUnnecessary": {
+        "title": "Masquer l'Inutile",
+        "description": "Pas besoin de stationnement ? Masquez-le - le budget sera recalculé"
+      },
+      "threeLevels": {
+        "title": "Trois Niveaux à Choisir",
+        "description": "Pour chaque catégorie - économique, standard et premium"
+      },
+      "aiRecommends": {
+        "title": "L'IA Recommande l'Optimal",
+        "description": "Basé sur vos préférences et votre budget"
+      },
+      "instantRecalculation": {
+        "title": "Recalcul Instantané",
+        "description": "Changez les catégories - le budget se met à jour immédiatement"
+      }
+    },
+    "stats": {
+      "budgetControl": "contrôle sur le budget",
+      "levelsPerCategory": "niveaux par catégorie",
+      "combinations": "options de combinaison",
+      "perfectCombination": "combinaison parfaite"
+    },
+    "demo": {
+      "dayTitle": "Jour #1 à Paris",
+      "accommodation": "Hébergement",
+      "food": "Nourriture",
+      "levels": {
+        "economy": "Économique",
+        "standard": "Standard",
+        "comfort": "Confort",
+        "premium": "Premium",
+        "luxury": "Luxe"
+      },
+      "aiRecommends": "L'IA Recommande :",
+      "yourChoice": "Votre Choix",
+      "aiRecommendsLabel": "L'IA Recommande",
+      "budgetWas": "Était :",
+      "budgetNow": "Maintenant :"
+    }
+  },
+  "screenTwo": {
+    "title": "Plus vous racontez, plus la route de l'IA sera <span class=\"highlight\">précise</span>.",
+    "description": "Un questionnaire simple nous aide à mieux comprendre votre itinéraire idéal. Basé sur 12 paramètres clés, l'IA crée un profil pour sélectionner un itinéraire unique.",
+    "preferences": {
+      "interests": {
+        "title": "Intérêts",
+        "description": "Art, gastronomie, nature, histoire, shopping"
+      },
+      "activity": {
+        "title": "Activité",
+        "description": "Repos détendu, itinéraires actifs, équilibre 50/50"
+      },
+      "company": {
+        "title": "Compagnie",
+        "description": "Seul, couple, famille, amis, voyage d'affaires"
+      },
+      "budget": {
+        "title": "Budget",
+        "description": "Économique, confort, premium, luxe - sans compromis"
+      }
+    },
+    "places": {
+      "museum": {
+        "title": "Musées et Galeries",
+        "description": "Correspondance exacte à vos goûts artistiques",
+        "tag": "Art"
+      },
+      "park": {
+        "title": "Parcs Naturels",
+        "description": "Itinéraires par niveau de difficulté et beauté scénique",
+        "tag": "Nature"
+      },
+      "restaurant": {
+        "title": "Restaurants",
+        "description": "Cuisine, ambiance, prix - tout selon vos préférences",
+        "tag": "Gastronomie"
+      },
+      "viewpoint": {
+        "title": "Points de Vue",
+        "description": "Meilleures vues au meilleur moment de la journée",
+        "tag": "Points Photo"
+      }
+    },
+    "stats": {
+      "points": "points dans la base de données de l'IA",
+      "accuracy": "précision de sélection",
+      "parameters": "paramètres d'analyse"
+    }
+  },
+  "aiCard": {
+    "capabilities": {
+      "addExpenses": "Ajoutez Vos Dépenses",
+      "changeCategories": "Changez les Catégories",
+      "adjustBudget": "Ajustez le Budget",
+      "personalizeRoute": "Personnalisez l'Itinéraire"
+    }
+  },
+  "demoSection": {
+    "title": {
+      "part1": "Ce que vous",
+      "highlight": "obtiendrez",
+      "part2": ""
+    },
+    "subtitle": "Exemple de plan de voyage prêt à l'emploi pour Santorin",
+    "budget": {
+      "title": "Calcul Détaillé du Budget",
+      "subtitle": "Toutes les dépenses réparties par catégories",
+      "items": {
+        "hotel": "4 500 ₽",
+        "dinner": "2 500 ₽",
+        "transfer": "1 400 ₽",
+        "souvenirs": "1 500 ₽"
+      },
+      "total": "Total par jour :",
+      "totalAmount": "9 900 ₽"
+    },
+    "schedule": {
+      "title": "Plan Journalier par Heures",
+      "subtitle": "Quoi, où et quand faire",
+      "insight": "L'IA optimise l'itinéraire pour que vous ne manquiez rien",
+      "activities": {
+        "breakfast": {
+          "title": "Petit-déjeuner avec Vue sur la Caldeira",
+          "description": "Café \"Sunset View\" à Oia"
+        },
+        "walk": {
+          "title": "Promenade dans les Rues",
+          "description": "Coupoles bleues et maisons blanches"
+        },
+        "lunch": {
+          "title": "Déjeuner dans une Taverne Locale",
+          "description": "Cuisine grecque, fruits de mer"
+        },
+        "beach": {
+          "title": "Plage de Perissa",
+          "description": "Sable volcanique noir"
+        },
+        "sunset": {
+          "title": "Coucher de Soleil au Point de Vue",
+          "description": "Meilleure vue sur le coucher de soleil"
+        }
+      }
+    },
+    "constructor": {
+      "title": "Modifier comme un Constructeur",
+      "subtitle": "Changez les éléments, ajoutez les vôtres",
+      "button": "Créez Votre Plan",
+      "examples": {
+        "edited": {
+          "title": "Dîner Modifié",
+          "amount": "2 500 ₽ → 3 200 ₽"
+        },
+        "added": {
+          "title": "Souvenirs Ajoutés",
+          "amount": "+1 500 ₽ au budget"
+        },
+        "hidden": {
+          "title": "Stationnement Supprimé",
+          "amount": "— 800 ₽ du calcul"
+        }
+      }
+    }
+  },
+  "featuresSection": {
+    "aiPlans": "L'IA Planifie",
+    "youControl": "Vous Contrôlez",
+    "steps": {
+      "step1": {
+        "title": "Itinéraire en Minutes",
+        "description": "L'IA créera un plan horaire selon vos intérêts"
+      },
+      "step2": {
+        "title": "Budget Tenant Compte des Détails",
+        "description": "Toutes les dépenses, y compris les petits détails que les gens oublient"
+      },
+      "step3": {
+        "title": "Personnalisation Flexible",
+        "description": "Modifiez l'itinéraire et le budget dans le constructeur"
+      }
+    }
+  },
+  "cta": {
+    "title": "Où voulez-vous aller ?",
+    "subtitle": "Entrez la destination - l'IA créera l'itinéraire parfait en 2 minutes",
+    "placeholder": "Par exemple : Santorin, Tokyo, Bali...",
+    "submit": "C'est parti !",
+    "suggestions": "Destinations Populaires",
+    "guarantees": {
+      "fast": "2 minutes",
+      "editable": "Plan Modifiable",
+      "secure": "Sécurisé"
+    }
+  },
+  "mobileHeader": {
+    "logo": {
+      "trip": "Trip",
+      "fy": "fy",
+      "planner": "Planner"
+    },
+    "tagline": {
+      "main": "Planificateur de Voyage Numérique"
+    },
+    "languages": {
+      "ru": {
+        "name": "Russe"
+      },
+      "en": {
+        "name": "Anglais"
+      },
+      "es": {
+        "name": "Espagnol"
+      },
+      "fr": {
+        "name": "Français"
+      },
+      "de": {
+        "name": "Allemand"
+      },
+      "it": {
+        "name": "Italien"
+      },
+      "pt": {
+        "name": "Portugais"
+      },
+      "ja": {
+        "name": "Japonais"
+      },
+      "ko": {
+        "name": "Coréen"
+      },
+      "zh": {
+        "name": "Chinois"
+      },
+      "ar": {
+        "name": "Arabe"
+      },
+      "tr": {
+        "name": "Turc"
+      }
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "success": "Succès",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "add": "Ajouter",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "view": "Voir",
+    "download": "Télécharger",
+    "share": "Partager",
+    "currency": "₽",
+    "currencyFull": "roubles"
+  }
+}

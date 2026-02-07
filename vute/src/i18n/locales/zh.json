@@ -1,0 +1,345 @@
+{
+  "app": {
+    "name": "Tripfy Planner",
+    "slogan": "我们相信规划应该简单，旅行应该完美。",
+    "title": "您的完美旅程",
+    "aiHighlight": "由AI规划",
+    "description": "人工智能将创建个性化行程，计算精确预算，并规划您旅程的每一天。",
+    "startPlanning": "开始规划",
+    "learnMore": "了解更多",
+    "getStarted": "开始使用"
+  },
+  "techStats": {
+    "users": "用户数",
+    "routes": "已规划路线",
+    "accuracy": "AI准确度"
+  },
+  "cards": {
+    "destination": {
+      "title": "目的地",
+      "rating": "评分"
+    },
+    "schedule": {
+      "title": "行程安排",
+      "subtitle": "完美规划的一天"
+    },
+    "budget": {
+      "title": "费用表格",
+      "subtitle": "与计划一起生成"
+    },
+    "aiConstructor": {
+      "title": "构建器",
+      "subtitle": "根据需求定制计划"
+    }
+  },
+  "schedule": {
+    "breakfast": "早餐",
+    "walk": "散步",
+    "lunch": "午餐",
+    "beach": "海滩",
+    "sunset": "日落"
+  },
+  "ai": {
+    "insight": "AI会考虑您的偏好和体力活动",
+    "remembers": "AI记得小费、纪念品、税费和其他83%游客忘记的细节",
+    "createsBase": "AI基于数百位旅行者的经验创建基础。",
+    "youCustomize": "您根据自己的偏好和预算进行定制",
+    "humanCombination": "AI + 人类 = 完美计划",
+    "calculates": "AI计算，您调整",
+    "recommends": "AI推荐，您决定"
+  },
+  "expenses": {
+    "flight": "机票",
+    "hotel": "酒店10晚",
+    "hotelShort": "酒店",
+    "vignette": "道路通行费",
+    "parking": "机场停车",
+    "dinner": "餐厅晚餐",
+    "museum": "博物馆门票",
+    "souvenirs": "纪念品",
+    "mobile": "移动通信",
+    "insurance": "保险",
+    "transfer": "接送服务",
+    "total": "AI考虑的总费用"
+  },
+  "constructor": {
+    "title": "可编辑的AI构建器",
+    "description": "AI创建智能基础，您根据需求进行定制。更改费用，选择类别 - 所有内容实时更新。",
+    "editExpenses": "编辑AI费用",
+    "chooseCategories": "选择类别",
+    "tableHeaders": {
+      "item": "费用项目",
+      "aiCalculated": "AI计算",
+      "yourEdit": "您的编辑"
+    },
+    "features": {
+      "changeAmounts": {
+        "title": "更改金额",
+        "description": "AI建议了晚餐金额？设置您自己的价格"
+      },
+      "addExpenses": {
+        "title": "添加费用",
+        "description": "AI没有包括纪念品？只需添加新行"
+      },
+      "hideUnnecessary": {
+        "title": "隐藏不必要的",
+        "description": "不需要停车？隐藏它 - 预算将重新计算"
+      },
+      "threeLevels": {
+        "title": "三个级别选择",
+        "description": "每个类别 - 经济、标准和高级"
+      },
+      "aiRecommends": {
+        "title": "AI推荐最优",
+        "description": "基于您的偏好和预算"
+      },
+      "instantRecalculation": {
+        "title": "即时重新计算",
+        "description": "更改类别 - 预算立即更新"
+      }
+    },
+    "stats": {
+      "budgetControl": "预算控制",
+      "levelsPerCategory": "每类别级别",
+      "combinations": "组合选项",
+      "perfectCombination": "完美组合"
+    },
+    "demo": {
+      "dayTitle": "巴黎第1天",
+      "accommodation": "住宿",
+      "food": "餐饮",
+      "levels": {
+        "economy": "经济",
+        "standard": "标准",
+        "comfort": "舒适",
+        "premium": "高级",
+        "luxury": "豪华"
+      },
+      "aiRecommends": "AI推荐：",
+      "yourChoice": "您的选择",
+      "aiRecommendsLabel": "AI推荐",
+      "budgetWas": "之前：",
+      "budgetNow": "现在："
+    }
+  },
+  "screenTwo": {
+    "title": "您分享得越多，AI路线就越<span class=\"highlight\">精确</span>。",
+    "description": "简单的问卷帮助我们更好地了解您的理想路线。基于12个关键参数，AI创建个人资料以选择独特路线。",
+    "preferences": {
+      "interests": {
+        "title": "兴趣",
+        "description": "艺术、美食、自然、历史、购物"
+      },
+      "activity": {
+        "title": "活动强度",
+        "description": "轻松休息、活跃路线、50/50平衡"
+      },
+      "company": {
+        "title": "同行人员",
+        "description": "独自、情侣、家庭、朋友、商务旅行"
+      },
+      "budget": {
+        "title": "预算",
+        "description": "经济、舒适、高级、豪华 - 无妥协"
+      }
+    },
+    "places": {
+      "museum": {
+        "title": "博物馆和画廊",
+        "description": "完全符合您的艺术品味",
+        "tag": "艺术"
+      },
+      "park": {
+        "title": "自然公园",
+        "description": "按难度级别和风景优美度规划的路线",
+        "tag": "自然"
+      },
+      "restaurant": {
+        "title": "餐厅",
+        "description": "美食、氛围、价格 - 完全按您的偏好",
+        "tag": "美食"
+      },
+      "viewpoint": {
+        "title": "观景点",
+        "description": "一天中最佳时间的绝佳景色",
+        "tag": "摄影点"
+      }
+    },
+    "stats": {
+      "points": "AI数据库中的点",
+      "accuracy": "选择准确度",
+      "parameters": "分析参数"
+    }
+  },
+  "aiCard": {
+    "capabilities": {
+      "addExpenses": "添加您的费用",
+      "changeCategories": "更改类别",
+      "adjustBudget": "调整预算",
+      "personalizeRoute": "个性化路线"
+    }
+  },
+  "demoSection": {
+    "title": {
+      "part1": "您将",
+      "highlight": "获得什么",
+      "part2": ""
+    },
+    "subtitle": "圣托里尼现成旅行计划示例",
+    "budget": {
+      "title": "详细预算计算",
+      "subtitle": "所有费用按类别细分",
+      "items": {
+        "hotel": "4 500 ₽",
+        "dinner": "2 500 ₽",
+        "transfer": "1 400 ₽",
+        "souvenirs": "1 500 ₽"
+      },
+      "total": "每日总计：",
+      "totalAmount": "9 900 ₽"
+    },
+    "schedule": {
+      "title": "按小时安排的每日计划",
+      "subtitle": "做什么、在哪里、何时做",
+      "insight": "AI优化路线，确保您不会错过任何事物",
+      "activities": {
+        "breakfast": {
+          "title": "火山口景观早餐",
+          "description": "伊亚的\"日落景观\"咖啡馆"
+        },
+        "walk": {
+          "title": "街道漫步",
+          "description": "蓝色圆顶和白色房屋"
+        },
+        "lunch": {
+          "title": "当地小酒馆午餐",
+          "description": "希腊美食，海鲜"
+        },
+        "beach": {
+          "title": "佩里萨海滩",
+          "description": "黑色火山沙"
+        },
+        "sunset": {
+          "title": "观景点日落",
+          "description": "最佳日落景观"
+        }
+      }
+    },
+    "constructor": {
+      "title": "像构建器一样编辑",
+      "subtitle": "更改项目，添加自己的内容",
+      "button": "创建您的计划",
+      "examples": {
+        "edited": {
+          "title": "修改了晚餐",
+          "amount": "2 500 ₽ → 3 200 ₽"
+        },
+        "added": {
+          "title": "添加了纪念品",
+          "amount": "+1 500 ₽到预算"
+        },
+        "hidden": {
+          "title": "移除了停车费",
+          "amount": "— 800 ₽从计算中"
+        }
+      }
+    }
+  },
+  "featuresSection": {
+    "aiPlans": "AI规划",
+    "youControl": "您控制",
+    "steps": {
+      "step1": {
+        "title": "几分钟内生成路线",
+        "description": "AI将根据您的兴趣创建小时制计划"
+      },
+      "step2": {
+        "title": "考虑细节的预算",
+        "description": "所有费用，包括人们忘记的小细节"
+      },
+      "step3": {
+        "title": "灵活定制",
+        "description": "在构建器中编辑路线和预算"
+      }
+    }
+  },
+  "cta": {
+    "title": "您想去哪里？",
+    "subtitle": "输入目的地 - AI将在2分钟内创建完美路线",
+    "placeholder": "例如：圣托里尼、东京、巴厘岛...",
+    "submit": "出发！",
+    "suggestions": "热门目的地",
+    "guarantees": {
+      "fast": "2分钟",
+      "editable": "可编辑计划",
+      "secure": "安全"
+    }
+  },
+  "mobileHeader": {
+    "logo": {
+      "trip": "Trip",
+      "fy": "fy",
+      "planner": "Planner"
+    },
+    "tagline": {
+      "main": "数字旅行规划器"
+    },
+    "languages": {
+      "ru": {
+        "name": "俄语"
+      },
+      "en": {
+        "name": "英语"
+      },
+      "es": {
+        "name": "西班牙语"
+      },
+      "fr": {
+        "name": "法语"
+      },
+      "de": {
+        "name": "德语"
+      },
+      "it": {
+        "name": "意大利语"
+      },
+      "pt": {
+        "name": "葡萄牙语"
+      },
+      "ja": {
+        "name": "日语"
+      },
+      "ko": {
+        "name": "韩语"
+      },
+      "zh": {
+        "name": "中文"
+      },
+      "ar": {
+        "name": "阿拉伯语"
+      },
+      "tr": {
+        "name": "土耳其语"
+      }
+    }
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "success": "成功",
+    "save": "保存",
+    "cancel": "取消",
+    "edit": "编辑",
+    "delete": "删除",
+    "add": "添加",
+    "close": "关闭",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "view": "查看",
+    "download": "下载",
+    "share": "分享",
+    "currency": "₽",
+    "currencyFull": "卢布"
+  }
+}

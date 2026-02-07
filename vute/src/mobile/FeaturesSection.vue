@@ -1,33 +1,39 @@
 <template>
   <div class="features-section">
     <div class="ai-relationship">
-      <span class="ai-part">AI планирует</span>
+      <span class="ai-part">{{ t("featuresSection.aiPlans") }}</span>
       <span class="separator">, </span>
-      <span class="you-part">вы контролируете</span>
+      <span class="you-part">{{ t("featuresSection.youControl") }}</span>
     </div>
 
     <div class="journey-steps">
       <div class="step">
         <div class="step-number">1</div>
         <div class="step-content">
-          <div class="step-title">Маршрут за минуты</div>
-          <div class="step-description">AI создаст почасовой план по вашим интересам</div>
+          <div class="step-title">{{ t("featuresSection.steps.step1.title") }}</div>
+          <div class="step-description">
+            {{ t("featuresSection.steps.step1.description") }}
+          </div>
         </div>
       </div>
 
       <div class="step">
         <div class="step-number">2</div>
         <div class="step-content">
-          <div class="step-title">Бюджет с учётом деталей</div>
-          <div class="step-description">Все расходы, включая мелочи, о которых забывают</div>
+          <div class="step-title">{{ t("featuresSection.steps.step2.title") }}</div>
+          <div class="step-description">
+            {{ t("featuresSection.steps.step2.description") }}
+          </div>
         </div>
       </div>
 
       <div class="step">
         <div class="step-number">3</div>
         <div class="step-content">
-          <div class="step-title">Гибкая настройка</div>
-          <div class="step-description">Редактируйте маршрут и бюджет в конструкторе</div>
+          <div class="step-title">{{ t("featuresSection.steps.step3.title") }}</div>
+          <div class="step-description">
+            {{ t("featuresSection.steps.step3.description") }}
+          </div>
         </div>
       </div>
     </div>
@@ -35,8 +41,17 @@
 </template>
 
 <script>
+import { useLanguage } from "../i18n/useLanguage";
+
 export default {
   name: "FeaturesSection",
+  setup() {
+    const { t } = useLanguage();
+
+    return {
+      t,
+    };
+  },
 };
 </script>
 

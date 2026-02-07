@@ -2,17 +2,26 @@
   <div class="mobile-footer">
     <div class="footer-logo">
       <i class="fas fa-globe-americas"></i>
-      <span>Tripfy Planner</span>
+      <span>{{ t('app.name') }}</span>
     </div>
-    <p class="footer-tagline">Ваш AI-помощник в идеальных путешествиях</p>
+    <p class="footer-tagline">{{ t('app.slogan') }}</p>
 
-    <div class="footer-copyright">© 2024 Tripfy Planner. Все права защищены.</div>
+    <div class="footer-copyright">© 2024 {{ t('app.name') }}. Все права защищены.</div>
   </div>
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: "MobileFooter",
+  setup() {
+    const { t } = useLanguage()
+    
+    return {
+      t
+    }
+  }
 };
 </script>
 

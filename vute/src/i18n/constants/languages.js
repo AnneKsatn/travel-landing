@@ -51,7 +51,7 @@ export const LANGUAGES = [
     nativeName: 'Italiano',
     displayName: 'Italiano',
     flagIcon: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/it.svg',
-    enabled: false, // Можно включить позже
+    enabled: true, // Можно включить позже
     rtl: false
   },
   {
@@ -60,7 +60,7 @@ export const LANGUAGES = [
     nativeName: '中文',
     displayName: '中文 (Chinese)',
     flagIcon: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/cn.svg',
-    enabled: false,
+    enabled: true,
     rtl: false
   },
   {
@@ -69,7 +69,7 @@ export const LANGUAGES = [
     nativeName: '日本語',
     displayName: '日本語 (Japanese)',
     flagIcon: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/jp.svg',
-    enabled: false,
+    enabled: true,
     rtl: false
   }
 ]

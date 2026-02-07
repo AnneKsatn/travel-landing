@@ -1,0 +1,345 @@
+{
+  "app": {
+    "name": "Tripfy Planner",
+    "slogan": "Creemos que la planificación debe ser simple y los viajes perfectos.",
+    "title": "Tu Viaje Perfecto",
+    "aiHighlight": "planificado por IA",
+    "description": "La inteligencia artificial creará un itinerario personalizado, calculará un presupuesto preciso y planificará cada día de tu viaje.",
+    "startPlanning": "Comenzar a Planificar",
+    "learnMore": "Saber Más",
+    "getStarted": "Empezar"
+  },
+  "techStats": {
+    "users": "Usuarios",
+    "routes": "Rutas Planificadas",
+    "accuracy": "Precisión de la IA"
+  },
+  "cards": {
+    "destination": {
+      "title": "Destino",
+      "rating": "Calificación"
+    },
+    "schedule": {
+      "title": "Horario",
+      "subtitle": "Día Perfectamente Planificado"
+    },
+    "budget": {
+      "title": "Tabla de Gastos",
+      "subtitle": "Generado Junto con el Plan"
+    },
+    "aiConstructor": {
+      "title": "Constructor",
+      "subtitle": "Personaliza el Plan a Tus Necesidades"
+    }
+  },
+  "schedule": {
+    "breakfast": "Desayuno",
+    "walk": "Paseo",
+    "lunch": "Almuerzo",
+    "beach": "Playa",
+    "sunset": "Atardecer"
+  },
+  "ai": {
+    "insight": "La IA considerará tus preferencias y actividad física",
+    "remembers": "La IA recuerda propinas, souvenirs, impuestos y otros detalles que el 83% de los turistas olvidan",
+    "createsBase": "La IA crea una base basada en la experiencia de cientos de viajeros. ",
+    "youCustomize": "Tú personalizas según tus preferencias y presupuesto",
+    "humanCombination": "IA + Humano = Plan Perfecto",
+    "calculates": "La IA calcula, tú ajustas",
+    "recommends": "La IA recomienda, tú decides"
+  },
+  "expenses": {
+    "flight": "Billete de Avión",
+    "hotel": "Hotel 10 Noches",
+    "hotelShort": "Hotel",
+    "vignette": "Vignette de Carretera",
+    "parking": "Estacionamiento en Aeropuerto",
+    "dinner": "Cena en Restaurante",
+    "museum": "Entrada a Museo",
+    "souvenirs": "Souvenirs",
+    "mobile": "Conexión Móvil",
+    "insurance": "Seguro",
+    "transfer": "Traslado",
+    "total": "Gastos Totales que la IA Consideró"
+  },
+  "constructor": {
+    "title": "Constructor de IA Editable",
+    "description": "La IA crea una base inteligente, y tú la personalizas a tus necesidades. Cambia gastos, elige categorías - todo se actualiza en tiempo real.",
+    "editExpenses": "Editar Gastos de IA",
+    "chooseCategories": "Elegir Categorías",
+    "tableHeaders": {
+      "item": "Artículo de Gasto",
+      "aiCalculated": "La IA Calculó",
+      "yourEdit": "Tu Edición"
+    },
+    "features": {
+      "changeAmounts": {
+        "title": "Cambiar Montos",
+        "description": "¿La IA sugirió un monto para la cena? Establece tu propio precio"
+      },
+      "addExpenses": {
+        "title": "Agregar Gastos",
+        "description": "¿La IA no incluyó souvenirs? Simplemente agrega una nueva línea"
+      },
+      "hideUnnecessary": {
+        "title": "Ocultar lo Innecesario",
+        "description": "¿No necesitas estacionamiento? Ocúltalo - el presupuesto se recalculará"
+      },
+      "threeLevels": {
+        "title": "Tres Niveles para Elegir",
+        "description": "Para cada categoría - económico, estándar y premium"
+      },
+      "aiRecommends": {
+        "title": "La IA Recomienda Óptimo",
+        "description": "Basado en tus preferencias y presupuesto"
+      },
+      "instantRecalculation": {
+        "title": "Recálculo Instantáneo",
+        "description": "Cambia categorías - el presupuesto se actualiza inmediatamente"
+      }
+    },
+    "stats": {
+      "budgetControl": "control sobre el presupuesto",
+      "levelsPerCategory": "niveles por categoría",
+      "combinations": "opciones de combinación",
+      "perfectCombination": "combinación perfecta"
+    },
+    "demo": {
+      "dayTitle": "Día #1 en París",
+      "accommodation": "Alojamiento",
+      "food": "Alimentación",
+      "levels": {
+        "economy": "Económico",
+        "standard": "Estándar",
+        "comfort": "Confort",
+        "premium": "Premium",
+        "luxury": "Lujo"
+      },
+      "aiRecommends": "La IA Recomienda:",
+      "yourChoice": "Tu Elección",
+      "aiRecommendsLabel": "La IA Recomienda",
+      "budgetWas": "Era:",
+      "budgetNow": "Ahora:"
+    }
+  },
+  "screenTwo": {
+    "title": "Cuanto más cuentes, más <span class=\"highlight\">precisa</span> será la ruta de la IA.",
+    "description": "Un cuestionario simple nos ayuda a entender mejor tu ruta ideal. Basado en 12 parámetros clave, la IA crea un perfil para seleccionar una ruta única.",
+    "preferences": {
+      "interests": {
+        "title": "Intereses",
+        "description": "Arte, gastronomía, naturaleza, historia, compras"
+      },
+      "activity": {
+        "title": "Actividad",
+        "description": "Descanso relajado, rutas activas, equilibrio 50/50"
+      },
+      "company": {
+        "title": "Compañía",
+        "description": "Solo, pareja, familia, amigos, viaje de negocios"
+      },
+      "budget": {
+        "title": "Presupuesto",
+        "description": "Económico, confort, premium, lujo - sin compromisos"
+      }
+    },
+    "places": {
+      "museum": {
+        "title": "Museos y Galerías",
+        "description": "Coincidencia exacta con tus gustos artísticos",
+        "tag": "Arte"
+      },
+      "park": {
+        "title": "Parques Naturales",
+        "description": "Rutas por nivel de dificultad y belleza escénica",
+        "tag": "Naturaleza"
+      },
+      "restaurant": {
+        "title": "Restaurantes",
+        "description": "Cocina, ambiente, precio - todo según tus preferencias",
+        "tag": "Gastronomía"
+      },
+      "viewpoint": {
+        "title": "Miradores",
+        "description": "Mejores vistas en el mejor momento del día",
+        "tag": "Puntos Fotográficos"
+      }
+    },
+    "stats": {
+      "points": "puntos en base de datos de IA",
+      "accuracy": "precisión de selección",
+      "parameters": "parámetros de análisis"
+    }
+  },
+  "aiCard": {
+    "capabilities": {
+      "addExpenses": "Agrega Tus Gastos",
+      "changeCategories": "Cambia Categorías",
+      "adjustBudget": "Ajusta Presupuesto",
+      "personalizeRoute": "Personaliza Ruta"
+    }
+  },
+  "demoSection": {
+    "title": {
+      "part1": "Lo Que",
+      "highlight": "Obtendrás",
+      "part2": ""
+    },
+    "subtitle": "Ejemplo de plan de viaje listo a Santorini",
+    "budget": {
+      "title": "Cálculo Detallado del Presupuesto",
+      "subtitle": "Todos los gastos desglosados por categorías",
+      "items": {
+        "hotel": "4 500 ₽",
+        "dinner": "2 500 ₽",
+        "transfer": "1 400 ₽",
+        "souvenirs": "1 500 ₽"
+      },
+      "total": "Total por día:",
+      "totalAmount": "9 900 ₽"
+    },
+    "schedule": {
+      "title": "Plan Diario por Horas",
+      "subtitle": "Qué, dónde y cuándo hacer",
+      "insight": "La IA optimiza la ruta para que no te pierdas nada",
+      "activities": {
+        "breakfast": {
+          "title": "Desayuno con Vista a la Caldera",
+          "description": "Cafetería \"Sunset View\" en Oia"
+        },
+        "walk": {
+          "title": "Paseo por las Calles",
+          "description": "Cúpulas azules y casas blancas"
+        },
+        "lunch": {
+          "title": "Almuerzo en Taberna Local",
+          "description": "Cocina griega, mariscos"
+        },
+        "beach": {
+          "title": "Playa Perissa",
+          "description": "Arena volcánica negra"
+        },
+        "sunset": {
+          "title": "Atardecer en Mirador",
+          "description": "Mejor vista del atardecer"
+        }
+      }
+    },
+    "constructor": {
+      "title": "Editar Como Constructor",
+      "subtitle": "Cambia elementos, agrega los tuyos",
+      "button": "Crea Tu Plan",
+      "examples": {
+        "edited": {
+          "title": "Cambió la Cena",
+          "amount": "2 500 ₽ → 3 200 ₽"
+        },
+        "added": {
+          "title": "Agregó Souvenirs",
+          "amount": "+1 500 ₽ al presupuesto"
+        },
+        "hidden": {
+          "title": "Eliminó Estacionamiento",
+          "amount": "— 800 ₽ del cálculo"
+        }
+      }
+    }
+  },
+  "featuresSection": {
+    "aiPlans": "La IA Planifica",
+    "youControl": "Tú Controlas",
+    "steps": {
+      "step1": {
+        "title": "Ruta en Minutos",
+        "description": "La IA creará un plan por horas según tus intereses"
+      },
+      "step2": {
+        "title": "Presupuesto Considerando Detalles",
+        "description": "Todos los gastos, incluidos pequeños detalles que la gente olvida"
+      },
+      "step3": {
+        "title": "Personalización Flexible",
+        "description": "Edita ruta y presupuesto en el constructor"
+      }
+    }
+  },
+  "cta": {
+    "title": "¿A dónde quieres ir?",
+    "subtitle": "Ingresa destino - la IA creará la ruta perfecta en 2 minutos",
+    "placeholder": "Por ejemplo: Santorini, Tokio, Bali...",
+    "submit": "¡Vamos!",
+    "suggestions": "Destinos Populares",
+    "guarantees": {
+      "fast": "2 minutos",
+      "editable": "Plan Editable",
+      "secure": "Seguro"
+    }
+  },
+  "mobileHeader": {
+    "logo": {
+      "trip": "Trip",
+      "fy": "fy",
+      "planner": "Planner"
+    },
+    "tagline": {
+      "main": "Planificador Digital de Viajes"
+    },
+    "languages": {
+      "ru": {
+        "name": "Ruso"
+      },
+      "en": {
+        "name": "Inglés"
+      },
+      "es": {
+        "name": "Español"
+      },
+      "fr": {
+        "name": "Francés"
+      },
+      "de": {
+        "name": "Alemán"
+      },
+      "it": {
+        "name": "Italiano"
+      },
+      "pt": {
+        "name": "Portugués"
+      },
+      "ja": {
+        "name": "Japonés"
+      },
+      "ko": {
+        "name": "Coreano"
+      },
+      "zh": {
+        "name": "Chino"
+      },
+      "ar": {
+        "name": "Árabe"
+      },
+      "tr": {
+        "name": "Turco"
+      }
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un Error",
+    "success": "Éxito",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "add": "Agregar",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "view": "Ver",
+    "download": "Descargar",
+    "share": "Compartir",
+    "currency": "₽",
+    "currencyFull": "rublos"
+  }
+}
