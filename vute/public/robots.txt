@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+Sitemap: https://planify.app/sitemap.xml
+
+# Настройки для поисковых систем
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Clean-param: lang
+
+# Разрешаем индексировать JavaScript и CSS
+User-agent: Googlebot
+Allow: /*.js
+Allow: /*.css
+
+# Блокировка чувствительных файлов
+Disallow: /*.json$
+Disallow: /*.env$
+Disallow: /*.log$
+
+# Языковые версии
+Host: https://planify.app

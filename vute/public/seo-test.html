@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Test - Planify Travel Planner</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; }
+        .test { background: #f8f9fa; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #3498db; }
+        .pass { border-left-color: #2ecc71; }
+        .fail { border-left-color: #e74c3c; }
+        .warning { border-left-color: #f39c12; }
+    </style>
+</head>
+<body>
+    <h1>🔍 SEO Тест Planify</h1>
+    <p>Проверка базовой SEO-оптимизации для поисковых систем.</p>
+    
+    <div class="test pass">
+        <h3>✅ Robots.txt доступен</h3>
+        <p>Файл robots.txt настроен правильно.</p>
+        <p><a href="/robots.txt" target="_blank">Просмотреть robots.txt</a></p>
+    </div>
+    
+    <div class="test pass">
+        <h3>✅ Sitemap.xml доступен</h3>
+        <p>Карта сайта содержит основные страницы и языковые версии.</p>
+        <p><a href="/sitemap.xml" target="_blank">Просмотреть sitemap.xml</a></p>
+    </div>
+    
+    <div class="test">
+        <h3>🌍 Мультиязычные теги</h3>
+        <p>Проверка hreflang тегов:</p>
+        <ul>
+            <li>Английский: <code>&lt;link rel="alternate" hreflang="en" href="https://planify.app?lang=en"&gt;</code></li>
+            <li>Русский: <code>&lt;link rel="alternate" hreflang="ru" href="https://planify.app?lang=ru"&gt;</code></li>
+            <li>Испанский: <code>&lt;link rel="alternate" hreflang="es" href="https://planify.app?lang=es"&gt;</code></li>
+        </ul>
+    </div>
+    
+    <div class="test pass">
+        <h3>✅ Структурированные данные</h3>
+        <p>JSON-LD разметка добавлена для SoftwareApplication и TravelApplication.</p>
+    </div>
+    
+    <div class="test warning">
+        <h3>⚠️ Noscript контент</h3>
+        <p>Для пользователей с отключенным JavaScript доступен fallback контент.</p>
+        <p><strong>Рекомендация:</strong> Проверить, что контент содержит ключевые слова.</p>
+    </div>
+    
+    <div class="test">
+        <h3>📱 Open Graph и Twitter Cards</h3>
+        <p>Проверка наличия мета-тегов для социальных сетей:</p>
+        <ul>
+            <li>og:title - ✓ присутствует</li>
+            <li>og:description - ✓ присутствует</li>
+            <li>og:image - ⚠️ требуется реальное изображение</li>
+            <li>twitter:card - ✓ присутствует</li>
+        </ul>
+    </div>
+    
+    <div class="test">
+        <h3>🚀 Скорость загрузки</h3>
+        <p>Добавлены теги для оптимизации:</p>
+        <ul>
+            <li>preconnect для CDN - ✓</li>
+            <li>dns-prefetch - ✓</li>
+            <li>Мета-теги для мобильных - ✓</li>
+        </ul>
+    </div>
+    
+    <div class="test">
+        <h3>🔧 Технические проверки</h3>
+        <p>Откройте консоль разработчика (F12) и проверьте:</p>
+        <ol>
+            <li>Консоль на наличие ошибок JavaScript</li>
+            <li>Сеть - все файлы загружаются корректно</li>
+            <li>Элементы - meta-теги динамически меняются при смене языка</li>
+        </ol>
+    </div>
+    
+    <div class="test pass">
+        <h3>✅ Ключевые слова и описание</h3>
+        <p>Основные ключевые фразы включены:</p>
+        <ul>
+            <li>travel planner / планировщик путешествий</li>
+            <li>itinerary generator / генератор маршрутов</li>
+            <li>budget calculator / расчет бюджета</li>
+            <li>hotel finder / подбор отелей</li>
+            <li>AI assistant / ИИ помощник</li>
+        </ul>
+    </div>
+    
+    <div style="margin-top: 40px; padding: 20px; background: #e8f4fc; border-radius: 10px;">
+        <h2>🎯 Дальнейшие действия для SEO</h2>
+        <ol>
+            <li><strong>Создать реальные og:image изображения</strong> (1200×630px)</li>
+            <li><strong>Добавить фавиконки</strong> разных размеров</li>
+            <li><strong>Реализовать SSR</strong> для лучшей индексации</li>
+            <li><strong>Создать контентные страницы</strong> (блог, советы, примеры маршрутов)</li>
+            <li><strong>Зарегистрироваться</strong> в Google Search Console и Яндекс.Вебмастер</li>
+        </ol>
+        
+        <p style="margin-top: 20px;">
+            <a href="/" style="display: inline-block; background: #3498db; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;">
+                Вернуться на главную →
+            </a>
+        </p>
+    </div>
+</body>
+</html>

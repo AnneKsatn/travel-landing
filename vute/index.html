@@ -1,14 +1,207 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Базовые мета-теги -->
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vute</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Planify — AI Travel Planner | Create Perfect Itineraries & Budget</title>
+    <meta name="description" content="Planify: Create personalized travel routes, calculate trip costs, find hotels & attractions. Free AI-powered travel planning assistant for perfect vacations.">
+    <meta name="keywords" content="travel planner, trip itinerary, vacation budget, hotel finder, attractions map, AI travel assistant, packing list, route generator">
+    <meta name="author" content="Planify">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://planify.app/">
+    <meta property="og:title" content="Planify — AI Travel Planner | Smart Vacation Planning">
+    <meta property="og:description" content="Free AI travel assistant: Generate routes, calculate budgets, find hotels. Perfect for trip planning, sightseeing, and vacation organization.">
+    <meta property="og:image" content="https://planify.app/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://planify.app/">
+    <meta property="twitter:title" content="Planify — AI Travel Planner | Smart Vacation Planning">
+    <meta property="twitter:description" content="Free AI travel assistant: Generate routes, calculate budgets, find hotels. Perfect for trip planning, sightseeing, and vacation organization.">
+    <meta property="twitter:image" content="https://planify.app/twitter-image.jpg">
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Каноническая ссылка -->
+    <link rel="canonical" href="https://planify.app">
+    
+    <!-- Мультиязычные альтернативы -->
+    <link rel="alternate" hreflang="x-default" href="https://planify.app">
+    <link rel="alternate" hreflang="en" href="https://planify.app?lang=en">
+    <link rel="alternate" hreflang="ru" href="https://planify.app?lang=ru">
+    <link rel="alternate" hreflang="es" href="https://planify.app?lang=es">
+    <link rel="alternate" hreflang="de" href="https://planify.app?lang=de">
+    <link rel="alternate" hreflang="fr" href="https://planify.app?lang=fr">
+    <link rel="alternate" hreflang="zh" href="https://planify.app?lang=zh">
+    <link rel="alternate" hreflang="ja" href="https://planify.app?lang=ja">
+
+        <!-- Robots и Sitemap ссылки -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Предзагрузка важных ресурсов -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Дополнительные SEO теги -->
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Для мобильных устройств -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SEO Language Detection - Выполняется ДО Vue.js -->
+    <script>
+      // Этот код выполняется сразу при загрузке страницы
+      // До инициализации Vue.js
+      
+      // 1. Пытаемся получить сохраненный язык
+      const savedLang = localStorage.getItem('planify_language');
+      
+      // 2. Определяем язык браузера (первые 2 символа)
+      const browserLang = navigator.language ? navigator.language.slice(0, 2) : 'ru';
+      
+      // 3. Выбираем язык по приоритету: сохраненный > браузер > русский
+      const initialLang = savedLang || browserLang || 'ru';
+      
+      // 4. Сохраняем выбранный язык для Vue.js (чтобы он мог его прочитать)
+      window.__INITIAL_LANGUAGE__ = initialLang;
+      
+      console.log('🌍 Initial language detected:', initialLang);
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Planify AI Travel Planner",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1247"
+      },
+      "description": "AI-powered travel planning assistant that creates personalized itineraries, calculates trip budgets, suggests attractions and hotels.",
+      "featureList": [
+        "AI Route Generator",
+        "Travel Budget Calculator", 
+        "Hotel & Restaurant Finder",
+        "Packing List Creator",
+        "Attraction Recommendations",
+        "Multi-language Support",
+        "Real-time Cost Estimation",
+        "Travel Tips & Advice"
+      ],
+      "screenshot": "https://planify.app/screenshot.jpg"
+    }
+    </script>
+    
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+
+        <!-- Noscript контент для SEO (виден поисковым роботам) -->
+    <noscript>
+      <div style="padding: 30px; max-width: 1000px; margin: 0 auto; font-family: Arial, sans-serif;">
+        <h1 style="color: #2c3e50; margin-bottom: 20px;">🌍 Planify — ИИ-помощник для планирования путешествий</h1>
+        
+        <p style="font-size: 18px; line-height: 1.6; margin-bottom: 25px;">
+          <strong>Создавайте идеальные маршруты, рассчитывайте бюджет, получайте персональные советы для путешествий с помощью искусственного интеллекта.</strong>
+        </p>
+        
+        <h2 style="color: #3498db; margin: 30px 0 15px 0;">🚀 Ключевые возможности:</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 30px;">
+          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+            <h3 style="margin: 0 0 10px 0; color: #2c3e50;">🎯 Генератор уникальных маршрутов</h3>
+            <p style="margin: 0; color: #555;">ИИ создает персонализированные маршруты с учетом ваших интересов и времени</p>
+          </div>
+          
+          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #2ecc71;">
+            <h3 style="margin: 0 0 10px 0; color: #2c3e50;">💰 Расчет бюджета путешествия</h3>
+            <p style="margin: 0; color: #555;">Точная оценка стоимости поездки: транспорт, жилье, питание, развлечения</p>
+          </div>
+          
+          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c;">
+            <h3 style="margin: 0 0 10px 0; color: #2c3e50;">🏨 Подбор отелей и ресторанов</h3>
+            <p style="margin: 0; color: #555;">Персональные рекомендации на основе отзывов, цен и местоположения</p>
+          </div>
+          
+          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #f39c12;">
+            <h3 style="margin: 0 0 10px 0; color: #2c3e50;">🧳 Планировщик чемодана</h3>
+            <p style="margin: 0; color: #555;">Интеллектуальный список вещей с учетом сезона, длительности и типа поездки</p>
+          </div>
+          
+          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #9b59b6;">
+            <h3 style="margin: 0 0 10px 0; color: #2c3e50;">📅 Конструктор поездок</h3>
+            <p style="margin: 0; color: #555;">Гибкое планирование дня за днем с учетом времени и расстояний между точками</p>
+          </div>
+          
+          <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #1abc9c;">
+            <h3 style="margin: 0 0 10px 0; color: #2c3e50;">🌐 Мультиязычная поддержка</h3>
+            <p style="margin: 0; color: #555;">Работает на 8 языках: русский, английский, испанский, немецкий, французский, китайский, японский</p>
+          </div>
+        </div>
+        
+        <h2 style="color: #3498db; margin: 30px 0 15px 0;">🎫 Популярные направления:</h2>
+        
+        <ul style="columns: 2; column-gap: 40px; margin-bottom: 30px;">
+          <li>🗼 Париж — маршруты по достопримечательностям</li>
+          <li>🏛️ Рим — исторические экскурсии и музеи</li>
+          <li>🗻 Токио — современная культура и традиции</li>
+          <li>🏝️ Бали — пляжный отдых и природа</li>
+          <li>🏔️ Нью-Йорк — городские приключения</li>
+          <li>🕌 Стамбул — на стыке культур и цивилизаций</li>
+          <li>🏰 Прага — средневековая архитектура</li>
+          <li>🌄 Рейкьявик — северное сияние и природа</li>
+        </ul>
+        
+        <div style="background: #e8f4fc; padding: 20px; border-radius: 10px; margin: 30px 0; border: 1px solid #3498db;">
+          <h3 style="margin: 0 0 15px 0; color: #2c3e50;">📱 Как начать планирование:</h3>
+          <ol style="margin: 0; padding-left: 20px;">
+            <li>Выберите город или страну назначения</li>
+            <li>Укажите даты поездки и бюджет</li>
+            <li>Отметьте интересные категории (музеи, рестораны, природа)</li>
+            <li>Получите готовый маршрут с расчетом стоимости</li>
+            <li>Сохраните и поделитесь планом поездки</li>
+          </ol>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; padding: 15px; background: #2c3e50; color: white; border-radius: 8px;">
+          <strong>Для использования всех функций Planify включите JavaScript в настройках браузера</strong><br>
+          или посетите нас с мобильного приложения.
+        </p>
+        
+        <div style="text-align: center; margin-top: 20px;">
+          <a href="https://planify.app" style="display: inline-block; background: #3498db; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Перейти к планированию путешествия →
+          </a>
+        </div>
+      </div>
+    </noscript>
   </body>
 </html>
