@@ -1,54 +1,31 @@
 <template>
   <div class="hero-section-mobile">
     <div class="mobile-hero">
-      <!-- Пошаговые преимущества -->
-      <div class="benefits-list">
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-route"></i>
-          </div>
-          <div class="benefit-text">
-            <strong>Персонализированный маршрут</strong>
-            <span>С учетом ваших интересов и предпочтений</span>
-          </div>
-        </div>
-        
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-calculator"></i>
-          </div>
-          <div class="benefit-text">
-            <strong>Точный бюджет</strong>
-            <span>Расчет всех расходов заранее</span>
-          </div>
-        </div>
-        
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <div class="benefit-text">
-            <strong>План на каждый день</strong>
-            <span>Что, где и когда делать</span>
-          </div>
-        </div>
-        
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-          <div class="benefit-text">
-            <strong>Конструктор плана</strong>
-            <span>Редактируйте готовый маршрут как конструктор</span>
-          </div>
-        </div>
-      </div>
-
       <!-- Заголовок и форма ближе друг к другу -->
       <div class="form-section">
         <h2 class="form-title">
           Куда хотите <span class="highlight">поехать?</span>
         </h2>
+
+        <!-- Микро-иконки преимуществ -->
+        <div class="benefits-icons">
+          <div class="benefit-icon-item">
+            <i class="fas fa-route"></i>
+            <span>Маршрут</span>
+          </div>
+          <div class="benefit-icon-item">
+            <i class="fas fa-calculator"></i>
+            <span>Бюджет</span>
+          </div>
+          <div class="benefit-icon-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>План дня</span>
+          </div>
+          <div class="benefit-icon-item">
+            <i class="fas fa-sliders-h"></i>
+            <span>Конструктор</span>
+          </div>
+        </div>
 
         <form @submit.prevent="handleSubmit" class="simple-form" autocomplete="off">
           <div class="input-wrapper">
@@ -104,17 +81,21 @@
           <i class="fas fa-edit"></i>
           <span>Редактируемый план</span>
         </div>
+        <div class="guarantee">
+          <i class="fas fa-shield-alt"></i>
+          <span>Без регистрации</span>
+        </div>
       </div>
 
       <!-- Минимальное социальное доказательство -->
       <div class="mini-stats">
         <div class="stat">
-          <div class="stat-number">42,678</div>
+          <div class="stat-number">42K+</div>
           <div class="stat-label">планов создано</div>
         </div>
         <div class="stat">
-          <div class="stat-number">4.9</div>
-          <div class="stat-label">средний рейтинг</div>
+          <div class="stat-number">98.7%</div>
+          <div class="stat-label">точность ИИ</div>
         </div>
       </div>
     </div>
@@ -156,8 +137,8 @@ export default {
 
 <style scoped>
 .hero-section-mobile {
-  padding: 30px 20px 40px;
-  min-height: 90vh;
+  padding: 20px 20px 40px;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
@@ -169,66 +150,9 @@ export default {
   margin: 0 auto;
 }
 
-/* Список преимуществ */
-.benefits-list {
-  margin-bottom: 40px;
-  text-align: left;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-}
-
-.benefit-item:hover {
-  border-color: rgba(139, 92, 246, 0.1);
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.08);
-}
-
-.benefit-icon {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.benefit-text {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1;
-}
-
-.benefit-text strong {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-dark);
-  line-height: 1.2;
-}
-
-.benefit-text span {
-  font-size: 13px;
-  color: var(--text-medium);
-  line-height: 1.4;
-}
-
 /* Секция формы - заголовок ближе к инпуту */
 .form-section {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .form-title {
@@ -245,6 +169,43 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
+}
+
+/* Микро-иконки преимуществ */
+.benefits-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 25px;
+  max-width: 400px;
+  gap: 10px;
+}
+
+.benefit-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.benefit-icon-item i {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+
+.benefit-icon-item span {
+  font-size: 11px;
+  color: var(--text-medium);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
 }
 
 /* Форма */
@@ -368,7 +329,7 @@ export default {
 .mini-guarantees {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 30px;
   flex-wrap: wrap;
 }
@@ -421,31 +382,27 @@ export default {
 /* Адаптивность */
 @media (max-width: 480px) {
   .hero-section-mobile {
-    padding: 25px 16px 35px;
+    padding: 15px 16px 35px;
   }
   
   .form-title {
     font-size: 28px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   
-  .benefit-item {
-    padding: 12px;
-    gap: 12px;
+  .benefits-icons {
+    margin-bottom: 20px;
+    gap: 8px;
   }
   
-  .benefit-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 16px;
+  .benefit-icon-item i {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
   }
   
-  .benefit-text strong {
-    font-size: 15px;
-  }
-  
-  .benefit-text span {
-    font-size: 12px;
+  .benefit-icon-item span {
+    font-size: 10px;
   }
   
   .input-wrapper {
@@ -482,11 +439,14 @@ export default {
 }
 
 @media (max-width: 360px) {
-  .benefit-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
+  .benefits-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .benefit-icon-item {
+    flex: 0 0 calc(50% - 15px);
   }
   
   .suggestion-tags {

@@ -1,9 +1,8 @@
 <template>
   <div class="mobile-app">
-    <!-- Header вынесен в отдельный компонент -->
     <MobileHeader @language-changed="setLanguage" />
     <HeroSectionMobile @destination-submitted="handleDestinationSubmitted" />
-
+    
     <!-- Демо-секция: Что получит клиент -->
     <div class="mobile-demo-section">
       <div class="demo-header">
@@ -183,22 +182,7 @@
         </button>
       </div>
     </div>
-
-    <!-- Финальный призыв -->
-    <div class="mobile-final-cta">
-      <div class="final-cta-content">
-        <div class="sparkles">
-          <i class="fas fa-sparkles"></i>
-        </div>
-        <h3>Готовы к идеальному путешествию?</h3>
-        <p>Создайте персонализированный план за 2 минуты</p>
-        <button class="final-cta-btn" @click="startPlanning">
-          <i class="fas fa-paper-plane"></i>
-          Начать планирование
-        </button>
-      </div>
-    </div>
-
+    
     <!-- Мобильный футер -->
     <div class="mobile-footer">
       <div class="footer-logo">
@@ -213,7 +197,7 @@
         <a href="#" @click.prevent="showPrivacy">Конфиденциальность</a>
       </div>
 
-      <div class="footer-copyright">© 2023 Tripfy Planner. Все права защищены.</div>
+      <div class="footer-copyright">© 2024 Tripfy Planner. Все права защищены.</div>
     </div>
   </div>
 </template>
@@ -534,85 +518,6 @@ export default {
   flex-shrink: 0;
 }
 
-/* Финальный призыв */
-.mobile-final-cta {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  margin: 0 20px 40px;
-  padding: 40px 25px;
-  border-radius: 28px;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(14, 165, 233, 0.3);
-  position: relative;
-  overflow: hidden;
-  max-width: 500px;
-  margin: 0 auto 40px;
-}
-
-.mobile-final-cta::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.3;
-}
-
-.final-cta-content {
-  position: relative;
-  z-index: 1;
-}
-
-.sparkles {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  color: white;
-  font-size: 24px;
-}
-
-.mobile-final-cta h3 {
-  font-size: 24px;
-  font-weight: 800;
-  color: white;
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.mobile-final-cta p {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 30px;
-}
-
-.final-cta-btn {
-  background: white;
-  color: var(--primary);
-  border: none;
-  padding: 20px 30px;
-  border-radius: 16px;
-  font-size: 17px;
-  font-weight: 700;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.final-cta-btn:active {
-  transform: scale(0.98);
-}
-
 /* Мобильный футер */
 .mobile-footer {
   text-align: center;
@@ -705,21 +610,6 @@ export default {
     width: 46px;
     height: 24px;
     font-size: 11px;
-  }
-  
-  .mobile-final-cta {
-    padding: 35px 20px;
-    margin: 0 16px 35px;
-  }
-  
-  .mobile-final-cta h3 {
-    font-size: 22px;
-  }
-  
-  .sparkles {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
   }
 }
 
