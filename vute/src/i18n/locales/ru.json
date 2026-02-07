@@ -341,5 +341,22 @@
         "name": "Türkçe"
       }
     }
+  },
+  "stats": {
+    "plansCreatedNumber": "42,678",
+    "plansCreatedLabel": "планов создано",
+    "averageRatingNumber": "4.9",
+    "averageRatingLabel": "средний рейтинг"
+  },
+  "popularPlaces": {
+    "santorini": "Санторини",
+    "tokyo": "Токио",
+    "bali": "Бали",
+    "paris": "Париж",
+    "newYork": "Нью-Йорк",
+    "dubai": "Дубай"
+  },
+  "errors": {
+    "popupBlocked": "Похоже, ваш браузер заблокировал открытие новой вкладки. Хотите перейти вручную?"
   }
 }

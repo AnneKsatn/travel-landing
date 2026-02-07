@@ -2,9 +2,11 @@
   <div class="demo-section">
     <div class="demo-header">
       <h2 class="demo-title">
-        {{ t('demoSection.title.part1') }} <span class="highlight">{{ t('demoSection.title.highlight') }}</span> {{ t('demoSection.title.part2') }}
+        {{ t("demoSection.title.part1") }}
+        <span class="highlight">{{ t("demoSection.title.highlight") }}</span>
+        {{ t("demoSection.title.part2") }}
       </h2>
-      <p class="demo-subtitle">{{ t('demoSection.subtitle') }}</p>
+      <p class="demo-subtitle">{{ t("demoSection.subtitle") }}</p>
     </div>
 
     <!-- Пример расчета бюджета -->
@@ -14,8 +16,8 @@
           <i class="fas fa-calculator"></i>
         </div>
         <div class="card-title-content">
-          <h3>{{ t('demoSection.budget.title') }}</h3>
-          <p>{{ t('demoSection.budget.subtitle') }}</p>
+          <h3>{{ t("demoSection.budget.title") }}</h3>
+          <p>{{ t("demoSection.budget.subtitle") }}</p>
         </div>
       </div>
 
@@ -23,47 +25,49 @@
         <div class="budget-item">
           <div class="budget-category">
             <i class="fas fa-hotel"></i>
-            <span>{{ t('expenses.hotelShort') }}</span>
+            <span>{{ t("expenses.hotelShort") }}</span>
           </div>
-          <div class="budget-amount">{{ t('demoSection.budget.items.hotel') }}</div>
+          <div class="budget-amount">{{ t("demoSection.budget.items.hotel") }}</div>
         </div>
-        
+
         <div class="budget-item">
           <div class="budget-category">
             <i class="fas fa-utensils"></i>
-            <span>{{ t('expenses.dinner') }}</span>
+            <span>{{ t("expenses.dinner") }}</span>
           </div>
-          <div class="budget-amount">{{ t('demoSection.budget.items.dinner') }}</div>
+          <div class="budget-amount">{{ t("demoSection.budget.items.dinner") }}</div>
         </div>
-        
+
         <div class="budget-item">
           <div class="budget-category">
             <i class="fas fa-taxi"></i>
-            <span>{{ t('expenses.transfer') }}</span>
+            <span>{{ t("expenses.transfer") }}</span>
           </div>
-          <div class="budget-amount">{{ t('demoSection.budget.items.transfer') }}</div>
+          <div class="budget-amount">{{ t("demoSection.budget.items.transfer") }}</div>
         </div>
-        
+
         <div class="budget-item">
           <div class="budget-category">
             <i class="fas fa-gift"></i>
-            <span>{{ t('expenses.souvenirs') }}</span>
+            <span>{{ t("expenses.souvenirs") }}</span>
           </div>
-          <div class="budget-amount">{{ t('demoSection.budget.items.souvenirs') }}</div>
+          <div class="budget-amount">{{ t("demoSection.budget.items.souvenirs") }}</div>
         </div>
-        
+
         <div class="budget-item total">
           <div class="budget-category">
             <i class="fas fa-check-double"></i>
-            <strong>{{ t('demoSection.budget.total') }}</strong>
+            <strong>{{ t("demoSection.budget.total") }}</strong>
           </div>
-          <div class="budget-amount total-amount">{{ t('demoSection.budget.totalAmount') }}</div>
+          <div class="budget-amount total-amount">
+            {{ t("demoSection.budget.totalAmount") }}
+          </div>
         </div>
       </div>
 
       <div class="demo-insight">
         <i class="fas fa-lightbulb"></i>
-        <span>{{ t('ai.remembers') }}</span>
+        <span>{{ t("ai.remembers") }}</span>
       </div>
     </div>
 
@@ -74,8 +78,8 @@
           <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="card-title-content">
-          <h3>{{ t('demoSection.schedule.title') }}</h3>
-          <p>{{ t('demoSection.schedule.subtitle') }}</p>
+          <h3>{{ t("demoSection.schedule.title") }}</h3>
+          <p>{{ t("demoSection.schedule.subtitle") }}</p>
         </div>
       </div>
 
@@ -83,47 +87,67 @@
         <div class="timeline-item">
           <div class="time-badge">9:00</div>
           <div class="timeline-content">
-            <div class="activity-title">{{ t('demoSection.schedule.activities.breakfast.title') }}</div>
-            <div class="activity-desc">{{ t('demoSection.schedule.activities.breakfast.description') }}</div>
+            <div class="activity-title">
+              {{ t("demoSection.schedule.activities.breakfast.title") }}
+            </div>
+            <div class="activity-desc">
+              {{ t("demoSection.schedule.activities.breakfast.description") }}
+            </div>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="time-badge">10:30</div>
           <div class="timeline-content">
-            <div class="activity-title">{{ t('demoSection.schedule.activities.walk.title') }}</div>
-            <div class="activity-desc">{{ t('demoSection.schedule.activities.walk.description') }}</div>
+            <div class="activity-title">
+              {{ t("demoSection.schedule.activities.walk.title") }}
+            </div>
+            <div class="activity-desc">
+              {{ t("demoSection.schedule.activities.walk.description") }}
+            </div>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="time-badge">13:00</div>
           <div class="timeline-content">
-            <div class="activity-title">{{ t('demoSection.schedule.activities.lunch.title') }}</div>
-            <div class="activity-desc">{{ t('demoSection.schedule.activities.lunch.description') }}</div>
+            <div class="activity-title">
+              {{ t("demoSection.schedule.activities.lunch.title") }}
+            </div>
+            <div class="activity-desc">
+              {{ t("demoSection.schedule.activities.lunch.description") }}
+            </div>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="time-badge">15:00</div>
           <div class="timeline-content">
-            <div class="activity-title">{{ t('demoSection.schedule.activities.beach.title') }}</div>
-            <div class="activity-desc">{{ t('demoSection.schedule.activities.beach.description') }}</div>
+            <div class="activity-title">
+              {{ t("demoSection.schedule.activities.beach.title") }}
+            </div>
+            <div class="activity-desc">
+              {{ t("demoSection.schedule.activities.beach.description") }}
+            </div>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="time-badge">18:00</div>
           <div class="timeline-content">
-            <div class="activity-title">{{ t('demoSection.schedule.activities.sunset.title') }}</div>
-            <div class="activity-desc">{{ t('demoSection.schedule.activities.sunset.description') }}</div>
+            <div class="activity-title">
+              {{ t("demoSection.schedule.activities.sunset.title") }}
+            </div>
+            <div class="activity-desc">
+              {{ t("demoSection.schedule.activities.sunset.description") }}
+            </div>
           </div>
         </div>
       </div>
 
       <div class="demo-insight">
         <i class="fas fa-robot"></i>
-        <span>{{ t('demoSection.schedule.insight') }}</span>
+        <span>{{ t("demoSection.schedule.insight") }}</span>
       </div>
     </div>
 
@@ -134,8 +158,8 @@
           <i class="fas fa-sliders-h"></i>
         </div>
         <div class="card-title-content">
-          <h3>{{ t('demoSection.constructor.title') }}</h3>
-          <p>{{ t('demoSection.constructor.subtitle') }}</p>
+          <h3>{{ t("demoSection.constructor.title") }}</h3>
+          <p>{{ t("demoSection.constructor.subtitle") }}</p>
         </div>
       </div>
 
@@ -145,61 +169,71 @@
             <i class="fas fa-pen"></i>
           </div>
           <div class="example-text">
-            <strong>{{ t('demoSection.constructor.examples.edited.title') }}</strong>
-            <span>{{ t('demoSection.constructor.examples.edited.amount') }}</span>
+            <strong>{{ t("demoSection.constructor.examples.edited.title") }}</strong>
+            <span>{{ t("demoSection.constructor.examples.edited.amount") }}</span>
           </div>
         </div>
-        
+
         <div class="example-item">
           <div class="example-icon added">
             <i class="fas fa-plus"></i>
           </div>
           <div class="example-text">
-            <strong>{{ t('demoSection.constructor.examples.added.title') }}</strong>
-            <span>{{ t('demoSection.constructor.examples.added.amount') }}</span>
+            <strong>{{ t("demoSection.constructor.examples.added.title") }}</strong>
+            <span>{{ t("demoSection.constructor.examples.added.amount") }}</span>
           </div>
         </div>
-        
+
         <div class="example-item">
           <div class="example-icon hidden">
             <i class="fas fa-times"></i>
           </div>
           <div class="example-text">
-            <strong>{{ t('demoSection.constructor.examples.hidden.title') }}</strong>
-            <span>{{ t('demoSection.constructor.examples.hidden.amount') }}</span>
+            <strong>{{ t("demoSection.constructor.examples.hidden.title") }}</strong>
+            <span>{{ t("demoSection.constructor.examples.hidden.amount") }}</span>
           </div>
         </div>
       </div>
 
       <button class="constructor-btn" @click="startPlanning">
         <i class="fas fa-wand-magic-sparkles"></i>
-        {{ t('demoSection.constructor.button') }}
+        {{ t("demoSection.constructor.button") }}
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import { useLanguage } from '../i18n/useLanguage'
+import { useLanguage } from "../i18n/useLanguage";
 
 export default {
   name: "DemoSection",
   emits: ["start-planning"],
   setup() {
-    const { t } = useLanguage()
-    
+    const { t } = useLanguage();
+
     return {
-      t
-    }
+      t,
+    };
   },
   methods: {
     startPlanning() {
-      this.$emit("start-planning");
+      // Вариант 1: Простой параметр
+      const params = new URLSearchParams({
+        source: "mobile_btn_footer",
+        timestamp: new Date().getTime(),
+        locale: navigator.language,
+        user_agent: navigator.userAgent,
+      });
+
+      // Используем тот вариант, который вам нужен:
+      const url = `http://tripfy-app.tech/app/questionnaire?${params.toString()}`;
+
+      window.open(url, "_blank");
     },
   },
 };
 </script>
-
 
 <style scoped>
 .demo-section {

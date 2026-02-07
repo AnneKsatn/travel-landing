@@ -3,27 +3,15 @@
     <div class="cta-container">
       <div class="cta-content">
         <!-- Заголовок -->
-        <h2 class="cta-title">Куда хотите <span class="highlight">поехать?</span></h2>
+        <h2 class="cta-title">{{ t('cta.title') }}</h2>
 
         <p class="cta-subtitle">
-          <!-- Введите направление — AI создаст идеальный маршрут за 2 минуты -->
-
-          Перейдите к анкете и сгенерируйте маршрут.
+          {{ t('cta.subtitle') }}
         </p>
-
-        <button type="submit" class="submit-btn plan-trip" :disabled="isLoading">
-          <span v-if="!isLoading">
-            <i class="fas fa-paper-plane"></i>
-            Начать путешествие!
-          </span>
-          <span v-else>
-            <i class="fas fa-spinner fa-spin"></i>
-          </span>
-        </button>
 
         <!-- Простая форма -->
         <form @submit.prevent="handleSubmit" class="simple-form" autocomplete="off">
-          <!-- <div class="input-wrapper">
+          <div class="input-wrapper">
             <div class="input-icon">
               <i class="fas fa-map-marker-alt"></i>
             </div>
@@ -31,7 +19,7 @@
             <input
               type="text"
               v-model="destination"
-              placeholder="Например: Санторини, Токио, Бали..."
+              :placeholder="t('cta.placeholder')"
               class="destination-input"
               required
             >
@@ -43,17 +31,17 @@
             >
               <span v-if="!isLoading">
                 <i class="fas fa-paper-plane"></i>
-                Поехали!
+                {{ t('cta.submit') }}
               </span>
               <span v-else>
                 <i class="fas fa-spinner fa-spin"></i>
               </span>
             </button>
-          </div> -->
+          </div>
 
           <!-- Подсказки популярных направлений -->
-          <!-- <div class="quick-suggestions">
-            <span class="suggest-label">Популярные направления:</span>
+          <div class="quick-suggestions">
+            <span class="suggest-label">{{ t('cta.suggestions') }}:</span>
             <div class="suggestion-tags">
               <button
                 type="button"
@@ -62,24 +50,24 @@
                 @click="selectPlace(place)"
                 class="suggestion-tag"
               >
-                {{ place }}
+                {{ t(`popularPlaces.${place.key}`) }}
               </button>
             </div>
-          </div> -->
+          </div>
 
           <!-- Минимальные гарантии -->
           <div class="mini-guarantees">
             <div class="guarantee">
               <i class="fas fa-bolt"></i>
-              <span>2 минуты</span>
+              <span>{{ t('cta.guarantees.fast') }}</span>
             </div>
             <div class="guarantee">
               <i class="fas fa-edit"></i>
-              <span>Редактируемый план</span>
+              <span>{{ t('cta.guarantees.editable') }}</span>
             </div>
             <div class="guarantee">
               <i class="fas fa-lock"></i>
-              <span>Безопасно</span>
+              <span>{{ t('cta.guarantees.secure') }}</span>
             </div>
           </div>
         </form>
@@ -87,12 +75,12 @@
         <!-- Минимальное социальное доказательство -->
         <div class="mini-stats">
           <div class="stat">
-            <div class="stat-number">42,678</div>
-            <div class="stat-label">планов создано</div>
+            <div class="stat-number">{{ t('stats.plansCreatedNumber') }}</div>
+            <div class="stat-label">{{ t('stats.plansCreatedLabel') }}</div>
           </div>
           <div class="stat">
-            <div class="stat-number">4.9</div>
-            <div class="stat-label">средний рейтинг</div>
+            <div class="stat-number">{{ t('stats.averageRatingNumber') }}</div>
+            <div class="stat-label">{{ t('stats.averageRatingLabel') }}</div>
           </div>
         </div>
       </div>
@@ -101,40 +89,86 @@
 </template>
 
 <script>
+import { useLanguage } from '../i18n/useLanguage'
+
 export default {
   name: "SimpleCTA",
+  setup() {
+    const { t } = useLanguage()
+    
+    // Популярные направления с ключами для перевода
+    const popularPlaces = [
+      { key: "santorini" },
+      { key: "tokyo" },
+      { key: "bali" },
+      { key: "paris" },
+      { key: "newYork" },
+      { key: "dubai" }
+    ]
+    
+    return {
+      t,
+      popularPlaces
+    }
+  },
   data() {
     return {
       destination: "",
       isLoading: false,
-      popularPlaces: ["Санторини", "Токио", "Бали", "Париж", "Нью-Йорк", "Дубай"],
     };
   },
   methods: {
     selectPlace(place) {
-      this.destination = place;
+      // Используем перевод для установки значения
+      this.destination = this.t(`popularPlaces.${place.key}`);
+      // Фокусируемся на поле ввода после выбора
+      const input = document.querySelector('.destination-input');
+      if (input) {
+        input.focus();
+      }
     },
 
-    handleSubmit() {
+    async handleSubmit() {
       if (!this.destination.trim()) {
         return;
       }
 
       this.isLoading = true;
 
-      // Имитация отправки
-      setTimeout(() => {
-        // Эмитируем событие с данными
-        this.$emit("destination-submitted", this.destination);
+      try {
+        const destination = this.destination.trim();
 
-        // В реальном приложении здесь будет редирект:
-        // window.location.href = `/questionnaire?destination=${encodeURIComponent(this.destination)}`
+        // Создаем параметры для URL
+        const params = new URLSearchParams({
+          destination: destination,
+          source: "desktop_form_btn",
+          timestamp: new Date().getTime(),
+          locale: navigator.language,
+          user_agent: navigator.userAgent,
+        });
 
+        // Формируем URL
+        const url = `http://tripfy-app.tech/app/questionnaire?${params.toString()}`;
+        
+        // Открываем новую вкладку
+        const newWindow = window.open(url, "_blank");
+        
+        // Проверяем, открылось ли окно (на случай блокировки popup)
+        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+          // Если popup заблокирован, предлагаем альтернативу
+          const shouldRedirect = confirm(
+            this.t('errors.popupBlocked')
+          );
+          if (shouldRedirect) {
+            window.location.href = url;
+          }
+        }
+      } catch (error) {
+        console.error("Ошибка при открытии страницы:", error);
+      } finally {
+        // Завершаем загрузку
         this.isLoading = false;
-
-        // Можно показать уведомление в родительском компоненте
-        console.log("Переход в анкету для:", this.destination);
-      }, 800);
+      }
     },
   },
   emits: ["destination-submitted"],
@@ -445,9 +479,44 @@ export default {
   }
 }
 
-.plan-trip {
- margin-left: auto;
- margin-right: auto;
- margin-bottom: 40px;
+@media (max-width: 480px) {
+  .cta-content {
+    padding: 30px 16px;
+  }
+
+  .cta-title {
+    font-size: 28px;
+  }
+
+  .cta-subtitle {
+    font-size: 15px;
+  }
+
+  .input-wrapper {
+    padding: 15px;
+  }
+
+  .destination-input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .suggestion-tag {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
 }
 </style>

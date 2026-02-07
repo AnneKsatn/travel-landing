@@ -11,7 +11,7 @@
 
     <!-- Форма -->
     <div class="form-section">
-      <h2 class="form-title">{{ t('cta.title') }}</h2>
+      <h2 class="form-title">{{ t("cta.title") }}</h2>
 
       <form @submit.prevent="handleSubmit" class="simple-form" autocomplete="off">
         <div class="input-wrapper">
@@ -30,7 +30,7 @@
 
         <!-- Быстрые подсказки -->
         <div class="quick-suggestions">
-          <span class="suggest-label">{{ t('cta.suggestions') }}:</span>
+          <span class="suggest-label">{{ t("cta.suggestions") }}:</span>
           <div class="suggestion-tags">
             <button
               type="button"
@@ -46,9 +46,9 @@
 
         <!-- Кнопка отправки -->
         <button type="submit" class="submit-btn" :disabled="isLoading">
-          <span v-if="!isLoading">{{ t('cta.submit') }}</span>
+          <span v-if="!isLoading">{{ t("cta.submit") }}</span>
           <span v-else class="loading-text">
-            <i class="fas fa-spinner fa-spin"></i> {{ t('common.loading') }}
+            <i class="fas fa-spinner fa-spin"></i> {{ t("common.loading") }}
           </span>
         </button>
       </form>
@@ -57,7 +57,7 @@
       <div class="guarantees">
         <div class="guarantee">
           <i class="fas fa-shield-alt"></i>
-          <span>{{ t('cta.guarantees.secure') }}</span>
+          <span>{{ t("cta.guarantees.secure") }}</span>
         </div>
       </div>
     </div>
@@ -65,17 +65,16 @@
 </template>
 
 <script>
-import { useLanguage } from '../i18n/useLanguage'
+import { useLanguage } from "../i18n/useLanguage";
 
 export default {
   name: "HeroForm",
-  emits: ["destination-submitted"],
   setup() {
-    const { t } = useLanguage()
-    
+    const { t } = useLanguage();
+
     return {
-      t
-    }
+      t,
+    };
   },
   data() {
     return {
@@ -87,21 +86,38 @@ export default {
   methods: {
     selectPlace(place) {
       this.destination = place;
-      const input = document.querySelector('.destination-input');
+      const input = document.querySelector(".destination-input");
       if (input) {
         input.focus();
       }
     },
+
     handleSubmit() {
       if (!this.destination.trim()) {
         return;
       }
+
       this.isLoading = true;
-      setTimeout(() => {
-        this.$emit("destination-submitted", this.destination);
-        this.isLoading = false;
-        console.log("Переход в анкету для:", this.destination);
-      }, 800);
+      this.redirectToQuestionnaire();
+      this.isLoading = false;
+    },
+
+    redirectToQuestionnaire() {
+      const destination = this.destination.trim();
+
+      // Вариант 1: Простой параметр
+      const params = new URLSearchParams({
+        destination: destination,
+        source: "mobile_form_btn",
+        timestamp: new Date().getTime(),
+        locale: navigator.language,
+        user_agent: navigator.userAgent,
+      });
+
+      // Используем тот вариант, который вам нужен:
+      const url = `http://tripfy-app.tech/app/questionnaire?${params.toString()}`;
+
+      window.open(url, "_blank");
     },
   },
 };
