@@ -1,32 +1,45 @@
 <template>
   <div class="hero-section-mobile">
     <div class="mobile-hero">
-      <!-- Заголовок и форма ближе друг к другу -->
-      <div class="form-section">
-        <h2 class="form-title">
-          <span class="highlight">Ваше идеальное путешествие</span>
-          спланирует AI
-        </h2>
-        
-        <!-- Микро-иконки преимуществ -->
-        <div class="benefits-icons">
-          <div class="benefit-icon-item">
-            <i class="fas fa-route"></i>
-            <span>Маршрут</span>
+      <!-- Ценности и социальное доказательство -->
+      <div class="value-section">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-route"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Персональный маршрут</h3>
+              <p>С учетом ваших интересов и предпочтений</p>
+            </div>
           </div>
-          <div class="benefit-icon-item">
-            <i class="fas fa-calculator"></i>
-            <span>Бюджет</span>
-          </div>
-          <div class="benefit-icon-item">
-            <i class="fas fa-calendar-alt"></i>
-            <span>План дня</span>
-          </div>
-          <div class="benefit-icon-item">
-            <i class="fas fa-sliders-h"></i>
-            <span>Конструктор</span>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Честный бюджет</h3>
+              <p>Без скрытых расходов и неожиданностей</p>
+            </div>
           </div>
         </div>
+
+        <div class="social-proof">
+          <div class="proof-content">
+            <i class="fas fa-users"></i>
+            <div class="proof-text">
+              <strong>42K+ туристов</strong> доверяют планирование нам
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Форма планирования -->
+      <div class="form-section">
+        <h2 class="form-title">
+          Куда <span class="highlight">отправимся</span>?
+        </h2>
 
         <form @submit.prevent="handleSubmit" class="simple-form" autocomplete="off">
           <div class="input-wrapper">
@@ -37,7 +50,7 @@
             <input
               type="text"
               v-model="destination"
-              placeholder="Куда хотите поехать? Например: Санторини, Токио..."
+              placeholder="Например: Санторини, Токио, Бали..."
               class="destination-input"
               required
             >
@@ -63,33 +76,29 @@
           <button type="submit" class="submit-btn" :disabled="isLoading || !destination.trim()">
             <span v-if="!isLoading">
               <i class="fas fa-magic"></i>
-              Создать план путешествия
+              Построить мой маршрут
             </span>
             <span v-else>
               <i class="fas fa-spinner fa-spin"></i>
-              ИИ анализирует...
+              Создаем план...
             </span>
           </button>
         </form>
-      </div>
 
-      <!-- Минимальные гарантии -->
-      <div class="mini-guarantees">
-        <div class="guarantee">
-          <i class="fas fa-bolt"></i>
-          <span>2 минуты</span>
-        </div>
-        <div class="guarantee">
-          <i class="fas fa-edit"></i>
-          <span>Редактируемый</span>
-        </div>
-        <div class="guarantee">
-          <i class="fas fa-shield-alt"></i>
-          <span>Без регистрации</span>
-        </div>
-        <div class="guarantee">
-          <i class="fas fa-robot"></i>
-          <span>AI-помощник</span>
+        <!-- Гарантии -->
+        <div class="guarantees">
+          <div class="guarantee">
+            <i class="fas fa-bolt"></i>
+            <span>2 минуты</span>
+          </div>
+          <div class="guarantee">
+            <i class="fas fa-edit"></i>
+            <span>Редактируемый</span>
+          </div>
+          <div class="guarantee">
+            <i class="fas fa-shield-alt"></i>
+            <span>Без регистрации</span>
+          </div>
         </div>
       </div>
     </div>
@@ -131,7 +140,7 @@ export default {
 
 <style scoped>
 .hero-section-mobile {
-  padding: 30px 20px 40px;
+  padding: 20px 20px 40px;
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -144,72 +153,106 @@ export default {
   margin: 0 auto;
 }
 
-/* Секция формы - больше воздуха */
+/* Секция ценностей */
+.value-section {
+  margin-bottom: 30px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+  text-align: center;
+}
+
+.benefit-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  color: white;
+  font-size: 18px;
+}
+
+.benefit-content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.benefit-content p {
+  font-size: 12px;
+  color: var(--text-medium);
+  line-height: 1.3;
+}
+
+/* Социальное доказательство */
+.social-proof {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15);
+}
+
+.proof-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.proof-content i {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.proof-text {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.proof-text strong {
+  font-weight: 800;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Форма */
 .form-section {
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .form-title {
   font-size: 28px;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   color: var(--text-dark);
   line-height: 1.2;
   text-align: center;
 }
 
 .form-title .highlight {
-  display: block;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 4px;
-}
-
-.form-subtitle {
-  font-size: 15px;
-  color: var(--text-medium);
-  text-align: center;
-  margin-bottom: 25px;
-  line-height: 1.4;
-}
-
-/* Микро-иконки преимуществ */
-.benefits-icons {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 30px;
-  max-width: 400px;
-  gap: 12px;
-  padding: 0 5px;
-}
-
-.benefit-icon-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  flex: 1;
-}
-
-.benefit-icon-item i {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 16px;
-}
-
-.benefit-icon-item span {
-  font-size: 11px;
-  color: var(--text-medium);
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.2;
 }
 
 /* Форма */
@@ -329,12 +372,12 @@ export default {
   transform: scale(0.98);
 }
 
-/* Минимальные гарантии */
-.mini-guarantees {
+/* Гарантии */
+.guarantees {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-top: 25px;
   flex-wrap: wrap;
   padding-top: 25px;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -360,32 +403,43 @@ export default {
 /* Адаптивность */
 @media (max-width: 480px) {
   .hero-section-mobile {
-    padding: 25px 16px 35px;
+    padding: 15px 16px 35px;
   }
   
   .form-title {
-    font-size: 24px;
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+  
+  .benefits-grid {
+    gap: 12px;
+  }
+  
+  .benefit-card {
+    padding: 15px;
+  }
+  
+  .benefit-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
   
-  .form-subtitle {
+  .benefit-content h3 {
     font-size: 14px;
-    margin-bottom: 20px;
   }
   
-  .benefits-icons {
-    margin-bottom: 25px;
-    gap: 8px;
+  .benefit-content p {
+    font-size: 11px;
   }
   
-  .benefit-icon-item i {
-    width: 36px;
-    height: 36px;
-    font-size: 15px;
+  .social-proof {
+    padding: 16px;
   }
   
-  .benefit-icon-item span {
-    font-size: 10px;
+  .proof-text {
+    font-size: 14px;
   }
   
   .input-wrapper {
@@ -412,27 +466,22 @@ export default {
     font-size: 12px;
   }
   
-  .mini-guarantees {
+  .guarantees {
     gap: 10px;
   }
 }
 
 @media (max-width: 360px) {
-  .benefits-icons {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .benefit-icon-item {
-    flex: 0 0 calc(50% - 15px);
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   
   .suggestion-tags {
     gap: 6px;
   }
   
-  .mini-guarantees {
+  .guarantees {
     flex-direction: column;
     align-items: center;
     gap: 10px;

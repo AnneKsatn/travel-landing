@@ -1,139 +1,63 @@
 <template>
   <div class="mobile-header">
     <div class="header-top">
-      <div class="language-switcher-mobile">
-        <button
-          v-for="lang in languages"
-          :key="lang.code"
-          class="lang-btn"
-          :class="{ active: language === lang.code }"
-          @click="setLanguage(lang.code)"
-          :title="lang.name"
+      <div class="language-dropdown">
+        <button 
+          class="dropdown-toggle" 
+          @click="toggleDropdown"
+          :aria-expanded="dropdownOpen.toString()"
         >
-          {{ lang.flag }}
+          <span class="current-language">
+            <span class="language-flag">{{ getCurrentFlag }}</span>
+            <span class="language-name">{{ getCurrentName }}</span>
+          </span>
+          <i class="fas" :class="dropdownOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
         </button>
+        
+        <div v-if="dropdownOpen" class="dropdown-menu">
+          <div class="dropdown-backdrop" @click="closeDropdown"></div>
+          <div class="dropdown-content">
+            <button
+              v-for="lang in languages"
+              :key="lang.code"
+              class="dropdown-item"
+              :class="{ active: language === lang.code }"
+              @click="setLanguage(lang.code)"
+            >
+              <span class="item-flag">{{ lang.flag }}</span>
+              <span class="item-name">{{ lang.name }}</span>
+              <i v-if="language === lang.code" class="fas fa-check"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="header-content">
       <div class="mobile-logo">
         <div class="logo-icon">
-          <i class="fas fa-route"></i>
+          <i class="fas fa-compass"></i>
         </div>
         <h1 class="logo-title">
           <span class="trip">Trip</span>
           <span class="fy">fy</span>
           <span class="planner"> Planner</span>
         </h1>
-        <p class="logo-subtitle">Планируйте путешествия с удовольствием</p>
-      </div>
-
-      <div class="benefits-showcase">
-        <div class="benefit">
-          <div class="benefit-icon">
-            <i class="fas fa-compass"></i>
-          </div>
-          <div class="benefit-text">
-            <strong>Персональный маршрут</strong>
-            <span>С учетом ваших предпочтений</span>
-          </div>
-        </div>
         
-        <div class="benefit">
-          <div class="benefit-icon">
-            <i class="fas fa-calculator"></i>
+        <!-- НОВЫЙ ТЕКСТ -->
+        <div class="header-taglines">
+          <div class="tagline-main">Цифровой планёр путешествий</div>
+          <div class="tagline-sub">
+            <span class="ai-part">AI создаст маршрут</span>
+            <span class="separator">, </span>
+            <span class="you-part">вы его настроите</span>
           </div>
-          <div class="benefit-text">
-            <strong>Честный бюджет</strong>
-            <span>Без скрытых расходов</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trust-signals">
-        <div class="trust-item">
-          <i class="fas fa-users"></i>
-          <span>42K+ довольных туристов</span>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.benefits-showcase {
-  margin: 25px 0;
-}
-
-.benefit {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 14px;
-  padding: 16px;
-  margin-bottom: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.benefit:last-child {
-  margin-bottom: 0;
-}
-
-.benefit-icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.benefit-text {
-  flex: 1;
-}
-
-.benefit-text strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 4px;
-}
-
-.benefit-text span {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.3;
-}
-
-.trust-signals {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 15px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.trust-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.trust-item i {
-  color: #fbbf24;
-}
-</style>
 
 <script>
 export default {
@@ -141,22 +65,57 @@ export default {
   data() {
     return {
       language: "ru",
+      dropdownOpen: false,
       languages: [
         { code: "ru", name: "Русский", flag: "🇷🇺" },
         { code: "en", name: "English", flag: "🇺🇸" },
         { code: "es", name: "Español", flag: "🇪🇸" },
         { code: "fr", name: "Français", flag: "🇫🇷" },
         { code: "de", name: "Deutsch", flag: "🇩🇪" },
+        { code: "it", name: "Italiano", flag: "🇮🇹" },
+        { code: "pt", name: "Português", flag: "🇵🇹" },
+        { code: "ja", name: "日本語", flag: "🇯🇵" },
+        { code: "ko", name: "한국어", flag: "🇰🇷" },
+        { code: "zh", name: "中文", flag: "🇨🇳" },
+        { code: "ar", name: "العربية", flag: "🇸🇦" },
+        { code: "tr", name: "Türkçe", flag: "🇹🇷" },
       ],
     };
   },
+  computed: {
+    getCurrentFlag() {
+      const lang = this.languages.find(l => l.code === this.language);
+      return lang ? lang.flag : "🇷🇺";
+    },
+    getCurrentName() {
+      const lang = this.languages.find(l => l.code === this.language);
+      return lang ? lang.name : "Русский";
+    }
+  },
   methods: {
+    toggleDropdown() {
+      this.dropdownOpen = !this.dropdownOpen;
+    },
+    
+    closeDropdown() {
+      this.dropdownOpen = false;
+    },
+    
     setLanguage(lang) {
       this.language = lang;
       this.$emit("language-changed", lang);
+      this.closeDropdown();
     },
   },
   emits: ["language-changed"],
+  
+  mounted() {
+    document.addEventListener('click', (event) => {
+      if (!this.$el.contains(event.target)) {
+        this.closeDropdown();
+      }
+    });
+  }
 };
 </script>
 
@@ -167,9 +126,9 @@ export default {
     rgba(14, 165, 233, 0.9) 0%,
     rgba(139, 92, 246, 0.8) 100%
   );
-  padding: 12px 20px 20px;
+  padding: 12px 20px 25px;
   border-radius: 0 0 30px 30px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   position: relative;
   overflow: hidden;
 }
@@ -189,33 +148,150 @@ export default {
   justify-content: flex-end;
   margin-bottom: 15px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-.language-switcher-mobile {
+/* Dropdown стили */
+.language-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 16px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 5px;
-}
-
-.lang-btn {
-  padding: 6px 10px;
-  border: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 16px;
-  border-radius: 15px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
   transition: all 0.2s ease;
-  min-width: 36px;
+  min-width: 140px;
 }
 
-.lang-btn.active {
+.dropdown-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-toggle i {
+  font-size: 12px;
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+.current-language {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-flag {
+  font-size: 16px;
+}
+
+.language-name {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Выпадающее меню */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1000;
+  width: 220px;
+}
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.dropdown-content {
   background: white;
-  color: var(--primary-dark);
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--text-dark);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background: rgba(14, 165, 233, 0.05);
+}
+
+.dropdown-item.active {
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.item-flag {
+  font-size: 18px;
+  margin-right: 12px;
+  width: 24px;
+  text-align: center;
+}
+
+.item-name {
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-item .fa-check {
+  color: var(--primary);
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* Стиль для скроллбара */
+.dropdown-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .header-content {
@@ -227,7 +303,7 @@ export default {
 
 .mobile-logo {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .logo-icon {
@@ -241,7 +317,7 @@ export default {
   justify-content: center;
   margin: 0 auto 12px;
   color: white;
-  font-size: 24px;
+  font-size: 22px;
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -275,61 +351,29 @@ export default {
 }
 
 .logo-subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 400;
-}
-
-.mobile-stats-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 18px;
-  padding: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.stat-item {
-  text-align: center;
-  flex: 1;
-}
-
-.stat-divider {
-  width: 1px;
-  height: 30px;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.stat-number {
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-  margin-bottom: 3px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.stat-label {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.8);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+  line-height: 1.4;
 }
 
 /* Адаптивность для маленьких экранов */
+@media (max-width: 480px) {
+  .dropdown-menu {
+    width: 200px;
+  }
+  
+  .dropdown-toggle {
+    min-width: 130px;
+    padding: 7px 14px;
+  }
+  
+  .language-name {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 350px) {
-  .mobile-stats-bar {
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px;
-  }
-
-  .stat-divider {
-    display: none;
-  }
-
   .logo-title {
     font-size: 28px;
   }
@@ -343,28 +387,88 @@ export default {
     font-size: 16px;
     top: -1px;
   }
-}
-
-@media (max-width: 400px) {
-  .language-switcher-mobile {
-    gap: 5px;
-  }
-
-  .lang-btn {
-    padding: 5px 8px;
+  
+  .logo-subtitle {
     font-size: 15px;
-    min-width: 32px;
   }
-
-  .mobile-header {
-    padding: 10px 16px 18px;
+  
+  .dropdown-toggle {
+    min-width: 120px;
+  }
+  
+  .dropdown-menu {
+    width: 180px;
+    z-index: 10;
   }
 }
 
 /* Ховер-эффекты для десктопа */
 @media (hover: hover) and (pointer: fine) {
+  .dropdown-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  }
+  
   .lang-btn:hover {
     transform: scale(1.05);
   }
 }
+
+.header-taglines {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.tagline-main {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  opacity: 0.95;
+}
+
+.tagline-sub {
+  font-size: 16px;
+  color: white;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.ai-part {
+  font-weight: 600;
+  color: #FFD700; /* золотой акцент на AI */
+}
+
+.separator {
+  opacity: 0.7;
+}
+
+.you-part {
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* Адаптивность для нового текста */
+@media (max-width: 480px) {
+  .tagline-main {
+    font-size: 16px;
+  }
+  
+  .tagline-sub {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px) {
+  .tagline-main {
+    font-size: 15px;
+  }
+  
+  .tagline-sub {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}
+
 </style>
