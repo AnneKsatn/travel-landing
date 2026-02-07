@@ -341,5 +341,22 @@
     "share": "Condividi",
     "currency": "₽",
     "currencyFull": "rubli"
+  },
+  "stats": {
+    "plansCreatedNumber": "42.678",
+    "plansCreatedLabel": "piani creati",
+    "averageRatingNumber": "4,9",
+    "averageRatingLabel": "valutazione media"
+  },
+  "popularPlaces": {
+    "santorini": "Santorini",
+    "tokyo": "Tokyo",
+    "bali": "Bali",
+    "paris": "Parigi",
+    "newYork": "New York",
+    "dubai": "Dubai"
+  },
+  "errors": {
+    "popupBlocked": "Sembra che il tuo browser abbia bloccato l'apertura di una nuova scheda. Vuoi andarci manualmente?"
   }
 }

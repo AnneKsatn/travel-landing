@@ -341,5 +341,22 @@
     "share": "Teilen",
     "currency": "₽",
     "currencyFull": "Rubel"
+  },
+  "stats": {
+    "plansCreatedNumber": "42.678",
+    "plansCreatedLabel": "Pläne erstellt",
+    "averageRatingNumber": "4,9",
+    "averageRatingLabel": "durchschnittliche Bewertung"
+  },
+  "popularPlaces": {
+    "santorini": "Santorin",
+    "tokyo": "Tokio",
+    "bali": "Bali",
+    "paris": "Paris",
+    "newYork": "New York",
+    "dubai": "Dubai"
+  },
+  "errors": {
+    "popupBlocked": "Es scheint, dass Ihr Browser das Öffnen eines neuen Tabs blockiert hat. Möchten Sie manuell gehen?"
   }
 }

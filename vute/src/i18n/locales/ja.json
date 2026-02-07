@@ -341,5 +341,22 @@
     "share": "共有",
     "currency": "₽",
     "currencyFull": "ルーブル"
+  },
+  "stats": {
+    "plansCreatedNumber": "42,678",
+    "plansCreatedLabel": "プラン作成数",
+    "averageRatingNumber": "4.9",
+    "averageRatingLabel": "平均評価"
+  },
+  "popularPlaces": {
+    "santorini": "サントリーニ",
+    "tokyo": "東京",
+    "bali": "バリ",
+    "paris": "パリ",
+    "newYork": "ニューヨーク",
+    "dubai": "ドバイ"
+  },
+  "errors": {
+    "popupBlocked": "ブラウザが新しいタブの開設をブロックしているようです。手動で移動しますか？"
   }
 }

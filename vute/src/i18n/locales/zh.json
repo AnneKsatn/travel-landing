@@ -341,5 +341,23 @@
     "share": "分享",
     "currency": "₽",
     "currencyFull": "卢布"
+  },
+  "stats": {
+    "plansCreatedNumber": "42,678",
+    "plansCreatedLabel": "已创建计划",
+    "averageRatingNumber": "4.9",
+    "averageRatingLabel": "平均评分"
+  },
+  "popularPlaces": {
+    "santorini": "圣托里尼",
+    "tokyo": "东京",
+    "bali": "巴厘岛",
+    "paris": "巴黎",
+    "newYork": "纽约",
+    "dubai": "迪拜"
+  },
+  "errors": {
+    "popupBlocked": "您的浏览器似乎阻止了新标签页的打开。您想手动前往吗？"
   }
+}
 }
