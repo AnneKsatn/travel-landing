@@ -4,10 +4,8 @@
       <!-- Десктопная версия -->
       <template #desktop>
         <div class="desktop-app">
-          <!-- TechStats наверху первого экрана -->
-          <TechStats class="tech-stats-top" />
 
-          <!-- Главный герой-секция -->
+          <TechStats class="tech-stats-top" />
           <HeroSection
             :current-destination="currentDestination"
             @start-planning="startPlanning"
@@ -15,13 +13,8 @@
             @budget-analyzed="onBudgetAnalyzed"
           />
 
-          <!-- Второй экран -->
           <ScreenTwo />
-
-          <!-- Третий экран: Конструктор -->
           <ConstructorBlock />
-
-          <!-- Четвертый экран: Форма -->
           <SimpleCTA @destination-submitted="handleDestinationSubmit" />
         </div>
       </template>
@@ -52,6 +45,7 @@ import SimpleCTA from "./components/CTAForm.vue";
 import HeroSection from "./components/HeroSection.vue";
 import ResponsiveLayout from "./components/ResponsiveLayout.vue";
 import MobileHero from "./mobile/MobileApp.vue";
+import manarolaPhoto from "./assets/manarola.png";
 
 export default {
   name: "App",
@@ -69,33 +63,18 @@ export default {
       currentDestinationIndex: 0,
       destinations: [
         {
-          name: "Санторини",
-          location: "Греция, Эгейское море",
+          name: "Манарола",
+          location: "Север Италии",
           rating: "9.8/10",
-          photo:
-            "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
+          photo: manarolaPhoto,
         },
-        {
-          name: "Токио",
-          location: "Япония",
-          rating: "9.7/10",
-          photo:
-            "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-        },
-        {
-          name: "Мальдивы",
-          location: "Индийский океан",
-          rating: "9.9/10",
-          photo:
-            "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-        },
-        {
-          name: "Бали",
-          location: "Индонезия",
-          rating: "9.6/10",
-          photo:
-            "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-        },
+        // {
+        //   name: "Мальдивы",
+        //   location: "Индийский океан",
+        //   rating: "9.9/10",
+        //   photo:
+        //     "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
+        // }
       ],
       notification: {
         show: false,

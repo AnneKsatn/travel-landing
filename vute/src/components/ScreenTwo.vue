@@ -12,39 +12,39 @@
         <h2 class="section-title" v-html="t('screenTwo.title')"></h2>
 
         <p class="section-description">
-          {{ t('screenTwo.description') }}
+          {{ t("screenTwo.description") }}
         </p>
 
         <div class="preference-list">
           <div class="preference-item">
             <i class="fas fa-heart"></i>
             <div>
-              <h4>{{ t('screenTwo.preferences.interests.title') }}</h4>
-              <p>{{ t('screenTwo.preferences.interests.description') }}</p>
+              <h4>{{ t("screenTwo.preferences.interests.title") }}</h4>
+              <p>{{ t("screenTwo.preferences.interests.description") }}</p>
             </div>
           </div>
 
           <div class="preference-item">
             <i class="fas fa-walking"></i>
             <div>
-              <h4>{{ t('screenTwo.preferences.activity.title') }}</h4>
-              <p>{{ t('screenTwo.preferences.activity.description') }}</p>
+              <h4>{{ t("screenTwo.preferences.activity.title") }}</h4>
+              <p>{{ t("screenTwo.preferences.activity.description") }}</p>
             </div>
           </div>
 
           <div class="preference-item">
             <i class="fas fa-users"></i>
             <div>
-              <h4>{{ t('screenTwo.preferences.company.title') }}</h4>
-              <p>{{ t('screenTwo.preferences.company.description') }}</p>
+              <h4>{{ t("screenTwo.preferences.company.title") }}</h4>
+              <p>{{ t("screenTwo.preferences.company.description") }}</p>
             </div>
           </div>
 
           <div class="preference-item">
             <i class="fas fa-coins"></i>
             <div>
-              <h4>{{ t('screenTwo.preferences.budget.title') }}</h4>
-              <p>{{ t('screenTwo.preferences.budget.description') }}</p>
+              <h4>{{ t("screenTwo.preferences.budget.title") }}</h4>
+              <p>{{ t("screenTwo.preferences.budget.description") }}</p>
             </div>
           </div>
         </div>
@@ -57,17 +57,15 @@
           <div class="place-card museum-card">
             <div
               class="place-image"
-              style="
-                background-image: url('https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-              "
+              style="background-image: url('src/assets/art_gallery.png')"
             ></div>
             <div class="place-content">
               <div class="place-icon">
                 <i class="fas fa-landmark"></i>
               </div>
-              <h4>{{ t('screenTwo.places.museum.title') }}</h4>
-              <p>{{ t('screenTwo.places.museum.description') }}</p>
-              <div class="place-tag">{{ t('screenTwo.places.museum.tag') }}</div>
+              <h4>{{ t("screenTwo.places.museum.title") }}</h4>
+              <p>{{ t("screenTwo.places.museum.description") }}</p>
+              <div class="place-tag">{{ t("screenTwo.places.museum.tag") }}</div>
             </div>
           </div>
 
@@ -75,17 +73,15 @@
           <div class="place-card park-card">
             <div
               class="place-image"
-              style="
-                background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-              "
+              style="background-image: url('src/assets/national_park.png')"
             ></div>
             <div class="place-content">
               <div class="place-icon">
                 <i class="fas fa-tree"></i>
               </div>
-              <h4>{{ t('screenTwo.places.park.title') }}</h4>
-              <p>{{ t('screenTwo.places.park.description') }}</p>
-              <div class="place-tag">{{ t('screenTwo.places.park.tag') }}</div>
+              <h4>{{ t("screenTwo.places.park.title") }}</h4>
+              <p>{{ t("screenTwo.places.park.description") }}</p>
+              <div class="place-tag">{{ t("screenTwo.places.park.tag") }}</div>
             </div>
           </div>
 
@@ -93,17 +89,15 @@
           <div class="place-card restaurant-card">
             <div
               class="place-image"
-              style="
-                background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-              "
+              style="background-image: url('src/assets/restaurant.png')"
             ></div>
             <div class="place-content">
               <div class="place-icon">
                 <i class="fas fa-utensils"></i>
               </div>
-              <h4>{{ t('screenTwo.places.restaurant.title') }}</h4>
-              <p>{{ t('screenTwo.places.restaurant.description') }}</p>
-              <div class="place-tag">{{ t('screenTwo.places.restaurant.tag') }}</div>
+              <h4>{{ t("screenTwo.places.restaurant.title") }}</h4>
+              <p>{{ t("screenTwo.places.restaurant.description") }}</p>
+              <div class="place-tag">{{ t("screenTwo.places.restaurant.tag") }}</div>
             </div>
           </div>
 
@@ -112,16 +106,19 @@
             <div
               class="place-image"
               style="
-                background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+                background-image: url('src/assets/view_point.png');
+                background-position-y: -200px;
+                background-position-x: center;
+                background-repeat: no-repeat;
               "
             ></div>
             <div class="place-content">
               <div class="place-icon">
                 <i class="fas fa-binoculars"></i>
               </div>
-              <h4>{{ t('screenTwo.places.viewpoint.title') }}</h4>
-              <p>{{ t('screenTwo.places.viewpoint.description') }}</p>
-              <div class="place-tag">{{ t('screenTwo.places.viewpoint.tag') }}</div>
+              <h4>{{ t("screenTwo.places.viewpoint.title") }}</h4>
+              <p>{{ t("screenTwo.places.viewpoint.description") }}</p>
+              <div class="place-tag">{{ t("screenTwo.places.viewpoint.tag") }}</div>
             </div>
           </div>
         </div>
@@ -129,15 +126,15 @@
         <div class="ai-stats">
           <div class="stat-item">
             <div class="stat-value">1000+</div>
-            <div class="stat-label">{{ t('screenTwo.stats.points') }}</div>
+            <div class="stat-label">{{ t("screenTwo.stats.points") }}</div>
           </div>
           <div class="stat-item">
             <div class="stat-value">94%</div>
-            <div class="stat-label">{{ t('screenTwo.stats.accuracy') }}</div>
+            <div class="stat-label">{{ t("screenTwo.stats.accuracy") }}</div>
           </div>
           <div class="stat-item">
             <div class="stat-value">12</div>
-            <div class="stat-label">{{ t('screenTwo.stats.parameters') }}</div>
+            <div class="stat-label">{{ t("screenTwo.stats.parameters") }}</div>
           </div>
         </div>
       </div>
@@ -146,16 +143,16 @@
 </template>
 
 <script>
-import { useLanguage } from '../i18n/useLanguage'
+import { useLanguage } from "../i18n/useLanguage";
 
 export default {
   name: "ScreenTwo",
   setup() {
-    const { t } = useLanguage()
-    
+    const { t } = useLanguage();
+
     return {
-      t
-    }
+      t,
+    };
   },
   mounted() {
     this.setupScrollAnimations();

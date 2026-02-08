@@ -32,11 +32,11 @@
         />
         
         <!-- Правая колонка -->
-        <ConstructorBlockFeatureCategories
+        <!-- <ConstructorBlockFeatureCategories
           :t="t"
           :format-currency="formatCurrency"
           :selected-options="selectedOptions"
-        />
+        /> -->
       </div>
 
       <!-- Общая статистика конструктора -->
@@ -178,9 +178,12 @@ export default {
 /* Две колонки с фичами */
 .constructor-features {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   margin-bottom: 80px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Адаптивность */

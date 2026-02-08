@@ -66,23 +66,31 @@
 
 <script>
 import { useLanguage } from "../i18n/useLanguage";
+import { computed } from "vue"
 
 export default {
   name: "HeroForm",
   setup() {
     const { t } = useLanguage();
 
+    const popularPlaces = computed(() => [
+      t("popularPlaces.santorini"),
+      t("popularPlaces.tokyo"),
+      t("popularPlaces.bali"),
+    ]);
+
     return {
       t,
+      popularPlaces
     };
   },
   data() {
     return {
       destination: "",
       isLoading: false,
-      popularPlaces: ["Санторини", "Токио", "Бали"],
     };
   },
+
   methods: {
     selectPlace(place) {
       this.destination = place;
